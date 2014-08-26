@@ -80,7 +80,7 @@
                   <a href="minutes">Meetings</a>                  
                 </li>
               </ul>
-                
+            </div>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.yamm -->
       </div><!-- /.navbar -->
