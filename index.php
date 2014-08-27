@@ -40,25 +40,17 @@
       </div><!-- /.row -->
     
       <div class="row inner-top-sm">
-
-      <div class="col-md-4 inner-bottom-sm">
-        <h2>Standards-based</h2>
-        <p class="text-small">
-This is for the world, so nobody should own it. We believe in One Web, and open standards that empower individuals. All of the work we do is released under a patent and royalty-free license through the World Wide Web Consortium, which is the organization that brought us the Web.
-        </p>
-        <a href="#" class="txt-btn">About open standards</a>
-      </div><!-- /.col -->
-      
-      <div class="col-md-4 inner-bottom-sm">
-        <h2>Credentials</h2>
+     
+      <div class="col-md-6 inner-bottom-sm">
+        <h2 class="text-center">Credentials</h2>
         <p class="text-small">
 A <em><strong>credential</strong></em> is a qualification, achievement, quality, or piece of information about an entity’s background such as a name, government ID, payment provider, home address, or university degree. The work we do is about helping you store and transmit these credentials online.
         </p>
         <a href="#" class="txt-btn">Learn more</a>
       </div><!-- /.col -->
       
-      <div class="col-md-4 inner-bottom-sm">
-        <h2>Community</h2>
+      <div class="col-md-6 inner-bottom-sm">
+        <h2 class="text-center">Community</h2>
         <p class="text-small">
 Everyone is invited to participate in building the future of credentials online. Web developers, students, researchers, non-profits, and for-profits alike. This work affects all of us, so all of us should have a voice.
         </p>
