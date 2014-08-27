@@ -47,7 +47,7 @@
 		  
 			<div class="footer-bottom">
 				<div class="container inner">
-					<p class="pull-left">&copy; OPCG - CC0 - Public domain</p>
+					<p class="pull-left">&copy; OCCG - CC0 - Public domain</p>
 					<ul class="footer-menu pull-right">
 						<li><a href="<?php echo $TOP_DIR ?>/">Home</a></li>
 					</ul><!-- .footer-menu -->
