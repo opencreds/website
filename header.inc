@@ -77,7 +77,10 @@
               <ul class="nav navbar-nav">
                 
                 <li>
-                  <a href="minutes">Meetings</a>                  
+                  <a href="<?php echo $TOP_DIR ?>/specs">Specs</a>                  
+                </li>
+                <li>
+                  <a href="<?php echo $TOP_DIR ?>/minutes">Meetings</a>                  
                 </li>
               </ul>
             </div>
