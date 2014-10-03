@@ -1,0 +1,646 @@
+<!DOCTYPE html> 
+<html> 
+  <head> 
+    <title>Credentials Use Cases</title> 
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/> 
+    <!-- 
+      === NOTA BENE ===
+      For the three scripts below, if your spec resides on dev.w3 you can check them
+      out in the same tree and use relative links so that they'll work offline,
+     --> 
+    <script src='../../respec-w3c-common.js' class='remove'></script> 
+    <script src='../../opencreds-common.js' class='remove'></script> 
+    <script class='remove'> 
+      var respecConfig = {
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "CG-DRAFT",
+          
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "credentials-use-cases",
+ 
+          // if you wish the publication date to be other than today, set this
+          // publishDate:  "2009-08-06",
+ 
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          // previousPublishDate:  "1977-03-15",
+          // previousMaturity:  "WD",
+ 
+          // if there a publicly available Editor's Draft, this is the link
+          edDraftURI:           "https://opencreds.org/specs/source/use-cases",
+ 
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+ 
+          // if you want to have extra CSS, append them to this list
+          // it is recommended that the respec.css stylesheet be kept
+          //extraCSS:             [],
+ 
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+              { name: "Manu Sporny", url: "http://digitalbazaar.com/",
+                company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
+          ],
+ 
+          // authors, add as many as you like. 
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+ 
+          //authors:  [
+          //    { name: "Your Name", url: "http://example.org/",
+          //      company: "Your Company", companyURL: "http://example.com/" },
+          //],
+
+          // maximum level of table of contents
+          maxTocLevel: 2,
+      
+          // name of the WG
+          wg:           "Credentials Community Group",
+          
+          // URI of the public WG page
+          wgURI:        "http://www.w3.org/community/credentials/",
+          
+          // name (with the @w3c.org) of the public mailing to which comments are due
+          wgPublicList: "public-credentials@w3.org",
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "",
+
+          preProcess: [ opencreds.preProcess ]/*,
+          alternateFormats: [ {uri: "diff-20111214.html", label: "diff to previous version"} ],
+          */
+      };
+    </script> 
+  </head> 
+<body> 
+  <section id='abstract'> 
+    <p> 
+A <em>credential</em> is a qualification, achievement, quality, or piece of 
+information about an entity’s background such as a name, government ID, 
+payment provider, home address, or university degree.
+The use cases outlined here are provided in order to make progress toward 
+possible future standardization and interoperability of both low and 
+high-stakes credentials with the goals of storing, transmitting, and receiving 
+digitally verifiable proof of qualifications and achievements. 
+The following use cases focus on concrete scenarios that the technology created 
+by the group should address.
+    </p> 
+  </section> 
+
+  <section> 
+    <h2>Introduction</h2> 
+    <p>
+A <em>credential</em> is a qualification, achievement, quality, or piece of 
+information about an entity’s background such as a name, government ID, 
+payment provider, home address, or university degree.
+The use cases outlined here are provided in order to make progress toward 
+possible future standardization and interoperability of both low and 
+high-stakes credentials with the goals of storing, transmitting, and receiving 
+digitally verifiable proof of qualifications and achievements. 
+The following use cases focus on concrete scenarios that the technology created 
+by the group should address.
+    </p>
+    <p class="issue">
+Create a better introduction to the use cases.
+    </p>
+  </section>
+
+  <section>
+    <h2>Glossary</h2>
+  
+    <p>
+There is certain terminology used throughout this document that has a very
+specific meaning. In order to state explicitly what that meaning is, the 
+following definitions are provided:
+    </p>
+
+    <dl>
+      <dt><tdef>entity</tdef></dt>
+      <dd>
+a thing with distinct and independent existence such as a person, organization,
+or instance of a software program.
+      </dd>
+      <dt><tdef>credential</tdef></dt>
+      <dd>
+a qualification, achievement, quality, or piece of information about an 
+<tref title="entity">entity’s</tref> background such as a name, government ID, 
+payment processor, home address, or university degree.
+      </dd>
+      <dt><tdef>credential exchange</tdef></dt>
+      <dd>
+a transmission of a credential from one <tref>entity</tref> to another 
+<tref>entity</tref>.
+      </dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Roles</h2>
+  
+    <p>
+Each interaction in a Credentials scenario involves a number of 
+<tref title="entity">entities</tref>. In order to make it clear who the
+actors are, the following roles are defined:
+    </p>
+
+    <dl>
+      <dt><tdef>credentialee</tdef></dt>
+      <dd>
+an <tref>entity</tref> that is in control of a particular 
+<tref>credential</tref>. Typically an credentialee is also the primary topic 
+of the information in a credential and is the entity that initiates the 
+transmission of the credential.
+      </dd>
+      <dt><tdef>issuer</tdef></dt>
+      <dd>
+an <tref>entity</tref> that creates and assigns 
+<tref title="credential">credentials</tref> to 
+<tref title="credentialee">credentialees</tref>.
+      </dd>
+      <dt><tdef>requestor</tdef></dt>
+      <dd>
+an <tref>entity</tref> that requests a <tref>credential</tref> from an
+<tref>credentialee</tref>.
+      </dd>
+      <dt><tdef>user agent</tdef></dt>
+      <dd>
+a program, such as a browser or other Web client, that mediates the
+communication between the <tref>credentialee</tref> and
+the <tref>requestor</tref>.
+      </dd>
+      <dt><tdef>credential service</tdef></dt>
+      <dd>
+a program, such as a <tref>credential</tref> storage vault or personal 
+credential wallet, that stores and protects access to an 
+<tref title="credentialee">credentialee's</tref> credentials.
+      </dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Design Criteria</h2>
+  
+    <p>
+When exploring systems design, there are concepts that clearly fit into use 
+cases and concepts apply to all use cases. We are calling the latter class of
+concepts <em>design criteria</em>, which are goals that should be kept in mind
+while designing the overall credentials system.
+    </p>
+
+    <section> 
+      <h2>Data Portability</h2> 
+   
+      <p>
+Ensure credentials may be easily moved from one <tref>credential service</tref> 
+to another.
+      </p>
+
+      <section> 
+        <h3>Details</h3> 
+        <p>
+
+        </p>
+      </section>
+    </section>
+
+    <section> 
+      <h2>Data Rights</h2> 
+   
+      <p>
+Ensure credentials may be dynamically annotated with acceptable use information
+when transmitted to <tref title="requestor">requestors</tref>.
+      </p>
+
+      <section> 
+        <h3>Details</h3> 
+        <p>
+
+        </p>
+      </section>
+    </section>
+
+    <section> 
+      <h2>Legacy Support</h2> 
+   
+      <p>
+Ensure the Credentials solution can provide an abstraction layer that 
+integrates with existing credentialing methods 
+(eg: email, username/passwords, etc.)
+      </p>
+
+      <section> 
+        <h3>Details</h3> 
+        <p>
+
+        </p>
+      </section>
+    </section>
+
+    <section> 
+      <h2>Reuse and Extend</h2> 
+   
+      <p>
+Consider using existing, widely deployed identity provider mechanisms (e.g. 
+Facebook Connect, OpenID Connect, G+ Sign-In, etc.) to integrate with the 
+credential sharing process. Only invent a new mechanism if the current identity 
+provider mechanisms do not provide the functionality necessary to achieve 
+the use cases promoted by the group.
+      </p>
+
+      <section> 
+        <h3>Details</h3> 
+        <p>
+
+        </p>
+      </section>
+    </section>
+
+  </section>
+
+  <section>
+    <h2>Use Cases</h2>
+    <p>
+The following use cases outline scenarios that are targeted to be supported
+in the set of Credentials 1.0 specifications.
+    </p>
+
+    <section> 
+      <h2>Storage</h2> 
+   
+      <p>
+Store a basic credential via the Web in a way that is easy to share with 
+various requestors given authorization by the credentialee, 
+and in a way that is easy to synchronize between devices.
+      </p>
+
+      <section> 
+        <h3>Details</h3> 
+
+        <section> 
+          <h4>Roles</h4> 
+     
+          <ul> 
+            <li>
+<tref>credentialee</tref>
+            </li>
+            <li>
+<tref>issuer</tref>
+            </li>
+            <li>
+<tref>credential service</tref>
+            </li>
+          </ul>
+        </section>
+
+        <section> 
+          <h4>Requirements</h4> 
+     
+          <ul> 
+            <li>
+The mechanism for writing a <tref>credential</tref> to a website MUST be 
+specified.
+            </li>
+            <li>
+Transferring a <tref>credential</tref> from one device to another MUST be 
+specified and MUST be <tref>credentialee</tref> initiated.
+            </li>
+            <li>
+Transmitting a <tref>credential</tref> from a <tref>credential service</tref>
+to a <tref>requestor</tref> MUST be specified.
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section> 
+      <h2>Transmission</h2> 
+   
+      <p>
+Steve (credentialee) visits a merchant website (requestor) and authorizes the 
+transmission of one or more credentials (such as proof-of-age, 
+shipping address, etc.) previously stored with a credential service to the 
+merchant to enable access or fulfillment of a transaction.
+      </p>
+
+      <section> 
+        <h3>Details</h3> 
+
+        <section> 
+          <h4>Roles</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section> 
+          <h4>Requirements</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section> 
+      <h2>Pre-Authorization</h2> 
+   
+      <p>
+Given the opt-in permission of the <tref>credentialee</tref> an identity
+URL may be used to discover additional attributes associated with the
+credentialee. For example, given a buyer's (credentialee) authorization, a 
+merchant (requestor) could query the identity URL for the buyer contained 
+in a digital receipt and obtain an up-to-date email address in order to send
+them a product recall notice.
+      </p>
+
+      <section> 
+        <h3>Details</h3> 
+
+        <section> 
+          <h4>Roles</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section> 
+          <h4>Requirements</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section> 
+      <h2>Verifiability</h2> 
+   
+      <p>
+Digitally verifiable credentials such that a merchant (requestor) and 
+payment processor (requestor) involved in a financial transaction can prove 
+that they have performed the proper due diligence when identifying the 
+payer (credentialee) and the payee (credentialee). This class of regulatory
+requirement is known as "Know Your Customer (KYC)".
+      </p>
+
+      <section> 
+        <h3>Details</h3> 
+
+        <section> 
+          <h4>Roles</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section> 
+          <h4>Requirements</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section> 
+      <h2>Need-to-Know</h2> 
+   
+      <p>
+A credentialee accesses a age-protected portion of a website without revealing 
+secrets that are not vital to the access. For example, providing a
+proof-of-age instead of a date of birth to the website.
+      </p>
+
+      <section> 
+        <h3>Details</h3> 
+
+        <section> 
+          <h4>Roles</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section> 
+          <h4>Requirements</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section> 
+      <h2>Composability</h2> 
+   
+      <p>
+Enable multiple credentials from multiple issuers to be composed together to 
+grant authorization to access a system.
+      </p>
+
+      <section> 
+        <h3>Details</h3> 
+
+        <section> 
+          <h4>Roles</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section> 
+          <h4>Requirements</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section> 
+      <h2>Endorsements</h2> 
+   
+      <p>
+Support endrosements/counter-signatures on credentials. Signatures can be 
+either dependent on one another (chained together), or multiple signatures on 
+original credential (part of a mathematical Set).
+      </p>
+
+      <section> 
+        <h3>Details</h3> 
+
+        <section> 
+          <h4>Roles</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section> 
+          <h4>Requirements</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section> 
+      <h2>Pseudo-anonymity</h2> 
+   
+      <p>
+Access a restricted area of a website using a credential without revealing 
+any personally identifying information. Personally identifying information is 
+available to law enforcement via a court order.
+      </p>
+
+      <section> 
+        <h3>Details</h3> 
+
+        <section> 
+          <h4>Roles</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section> 
+          <h4>Requirements</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section> 
+      <h2>Identity Aliases</h2> 
+   
+      <p>
+Gunther (credentialee) enters a short-identifier that he believes identifies The 
+Widget Store (credentialee) into a UI. The UI displays a certificate of 
+authenticity that indicates the short identifier is in fact for The Widget 
+Store. Gunther uses the short identifier to make a payment to the store.
+      </p>
+
+      <section> 
+        <h3>Details</h3> 
+
+        <section> 
+          <h4>Roles</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section> 
+          <h4>Requirements</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+  </section>
+
+  <section> 
+    <h2>Acknowledgements</h2>
+ 
+    <p>
+The editor is thankful to the following contributions from the 
+Web Payments Workshop and the Web Payments Community Group, specifically 
+(in alphabetical order): TBD
+    </p>
+
+  </section>
+
+  </body> 
+</html>
+
