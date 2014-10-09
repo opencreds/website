@@ -242,6 +242,41 @@ integrates with existing credentialing methods
     </section>
 
     <section> 
+      <h2>Flexible Access Control</h2> 
+   
+      <p>
+Ensure that a <tref>credentialee</tref> may provide access to their credentials
+in an interactive and non-interactive manner. Access granted by the credentilee
+may be revoked at a later time by the credentialee.
+      </p>
+      
+      <section> 
+        <h3>Examples</h3> 
+        <ul>
+          <li>
+A credentialee's identity URL may be used to discover additional attributes 
+associated with the credentialee in a pre-authorized manner. For example, 
+given a buyer's (credentialee) authorization, a merchant (requestor) could 
+query the identity URL for the buyer contained in a digital receipt and obtain 
+an up-to-date email address in order to send them a product recall notice.
+          </li>
+          <li>
+A credentialee has determined that a particular, previously pre-authorized, 
+merchant (requestor) is not trustworthy and revokes all future access to
+credentials from the merchant.
+          </li>
+        </ul>
+      </section>
+      
+      <section> 
+        <h3>Details</h3> 
+        <p>
+
+        </p>
+      </section>
+    </section>
+
+    <section> 
       <h2>Reuse and Extend</h2> 
    
       <p>
@@ -268,6 +303,71 @@ the use cases promoted by the group.
 The following use cases outline scenarios that are targeted to be supported
 in the set of Credentials 1.0 specifications.
     </p>
+
+    <section> 
+      <h2>Verifiable Claims</h2> 
+   
+      <p>
+A <tref>requestor</tref> cryptographically verifies that an 
+<tref>issuer</tref> has made a particular set of claims about an 
+<tref>entity</tref>. A claim would consist of an assertion about a particular
+qualification, achievement, or attribute of the entity.
+      </p>
+
+      <section> 
+        <h3>Examples</h3> 
+          <ul> 
+            <li>
+A university would like to verify that an incoming student has achieved an
+acceptable score on the SAT by verifying their score report with Educational
+Testing Service (ETS).
+            </li>
+            <li>
+A bank would like to perform "Know Your Customer" clearing on a new customer 
+by checking to see that they are a citizen of Finland and that they have
+a current national ID card issued to them by their government.
+            </li>
+            <li>
+A hospital would like to ensure that a prospective employee is licensed to
+practice medicine in their state as well as having up-to-date certificates
+related to areas of specialization.
+            </li>
+          </ul>
+      </section> 
+
+      <section> 
+        <h3>Details</h3> 
+
+        <section> 
+          <h4>Roles</h4> 
+     
+          <ul> 
+            <li>
+<tref>credentialee</tref>
+            </li>
+            <li>
+<tref>issuer</tref>
+            </li>
+            <li>
+<tref>requestor</tref>
+            </li>
+          </ul>
+        </section>
+
+        <section> 
+          <h4>Requirements</h4> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
 
     <section> 
       <h2>Storage</h2> 
@@ -319,7 +419,7 @@ to a <tref>requestor</tref> MUST be specified.
     </section>
 
     <section> 
-      <h2>Transmission</h2> 
+      <h2>Interactive Transmission</h2> 
    
       <p>
 Steve (credentialee) visits a merchant website (requestor) and authorizes the 
@@ -358,17 +458,25 @@ merchant to enable access or fulfillment of a transaction.
     </section>
 
     <section> 
-      <h2>Pre-Authorization</h2> 
+      <h2>Non-interactive Transmission</h2> 
    
       <p>
-Given the opt-in permission of the <tref>credentialee</tref> an identity
-URL may be used to discover additional attributes associated with the
-credentialee. For example, given a buyer's (credentialee) authorization, a 
-merchant (requestor) could query the identity URL for the buyer contained 
-in a digital receipt and obtain an up-to-date email address in order to send
-them a product recall notice.
+A <tref>requestor</tref> requests <tref title="credential">credentials</tref> 
+that they have been pre-authorized to access through a non-interactive channel
+to the <tref>credential service</tref>.
       </p>
 
+      <section> 
+        <h3>Examples</h3> 
+        <ul> 
+          <li>
+A grocery store wants to send out a product recall notice and requests an 
+up-to-date email address from each of their customers' credential service to 
+ensure that they're sending it to the correct email address.
+          </li>
+        </ul>
+      </section>
+      
       <section> 
         <h3>Details</h3> 
 
@@ -397,50 +505,10 @@ them a product recall notice.
         </section>
       </section>
     </section>
-
-    <section> 
-      <h2>Verifiability</h2> 
-   
-      <p>
-Digitally verifiable credentials such that a merchant (requestor) and 
-payment processor (requestor) involved in a financial transaction can prove 
-that they have performed the proper due diligence when identifying the 
-payer (credentialee) and the payee (credentialee). This class of regulatory
-requirement is known as "Know Your Customer (KYC)".
-      </p>
-
-      <section> 
-        <h3>Details</h3> 
-
-        <section> 
-          <h4>Roles</h4> 
-     
-          <ul> 
-            <li>
-            </li>
-            <li>
-            </li>
-            <li>
-            </li>
-          </ul>
-        </section>
-
-        <section> 
-          <h4>Requirements</h4> 
-     
-          <ul> 
-            <li>
-            </li>
-            <li>
-            </li>
-          </ul>
-        </section>
-      </section>
-    </section>
-
+    
     <section> 
       <h2>Need-to-Know</h2> 
-   
+
       <p>
 A credentialee accesses a age-protected portion of a website without revealing 
 secrets that are not vital to the access. For example, providing a
