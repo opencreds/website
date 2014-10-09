@@ -204,6 +204,10 @@ to another.
         <h3>Examples</h3> 
         <ul>
           <li>
+Yannos has been storing all of his credentials at his college credential service
+and, upon graduating, would like to move them to a more long-term storage 
+service. All of the credentials are moved without having to re-issue or 
+re-assign any of the credentials.
           </li>
         </ul>
       </section>
@@ -225,6 +229,18 @@ when transmitted to <tref title="requestor">requestors</tref>.
       </p>
 
       <section> 
+        <h3>Examples</h3> 
+        <ul>
+          <li>
+Rosa is transmitting her email address to a group buying website and wants to
+ensure that her email address will not be used for unsolicited emails. She
+attaches a "no advertising" assertion to her email credential to
+ensure that it isn't re-transmitted to 3rd parties for advertising purposes.
+          </li>
+        </ul>
+      </section>
+      
+      <section> 
         <h3>Details</h3> 
         <p>
 
@@ -237,7 +253,7 @@ when transmitted to <tref title="requestor">requestors</tref>.
    
       <p>
 Ensure the Credentials solution can provide an abstraction layer that 
-integrates with existing credentialing methods 
+integrates with existing authentication methods 
 (eg: email, username/passwords, etc.)
       </p>
 
@@ -245,6 +261,9 @@ integrates with existing credentialing methods
         <h3>Examples</h3> 
         <ul>
           <li>
+Petra goes to login to a website, but does not have any credentials. She does,
+however, have a username/password based account on the website. She is able to
+bypass the credential-based login and use a username/password login instead.
           </li>
         </ul>
       </section>
@@ -270,24 +289,22 @@ may be revoked at a later time by the credentialee.
         <h3>Examples</h3> 
         <ul>
           <li>
-          </li>
-        </ul>
-      </section>
-      
-      <section> 
-        <h3>Examples</h3> 
-        <ul>
-          <li>
-A credentialee's identity URL may be used to discover additional attributes 
-associated with the credentialee in a pre-authorized manner. For example, 
-given a buyer's (credentialee) authorization, a merchant (requestor) could 
-query the identity URL for the buyer contained in a digital receipt and obtain 
-an up-to-date email address in order to send them a product recall notice.
+Ralph is buying wine at an online wine store. The wine store interactively 
+requests a proof-of-age and shipping address credential from Ralph before 
+completing the transaction.
           </li>
           <li>
-A credentialee has determined that a particular, previously pre-authorized, 
-merchant (requestor) is not trustworthy and revokes all future access to
-credentials from the merchant.
+The Good Food grocery store requests non-interactive access to each of their
+customer's email credentials when they sign up for a loyalty card. If a
+product recall notice is ever issued for an item a customer purchased, the
+latest email address for the customer is fetched and the product recall notice
+is forwarded to the customer.
+          </li>
+          <li>
+Jackie allows TrustMart to automatically retrieve her latest address and phone
+credentials. She then recieves unsolicited junkmail that she knows came from
+TrustMart. She deauthorizes TrustMart from pulling her latest address and phone
+credentials.
           </li>
         </ul>
       </section>
@@ -315,6 +332,10 @@ the use cases promoted by the group.
         <h3>Examples</h3> 
         <ul>
           <li>
+Charlie uses an OpenID Connect login process to login to a website, which also
+transmits his credential service URL. The website uses the credential service
+URL to request additional credentials that the website needs to verify his
+education credentials.
           </li>
         </ul>
       </section>
@@ -326,6 +347,7 @@ the use cases promoted by the group.
         </p>
       </section>
     </section>
+
 
   </section>
 
@@ -369,6 +391,12 @@ related to areas of specialization.
 
       <section> 
         <h3>Details</h3> 
+
+        <p>
+This is the base use case for the credentials work. It establishes the need for
+a way of making claims about an entity and then digitally signing those claims
+such that the claims are cryptographically verifiable.
+        </p>
 
         <section> 
           <h4>Roles</h4> 
