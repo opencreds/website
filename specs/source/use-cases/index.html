@@ -462,15 +462,20 @@ such that the claims are cryptographically verifiable.
       <h2>Storage</h2> 
    
       <p>
-Store a basic credential via the Web in a way that is easy to share with 
-various requestors given authorization by the credentialee, 
-and in a way that is easy to synchronize between devices.
+Store a <tref>credential</tref> via the Web in a way that is easy to share with 
+a <tref title="requestor">requestor</tref> given authorization by the 
+<tref>credentialee</tref>. Ensure that the credential is is easy to 
+synchronize between devices.
       </p>
 
       <section> 
         <h3>Examples</h3> 
         <ul>
           <li>
+Cal receives a credential asserting that TrustCorp has verified that his email 
+address is valid. Cal stores the credential with his CredVaultCorp credential 
+vault. He also configures his personal credential vault to backup his 
+credentials from his CredVaultCorp vault on a regular basis.
           </li>
         </ul>
       </section>
@@ -519,16 +524,21 @@ to a <tref>requestor</tref> MUST be specified.
       <h2>Interactive Transmission</h2> 
    
       <p>
-Steve (credentialee) visits a merchant website (requestor) and authorizes the 
-transmission of one or more credentials (such as proof-of-age, 
-shipping address, etc.) previously stored with a credential service to the 
-merchant to enable access or fulfillment of a transaction.
+A <tref>credentialee</tref>) requests access to a restricted portion of a
+<tref title="requestor">requestor's</tref>website. The requestor interactively
+requests one or more <tref title="credential">credentials</tref> previously 
+stored with the credentialee's <tref>credential service</tref>. The 
+credentialee authorizes the transmission of the credentials to the requestor.
       </p>
 
       <section> 
         <h3>Examples</h3> 
         <ul>
           <li>
+Roxy visits the FineWines.com website and selects a number of wines to
+purchase. The website requests a proof-of-age and shipping address credential 
+from Roxy. Roxy's IronVaultCorp credential service delivers both credentials,
+allowing her to finalize the transaction.
           </li>
         </ul>
       </section>
@@ -567,8 +577,8 @@ merchant to enable access or fulfillment of a transaction.
    
       <p>
 A <tref>requestor</tref> requests <tref title="credential">credentials</tref> 
-that they have been pre-authorized to access through a non-interactive channel
-to the <tref>credential service</tref>.
+from a <tref>credential service</tref> that have been pre-authorized to be 
+accessed through a non-interactive channel.
       </p>
 
       <section> 
@@ -577,7 +587,9 @@ to the <tref>credential service</tref>.
           <li>
 A grocery store wants to send out a product recall notice and requests an 
 up-to-date email address from each of their customers' credential service to 
-ensure that they're sending it to the correct email address.
+ensure that they're sending it to the correct email address. The customers have
+previously authorized ongoing access to their preferred email address 
+credential.
           </li>
         </ul>
       </section>
@@ -615,15 +627,18 @@ ensure that they're sending it to the correct email address.
       <h2>Need-to-Know</h2> 
 
       <p>
-A credentialee accesses a age-protected portion of a website without revealing 
-secrets that are not vital to the access. For example, providing a
-proof-of-age instead of a date of birth to the website.
+A <tref>credentialee</tref> accesses a restricted portion of a website 
+without revealing secrets that are not vital in order to be granted access.
       </p>
 
       <section> 
         <h3>Examples</h3> 
         <ul>
           <li>
+Umal provides a credential stating that he is over the age of 13 in order to
+buy access to a PG-13 rated movie. This enables the online retailer 
+to avoid collecting information on a minor while ensuring that the proper age
+check is performed before granting him access to the movie.
           </li>
         </ul>
       </section>
@@ -661,14 +676,25 @@ proof-of-age instead of a date of birth to the website.
       <h2>Composability</h2> 
    
       <p>
-Enable multiple credentials from multiple issuers to be composed together to 
-grant authorization to access a system.
+Multiple credentials from multiple issuers are composed together to grant 
+authorization to access a system.
       </p>
 
       <section> 
         <h3>Examples</h3> 
         <ul>
           <li>
+Marisol wants to open a bank account at a new bank. The bank requires two 
+valid forms of identification. She uses a US Password credential and a 
+Colorado drivers license credential to prove that she is who she says she 
+is to the bank.
+          </li>
+          <li>
+Harpreet needs to access a secure Department of Defense facility. He provides
+his government ID credential, his Top Secret facility access credential, and
+his 
+<a href="http://en.wikipedia.org/wiki/Sensitive_Compartmented_Information_Facility">SCIF</a>
+room assignment to get access to the building entrance.
           </li>
         </ul>
       </section>
@@ -706,15 +732,25 @@ grant authorization to access a system.
       <h2>Endorsements</h2> 
    
       <p>
-Support endrosements/counter-signatures on credentials. Signatures can be 
-either dependent on one another (chained together), or multiple signatures on 
-original credential (part of a mathematical Set).
+A credential may be endorsed/counter-signed by one or more entities.
+Signatures can be either dependent on one another (chained together), or 
+multiple signatures on original credential (part of a mathematical Set).
       </p>
 
       <section> 
         <h3>Examples</h3> 
         <ul>
           <li>
+MidBank is attempting to establish a solid credit rating and hires three credit
+ratings agencies to audit its books. Each firm determines that the bank should
+have a AA credit rating and digitally countersigns the same credential 3 times
+to demonstrate the credit worthiness of the bank.
+          </li>
+          <li>
+Two people get married and get a marriage credential which needs to be
+digitally signed by the person that married them and the witness, in that order.
+The credential is first issued by the person that married them, and is then
+counter-signed by the witness.
           </li>
         </ul>
       </section>
@@ -761,6 +797,10 @@ available to law enforcement via a court order.
         <h3>Examples</h3> 
         <ul>
           <li>
+Roman would like to purchase access to an adult website without revealing any
+personally identifying information. He transmits an age verification credential
+and an an email mixnet credential to the merchant. The merchant is not able
+to use that information to identify Roman.
           </li>
         </ul>
       </section>
@@ -798,16 +838,20 @@ available to law enforcement via a court order.
       <h2>Identity Aliases</h2> 
    
       <p>
-Gunther (credentialee) enters a short-identifier that he believes identifies The 
-Widget Store (credentialee) into a UI. The UI displays a certificate of 
-authenticity that indicates the short identifier is in fact for The Widget 
-Store. Gunther uses the short identifier to make a payment to the store.
+A <tref>credentialee</tref> uses a short-identifier text string to lookup
+an <tref>entity</tref> identity URL.
       </p>
 
       <section> 
         <h3>Examples</h3> 
         <ul>
           <li>
+Gunther enters a short-identifier that he believes identifies The Smart Store 
+into a UI. The UI displays a certificate of authenticity that indicates the 
+short identifier is in fact for The Smart Store. Gunther uses the short 
+identifier to make a payment to the store. The short identifier is expanded to
+an identity URL and then the identity URL is used to determine the primary
+payment account for the identity URL.
           </li>
         </ul>
       </section>
