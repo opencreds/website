@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" typeof="bibo:Document " about="" property="dcterms:language" content="en">
+<head> 
+    <title>Credentials Community Group Use Cases</title> 
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"> 
+    <!-- 
+      === NOTA BENE ===
+      For the three scripts below, if your spec resides on dev.w3 you can check them
+      out in the same tree and use relative links so that they'll work offline,
+     --> 
+     
+     
+     
+  <style>/*****************************************************************
+ * ReSpec 3 CSS
+ * Robin Berjon - http://berjon.com/
+ *****************************************************************/
+
+/* --- INLINES --- */
+em.rfc2119 { 
+    text-transform:     lowercase;
+    font-variant:       small-caps;
+    font-style:         normal;
+    color:              #900;
+}
+
+h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym,
+h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+    border: none;
+}
+
+dfn {
+    font-weight:    bold;
+}
+
+a.internalDFN {
+    color:  inherit;
+    border-bottom:  1px solid #99c;
+    text-decoration:    none;
+}
+
+a.externalDFN {
+    color:  inherit;
+    border-bottom:  1px dotted #ccc;
+    text-decoration:    none;
+}
+
+a.bibref {
+    text-decoration:    none;
+}
+
+cite .bibref {
+    font-style: normal;
+}
+
+code {
+    color:  #C83500;
+}
+
+/* --- TOC --- */
+.toc a, .tof a {
+    text-decoration:    none;
+}
+
+a .secno, a .figno {
+    color:  #000;
+}
+
+ul.tof, ol.tof {
+    list-style: none outside none;
+}
+
+.caption {
+    margin-top: 0.5em;
+    font-style:   italic;
+}
+
+/* --- TABLE --- */
+table.simple {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+}
+
+.simple th {
+    background: #005a9c;
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+}
+
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+}
+
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+    background: #f0f6ff;
+}
+
+/* --- DL --- */
+.section dd > p:first-child {
+    margin-top: 0;
+}
+
+.section dd > p:last-child {
+    margin-bottom: 0;
+}
+
+.section dd {
+    margin-bottom:  1em;
+}
+
+.section dl.attrs dd, .section dl.eldef dd {
+    margin-bottom:  0;
+}
+
+@media print {
+    .removeOnSave {
+        display: none;
+    }
+}
+</style><style>/* --- ISSUES/NOTES --- */
+div.issue-title, div.note-title {
+    padding-right:  1em;
+    min-width: 7.5em;
+    color: #b9ab2d;
+}
+div.issue-title { color: #e05252; }
+div.note-title { color: #2b2; }
+div.issue-title span, div.note-title span {
+    text-transform: uppercase;
+}
+div.note, div.issue {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+.note > p:first-child, .issue > p:first-child { margin-top: 0 }
+.issue, .note {
+    padding: .5em;
+    border-left-width: .5em;
+    border-left-style: solid;
+}
+div.issue, div.note {
+    padding: 1em 1.2em 0.5em;
+    margin: 1em 0;
+    position: relative;
+    clear: both;
+}
+span.note, span.issue { padding: .1em .5em .15em; }
+
+.issue {
+    border-color: #e05252;
+    background: #fbe9e9;
+}
+.note {
+    border-color: #52e052;
+    background: #e9fbe9;
+}
+
+
+</style><link rel="stylesheet" href="https://www.w3.org/community/src/css/spec/cg-draft.css"><!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]--></head> 
+<body class="h-entry" role="document" id="respecDocument"><div class="head" role="contentinfo" id="respecHeader">
+  <p>
+    <a href="http://www.w3.org/"><img width="72" height="48" src="https://www.w3.org/Icons/w3c_home" alt="W3C"></a>
+  </p>
+  <h1 class="title p-name" id="title" property="dcterms:title">Credentials Community Group Use Cases</h1>
+  
+  <h2 property="dcterms:issued" datatype="xsd:dateTime" content="2014-10-14T22:24:02.000Z" id="draft-community-group-report-14-october-2014">Draft Community Group Report <time class="dt-published" datetime="2014-10-14">14 October 2014</time></h2>
+  <dl>
+    
+    
+    
+      <dt>Latest editor's draft:</dt>
+      <dd><a href="https://opencreds.org/specs/source/use-cases">https://opencreds.org/specs/source/use-cases</a></dd>
+    
+    
+    
+    
+    
+      
+    
+    <dt>Editor:</dt>
+    <dd class="p-author h-card vcard" rel="bibo:editor" inlist=""><span typeof="foaf:Person"><a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Manu Sporny" href="http://digitalbazaar.com/">Manu Sporny</a>, <a rel="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://digitalbazaar.com/">Digital Bazaar, Inc.</a></span>
+</dd>
+
+    
+  </dl>
+  
+  <p class="copyright">
+    <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 
+    2014
+    the Contributors to the Credentials Community Group Use Cases Specification, published by the
+    <a href="http://www.w3.org/community/credentials/">Credentials Community Group</a> under the
+    
+      <a href="https://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>.
+      A human-readable <a href="http://www.w3.org/community/about/agreements/cla-deed/">summary</a> is available.
+    
+  </p>
+  <hr>
+</div> 
+  <section id="abstract" class="introductory" property="dcterms:abstract" datatype="" typeof="bibo:Chapter" resource="#abstract" rel="bibo:Chapter"><h2 role="heading" id="h2_abstract">Abstract</h2> 
+    <p> 
+A <em>credential</em> is a qualification, achievement, quality, or piece of 
+information about an entity’s background such as a name, government ID, 
+payment provider, home address, or university degree.
+The use cases outlined here are provided in order to make progress toward 
+possible future standardization and interoperability of both low and 
+high-stakes credentials with the goals of storing, transmitting, and receiving 
+digitally verifiable proof of qualifications and achievements. 
+The following use cases focus on concrete scenarios that the technology created 
+by the group should address.
+    </p> 
+  </section><section id="sotd" class="introductory" typeof="bibo:Chapter" resource="#sotd" rel="bibo:Chapter"><h2 role="heading" id="h2_sotd">Status of This Document</h2>
+  <p>
+    This specification was published by the <a href="http://www.w3.org/community/credentials/">Credentials Community Group</a>.
+    It is not a W3C Standard nor is it on the W3C Standards Track.
+    
+      Please note that under the 
+      <a href="https://www.w3.org/community/about/agreements/cla/">W3C Community Contributor License Agreement (CLA)</a>
+      there is a limited opt-out and other conditions apply.
+    
+    Learn more about 
+    <a href="http://www.w3.org/community/">W3C Community and Business Groups</a>.
+  </p>
+   
+    <p>
+    </p>
+  
+    
+      <p>If you wish to make comments regarding this document, please send them to 
+      <a href="mailto:public-credentials@w3.org@w3.org">public-credentials@w3.org@w3.org</a> 
+      (<a href="mailto:public-credentials@w3.org-request@w3.org?subject=subscribe">subscribe</a>,
+      <a href="http://lists.w3.org/Archives/Public/public-credentials@w3.org/">archives</a>).</p>
+    
+</section><section id="toc"><h2 class="introductory" role="heading" id="h2_toc">Table of Contents</h2><ul class="toc" role="directory" id="respecContents"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#glossary" class="tocxref"><span class="secno">2. </span>Glossary</a></li><li class="tocline"><a href="#roles" class="tocxref"><span class="secno">3. </span>Roles</a></li><li class="tocline"><a href="#design-criteria" class="tocxref"><span class="secno">4. </span>Design Criteria</a><ul class="toc"><li class="tocline"><a href="#data-portability" class="tocxref"><span class="secno">4.1 </span>Data Portability</a><ul class="toc"></ul></li><li class="tocline"><a href="#data-rights" class="tocxref"><span class="secno">4.2 </span>Data Rights</a><ul class="toc"></ul></li><li class="tocline"><a href="#legacy-support" class="tocxref"><span class="secno">4.3 </span>Legacy Support</a><ul class="toc"></ul></li><li class="tocline"><a href="#flexible-access-control" class="tocxref"><span class="secno">4.4 </span>Flexible Access Control</a><ul class="toc"></ul></li><li class="tocline"><a href="#reuse-and-extend" class="tocxref"><span class="secno">4.5 </span>Reuse and Extend</a><ul class="toc"></ul></li><li class="tocline"><a href="#identifier-alignment" class="tocxref"><span class="secno">4.6 </span>Identifier Alignment</a><ul class="toc"></ul></li></ul></li><li class="tocline"><a href="#use-cases" class="tocxref"><span class="secno">5. </span>Use Cases</a><ul class="toc"><li class="tocline"><a href="#verifiable-claims" class="tocxref"><span class="secno">5.1 </span>Verifiable Claims</a><ul class="toc"></ul></li><li class="tocline"><a href="#storage" class="tocxref"><span class="secno">5.2 </span>Storage</a><ul class="toc"></ul></li><li class="tocline"><a href="#interactive-transmission" class="tocxref"><span class="secno">5.3 </span>Interactive Transmission</a><ul class="toc"></ul></li><li class="tocline"><a href="#non-interactive-transmission" class="tocxref"><span class="secno">5.4 </span>Non-interactive Transmission</a><ul class="toc"></ul></li><li class="tocline"><a href="#need-to-know" class="tocxref"><span class="secno">5.5 </span>Need-to-Know</a><ul class="toc"></ul></li><li class="tocline"><a href="#composability" class="tocxref"><span class="secno">5.6 </span>Composability</a><ul class="toc"></ul></li><li class="tocline"><a href="#endorsements" class="tocxref"><span class="secno">5.7 </span>Endorsements</a><ul class="toc"></ul></li><li class="tocline"><a href="#pseudo-anonymity" class="tocxref"><span class="secno">5.8 </span>Pseudo-anonymity</a><ul class="toc"></ul></li><li class="tocline"><a href="#identity-aliases" class="tocxref"><span class="secno">5.9 </span>Identity Aliases</a><ul class="toc"></ul></li></ul></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">6. </span>Acknowledgements</a></li></ul></section> 
+
+  
+
+  <section id="introduction"> 
+    <!--OddPage--><h2 role="heading" id="h2_introduction"><span class="secno">1. </span>Introduction</h2> 
+    <p>
+A <em>credential</em> is a qualification, achievement, quality, or piece of 
+information about an entity’s background such as a name, government ID, 
+payment provider, home address, or university degree.
+The use cases outlined here are provided in order to make progress toward 
+possible future standardization and interoperability of both low and 
+high-stakes credentials with the goals of storing, transmitting, and receiving 
+digitally verifiable proof of qualifications and achievements. 
+The following use cases focus on concrete scenarios that the technology created 
+by the group should address.
+    </p>
+    <div class="issue"><div class="issue-title" aria-level="1" role="heading" id="h_issue_1"><span>Issue 1</span></div><p class="">
+Create a better introduction to the use cases.
+    </p></div>
+  </section>
+
+  <section id="glossary">
+    <!--OddPage--><h2 role="heading" id="h2_glossary"><span class="secno">2. </span>Glossary</h2>
+  
+    <p>
+There is certain terminology used throughout this document that has a very
+specific meaning. In order to state explicitly what that meaning is, the 
+following definitions are provided:
+    </p>
+
+    <dl>
+      <dt><dfn title="entity" id="dfn-entity">entity</dfn></dt>
+      <dd>
+a thing with distinct and independent existence such as a person, organization,
+or instance of a software program.
+      </dd>
+      <dt><dfn title="credential" id="dfn-credential">credential</dfn></dt>
+      <dd>
+a qualification, achievement, quality, or piece of information about an 
+<a class="tref internalDFN" title="entity" href="#dfn-entity">entity’s</a> background such as a name, government ID, 
+payment processor, home address, or university degree.
+      </dd>
+      <dt><dfn title="credential_exchange" id="dfn-credential_exchange">credential exchange</dfn></dt>
+      <dd>
+a transmission of a credential from one <a class="tref internalDFN" title="entity" href="#dfn-entity">entity</a> to another 
+<a class="tref internalDFN" title="entity" href="#dfn-entity">entity</a>.
+      </dd>
+    </dl>
+  </section>
+
+  <section id="roles">
+    <!--OddPage--><h2 role="heading" id="h2_roles"><span class="secno">3. </span>Roles</h2>
+  
+    <p>
+Each interaction in a Credentials scenario involves a number of 
+<a class="tref internalDFN" title="entity" href="#dfn-entity">entities</a>. In order to make it clear who the
+actors are, the following roles are defined:
+    </p>
+
+    <dl>
+      <dt><dfn title="credentialee" id="dfn-credentialee">credentialee</dfn></dt>
+      <dd>
+an <a class="tref internalDFN" title="entity" href="#dfn-entity">entity</a> that is in control of a particular 
+<a class="tref internalDFN" title="credential" href="#dfn-credential">credential</a>. Typically an credentialee is also the primary topic 
+of the information in a credential and is the entity that initiates the 
+transmission of the credential.
+      </dd>
+      <dt><dfn title="issuer" id="dfn-issuer">issuer</dfn></dt>
+      <dd>
+an <a class="tref internalDFN" title="entity" href="#dfn-entity">entity</a> that creates and assigns 
+<a class="tref internalDFN" title="credential" href="#dfn-credential">credentials</a> to 
+<a class="tref internalDFN" title="credentialee" href="#dfn-credentialee">credentialees</a>.
+      </dd>
+      <dt><dfn title="requestor" id="dfn-requestor">requestor</dfn></dt>
+      <dd>
+an <a class="tref internalDFN" title="entity" href="#dfn-entity">entity</a> that requests a <a class="tref internalDFN" title="credential" href="#dfn-credential">credential</a> from an
+<a class="tref internalDFN" title="credentialee" href="#dfn-credentialee">credentialee</a>.
+      </dd>
+      <dt><dfn title="user_agent" id="dfn-user_agent">user agent</dfn></dt>
+      <dd>
+a program, such as a browser or other Web client, that mediates the
+communication between the <a class="tref internalDFN" title="credentialee" href="#dfn-credentialee">credentialee</a> and
+the <a class="tref internalDFN" title="requestor" href="#dfn-requestor">requestor</a>.
+      </dd>
+      <dt><dfn title="credential_service" id="dfn-credential_service">credential service</dfn></dt>
+      <dd>
+a program, such as a <a class="tref internalDFN" title="credential" href="#dfn-credential">credential</a> storage vault or personal 
+credential wallet, that stores and protects access to an 
+<a class="tref internalDFN" title="credentialee" href="#dfn-credentialee">credentialee's</a> credentials.
+      </dd>
+    </dl>
+  </section>
+
+  <section id="design-criteria">
+    <!--OddPage--><h2 role="heading" id="h2_design-criteria"><span class="secno">4. </span>Design Criteria</h2>
+  
+    <p>
+When exploring systems design, there are concepts that clearly fit into use 
+cases and concepts apply to all use cases. We are calling the latter class of
+concepts <em>design criteria</em>, which are goals that should be kept in mind
+while designing the overall credentials system.
+    </p>
+
+    <section id="data-portability"> 
+      <h3 role="heading" id="h3_data-portability"><span class="secno">4.1 </span>Data Portability</h3> 
+   
+      <p>
+Ensure credentials may be easily moved from one <a class="tref internalDFN" title="credential_service" href="#dfn-credential_service">credential service</a> 
+to another.
+      </p>
+
+      <section id="examples"> 
+        <h4 role="heading" id="h4_examples"><span class="secno">4.1.1 </span>Examples</h4> 
+        <ul>
+          <li>
+Yannos has been storing all of his credentials at his college credential service
+and, upon graduating, would like to move them to a more long-term storage 
+service. All of the credentials are moved without having to re-issue or 
+re-assign any of the credentials.
+          </li>
+        </ul>
+      </section>
+
+      <section id="details"> 
+        <h4 role="heading" id="h4_details"><span class="secno">4.1.2 </span>Details</h4> 
+        <p>
+
+        </p>
+      </section>
+    </section>
+
+    <section id="data-rights"> 
+      <h3 role="heading" id="h3_data-rights"><span class="secno">4.2 </span>Data Rights</h3> 
+   
+      <p>
+Ensure credentials may be dynamically annotated with acceptable use information
+when transmitted to <a class="tref internalDFN" title="requestor" href="#dfn-requestor">requestors</a>.
+      </p>
+
+      <section id="examples-1"> 
+        <h4 role="heading" id="h4_examples-1"><span class="secno">4.2.1 </span>Examples</h4> 
+        <ul>
+          <li>
+Rosa is transmitting her email address to a group buying website and wants to
+ensure that her email address will not be used for unsolicited emails. She
+attaches a "no advertising" assertion to her email credential to
+ensure that it isn't re-transmitted to 3rd parties for advertising purposes.
+          </li>
+        </ul>
+      </section>
+      
+      <section id="details-1"> 
+        <h4 role="heading" id="h4_details-1"><span class="secno">4.2.2 </span>Details</h4> 
+        <p>
+
+        </p>
+      </section>
+    </section>
+
+    <section id="legacy-support"> 
+      <h3 role="heading" id="h3_legacy-support"><span class="secno">4.3 </span>Legacy Support</h3> 
+   
+      <p>
+Ensure the Credentials solution can provide an abstraction layer that 
+integrates with existing authentication methods 
+(eg: email, username/passwords, etc.)
+      </p>
+
+      <section id="examples-2"> 
+        <h4 role="heading" id="h4_examples-2"><span class="secno">4.3.1 </span>Examples</h4> 
+        <ul>
+          <li>
+Petra goes to login to a website, but does not have any credentials. She does,
+however, have a username/password based account on the website. She is able to
+bypass the credential-based login and use a username/password login instead.
+          </li>
+        </ul>
+      </section>
+
+      <section id="details-2"> 
+        <h4 role="heading" id="h4_details-2"><span class="secno">4.3.2 </span>Details</h4> 
+        <p>
+
+        </p>
+      </section>
+    </section>
+
+    <section id="flexible-access-control"> 
+      <h3 role="heading" id="h3_flexible-access-control"><span class="secno">4.4 </span>Flexible Access Control</h3> 
+   
+      <p>
+Ensure that a <a class="tref internalDFN" title="credentialee" href="#dfn-credentialee">credentialee</a> may provide access to their credentials
+in an interactive and non-interactive manner. Access granted by the credentilee
+may be revoked at a later time by the credentialee.
+      </p>
+
+      <section id="examples-3"> 
+        <h4 role="heading" id="h4_examples-3"><span class="secno">4.4.1 </span>Examples</h4> 
+        <ul>
+          <li>
+Ralph is buying wine at an online wine store. The wine store interactively 
+requests a proof-of-age and shipping address credential from Ralph before 
+completing the transaction.
+          </li>
+          <li>
+The Good Food grocery store requests non-interactive access to each of their
+customer's email credentials when they sign up for a loyalty card. If a
+product recall notice is ever issued for an item a customer purchased, the
+latest email address for the customer is fetched and the product recall notice
+is forwarded to the customer.
+          </li>
+          <li>
+Jackie allows TrustMart to automatically retrieve her latest address and phone
+credentials. She then receives unsolicited junkmail that she knows came from
+TrustMart. She deauthorizes TrustMart from pulling her latest address and phone
+credentials.
+          </li>
+        </ul>
+      </section>
+      
+      <section id="details-3"> 
+        <h4 role="heading" id="h4_details-3"><span class="secno">4.4.2 </span>Details</h4> 
+        <p>
+
+        </p>
+      </section>
+    </section>
+
+    <section id="reuse-and-extend"> 
+      <h3 role="heading" id="h3_reuse-and-extend"><span class="secno">4.5 </span>Reuse and Extend</h3> 
+   
+      <p>
+Consider using existing, widely deployed identity provider mechanisms (e.g. 
+Facebook Connect, OpenID Connect, G+ Sign-In, etc.) to integrate with the 
+credential sharing process. Only invent a new mechanism if the current identity 
+provider mechanisms do not provide the functionality necessary to achieve 
+the use cases promoted by the group.
+      </p>
+
+      <section id="examples-4"> 
+        <h4 role="heading" id="h4_examples-4"><span class="secno">4.5.1 </span>Examples</h4> 
+        <ul>
+          <li>
+Charlie uses an OpenID Connect login process to login to a website, which also
+transmits his credential service URL. The website uses the credential service
+URL to request additional credentials that the website needs to verify his
+education credentials.
+          </li>
+        </ul>
+      </section>
+
+      <section id="details-4"> 
+        <h4 role="heading" id="h4_details-4"><span class="secno">4.5.2 </span>Details</h4> 
+        <p>
+
+        </p>
+      </section>
+    </section>
+
+    <section id="identifier-alignment"> 
+      <h3 role="heading" id="h3_identifier-alignment"><span class="secno">4.6 </span>Identifier Alignment</h3> 
+   
+      <p>
+Enable credentials to be issued by systems in a way that allows each system 
+to align their internal identifiers with the other.
+      </p>
+
+      <section id="examples-5"> 
+        <h4 role="heading" id="h4_examples-5"><span class="secno">4.6.1 </span>Examples</h4> 
+        <ul>
+          <li>
+Virginia Tech (a university) and the US Department of Education would like to
+update the loan status of a particular individual. Both systems support 
+credentials, but neither of them desire to use the universal identity URL in
+their internal systems (due to legacy system limitations). Both systems use a
+common internal identifier, such as a loan ID embedded in a credential, to 
+align the data in both systems with the other.
+          </li>
+        </ul>
+      </section>
+
+      <section id="details-5"> 
+        <h4 role="heading" id="h4_details-5"><span class="secno">4.6.2 </span>Details</h4> 
+        <p>
+
+        </p>
+      </section>
+    </section>
+
+  </section>
+
+  <section id="use-cases">
+    <!--OddPage--><h2 role="heading" id="h2_use-cases"><span class="secno">5. </span>Use Cases</h2>
+    <p>
+The following use cases outline scenarios that are targeted to be supported
+in the set of Credentials 1.0 specifications.
+    </p>
+
+    <section id="verifiable-claims"> 
+      <h3 role="heading" id="h3_verifiable-claims"><span class="secno">5.1 </span>Verifiable Claims</h3> 
+   
+      <p>
+A <a class="tref internalDFN" title="requestor" href="#dfn-requestor">requestor</a> cryptographically verifies that an 
+<a class="tref internalDFN" title="issuer" href="#dfn-issuer">issuer</a> has made a particular set of claims about an 
+<a class="tref internalDFN" title="entity" href="#dfn-entity">entity</a>. A claim would consist of an assertion about a particular
+qualification, achievement, or attribute of the entity.
+      </p>
+
+      <section id="examples-6"> 
+        <h4 role="heading" id="h4_examples-6"><span class="secno">5.1.1 </span>Examples</h4> 
+          <ul> 
+            <li>
+A university would like to verify that an incoming student has achieved an
+acceptable score on the GRE by verifying their score report with Educational
+Testing Service (ETS).
+            </li>
+            <li>
+A bank would like to perform "Know Your Customer" clearing on a new customer 
+by checking to see that they are a citizen of Finland and that they have
+a current national ID card issued to them by their government.
+            </li>
+            <li>
+A hospital would like to ensure that a prospective employee is licensed to
+practice medicine in their state as well as having up-to-date certificates
+related to areas of specialization.
+            </li>
+          </ul>
+      </section> 
+
+      <section id="details-6"> 
+        <h4 role="heading" id="h4_details-6"><span class="secno">5.1.2 </span>Details</h4> 
+
+        <p>
+This is the base use case for the credentials work. It establishes the need for
+a way to make claims about an <a class="tref internalDFN" title="entity" href="#dfn-entity">entity</a> and
+a way to cryptographically verify that the claims were made by a particular
+<a class="tref internalDFN" title="issuer" href="#dfn-issuer">issuer</a>.
+        </p>
+
+        <section id="roles-1"> 
+          <h5 role="heading" id="h5_roles-1"><span class="secno">5.1.2.1 </span>Roles</h5> 
+     
+          <ul> 
+            <li>
+<a class="tref internalDFN" title="credentialee" href="#dfn-credentialee">credentialee</a>
+            </li>
+            <li>
+<a class="tref internalDFN" title="issuer" href="#dfn-issuer">issuer</a>
+            </li>
+            <li>
+<a class="tref internalDFN" title="requestor" href="#dfn-requestor">requestor</a>
+            </li>
+          </ul>
+        </section>
+
+        <section id="requirements"> 
+          <h5 role="heading" id="h5_requirements"><span class="secno">5.1.2.2 </span>Requirements</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section id="storage"> 
+      <h3 role="heading" id="h3_storage"><span class="secno">5.2 </span>Storage</h3> 
+   
+      <p>
+Store a <a class="tref internalDFN" title="credential" href="#dfn-credential">credential</a> via the Web in a way that is easy to share with 
+a <a class="tref internalDFN" title="requestor" href="#dfn-requestor">requestor</a> given authorization by the 
+<a class="tref internalDFN" title="credentialee" href="#dfn-credentialee">credentialee</a>. Ensure that the credential is easy to 
+synchronize between devices.
+      </p>
+
+      <section id="examples-7"> 
+        <h4 role="heading" id="h4_examples-7"><span class="secno">5.2.1 </span>Examples</h4> 
+        <ul>
+          <li>
+Cal receives a credential asserting that TrustCorp has verified that his email 
+address is valid. Cal stores the credential with his CredVaultCorp credential 
+vault. He also configures his personal credential vault to backup his 
+credentials from his CredVaultCorp vault on a regular basis.
+          </li>
+        </ul>
+      </section>
+
+      <section id="details-7"> 
+        <h4 role="heading" id="h4_details-7"><span class="secno">5.2.2 </span>Details</h4> 
+
+        <section id="roles-2"> 
+          <h5 role="heading" id="h5_roles-2"><span class="secno">5.2.2.1 </span>Roles</h5> 
+     
+          <ul> 
+            <li>
+<a class="tref internalDFN" title="credentialee" href="#dfn-credentialee">credentialee</a>
+            </li>
+            <li>
+<a class="tref internalDFN" title="issuer" href="#dfn-issuer">issuer</a>
+            </li>
+            <li>
+<a class="tref internalDFN" title="credential_service" href="#dfn-credential_service">credential service</a>
+            </li>
+          </ul>
+        </section>
+
+        <section id="requirements-1"> 
+          <h5 role="heading" id="h5_requirements-1"><span class="secno">5.2.2.2 </span>Requirements</h5> 
+     
+          <ul> 
+            <li>
+The mechanism for writing a <a class="tref internalDFN" title="credential" href="#dfn-credential">credential</a> to a website <em class="rfc2119" title="MUST">MUST</em> be 
+specified.
+            </li>
+            <li>
+Transferring a <a class="tref internalDFN" title="credential" href="#dfn-credential">credential</a> from one device to another <em class="rfc2119" title="MUST">MUST</em> be 
+specified and <em class="rfc2119" title="MUST">MUST</em> be <a class="tref internalDFN" title="credentialee" href="#dfn-credentialee">credentialee</a> initiated.
+            </li>
+            <li>
+Transmitting a <a class="tref internalDFN" title="credential" href="#dfn-credential">credential</a> from a <a class="tref internalDFN" title="credential_service" href="#dfn-credential_service">credential service</a>
+to a <a class="tref internalDFN" title="requestor" href="#dfn-requestor">requestor</a> <em class="rfc2119" title="MUST">MUST</em> be specified.
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section id="interactive-transmission"> 
+      <h3 role="heading" id="h3_interactive-transmission"><span class="secno">5.3 </span>Interactive Transmission</h3> 
+   
+      <p>
+A <a class="tref internalDFN" title="credentialee" href="#dfn-credentialee">credentialee</a> requests access to a restricted portion of a
+<a class="tref internalDFN" title="requestor" href="#dfn-requestor">requestor's</a> website. The requestor interactively
+requests one or more <a class="tref internalDFN" title="credential" href="#dfn-credential">credentials</a> previously 
+stored with the credentialee's <a class="tref internalDFN" title="credential_service" href="#dfn-credential_service">credential service</a>. The 
+credentialee authorizes the transmission of the credentials to the requestor.
+      </p>
+
+      <section id="examples-8"> 
+        <h4 role="heading" id="h4_examples-8"><span class="secno">5.3.1 </span>Examples</h4> 
+        <ul>
+          <li>
+Roxy visits the FineWines.com website and selects a number of wines to
+purchase. The website requests a proof-of-age and shipping address credential 
+from Roxy. Roxy's IronVaultCorp credential service delivers both credentials,
+allowing her to finalize the transaction.
+          </li>
+        </ul>
+      </section>
+
+      <section id="details-8"> 
+        <h4 role="heading" id="h4_details-8"><span class="secno">5.3.2 </span>Details</h4> 
+
+        <section id="roles-3"> 
+          <h5 role="heading" id="h5_roles-3"><span class="secno">5.3.2.1 </span>Roles</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section id="requirements-2"> 
+          <h5 role="heading" id="h5_requirements-2"><span class="secno">5.3.2.2 </span>Requirements</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section id="non-interactive-transmission"> 
+      <h3 role="heading" id="h3_non-interactive-transmission"><span class="secno">5.4 </span>Non-interactive Transmission</h3> 
+   
+      <p>
+A <a class="tref internalDFN" title="requestor" href="#dfn-requestor">requestor</a> requests <a class="tref internalDFN" title="credential" href="#dfn-credential">credentials</a> 
+from a <a class="tref internalDFN" title="credential_service" href="#dfn-credential_service">credential service</a> that have been pre-authorized to be 
+accessed through a non-interactive channel.
+      </p>
+
+      <section id="examples-9"> 
+        <h4 role="heading" id="h4_examples-9"><span class="secno">5.4.1 </span>Examples</h4> 
+        <ul> 
+          <li>
+A grocery store wants to send out a product recall notice and requests an 
+up-to-date email address from each of their customers' credential service to 
+ensure that they're sending it to the correct email address. The customers have
+previously authorized ongoing access to their preferred email address 
+credential.
+          </li>
+        </ul>
+      </section>
+      
+      <section id="details-9"> 
+        <h4 role="heading" id="h4_details-9"><span class="secno">5.4.2 </span>Details</h4> 
+
+        <section id="roles-4"> 
+          <h5 role="heading" id="h5_roles-4"><span class="secno">5.4.2.1 </span>Roles</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section id="requirements-3"> 
+          <h5 role="heading" id="h5_requirements-3"><span class="secno">5.4.2.2 </span>Requirements</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+    
+    <section id="need-to-know"> 
+      <h3 role="heading" id="h3_need-to-know"><span class="secno">5.5 </span>Need-to-Know</h3> 
+
+      <p>
+A <a class="tref internalDFN" title="credentialee" href="#dfn-credentialee">credentialee</a> accesses a restricted portion of a website 
+without revealing secrets that are not vital in order to be granted access.
+      </p>
+
+      <section id="examples-10"> 
+        <h4 role="heading" id="h4_examples-10"><span class="secno">5.5.1 </span>Examples</h4> 
+        <ul>
+          <li>
+Umal provides a credential stating that he is over the age of 13 in order to
+buy access to a PG-13 rated movie. This enables the online retailer 
+to avoid collecting information on a minor while ensuring that the proper age
+check is performed before granting him access to the movie.
+          </li>
+        </ul>
+      </section>
+
+      <section id="details-10"> 
+        <h4 role="heading" id="h4_details-10"><span class="secno">5.5.2 </span>Details</h4> 
+
+        <section id="roles-5"> 
+          <h5 role="heading" id="h5_roles-5"><span class="secno">5.5.2.1 </span>Roles</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section id="requirements-4"> 
+          <h5 role="heading" id="h5_requirements-4"><span class="secno">5.5.2.2 </span>Requirements</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section id="composability"> 
+      <h3 role="heading" id="h3_composability"><span class="secno">5.6 </span>Composability</h3> 
+   
+      <p>
+Multiple credentials from multiple issuers are composed together to grant 
+authorization to access a system.
+      </p>
+
+      <section id="examples-11"> 
+        <h4 role="heading" id="h4_examples-11"><span class="secno">5.6.1 </span>Examples</h4> 
+        <ul>
+          <li>
+Marisol wants to open a bank account at a new bank. The bank requires two 
+valid forms of identification. She uses a US Password credential and a 
+Colorado drivers license credential to prove that she is who she says she 
+is to the bank.
+          </li>
+          <li>
+Harpreet needs to access a secure Department of Defense facility. He provides
+his government ID credential, his Top Secret facility access credential, and
+his 
+<a href="http://en.wikipedia.org/wiki/Sensitive_Compartmented_Information_Facility">SCIF</a>
+room assignment to get access to the building entrance.
+          </li>
+        </ul>
+      </section>
+
+      <section id="details-11"> 
+        <h4 role="heading" id="h4_details-11"><span class="secno">5.6.2 </span>Details</h4> 
+
+        <section id="roles-6"> 
+          <h5 role="heading" id="h5_roles-6"><span class="secno">5.6.2.1 </span>Roles</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section id="requirements-5"> 
+          <h5 role="heading" id="h5_requirements-5"><span class="secno">5.6.2.2 </span>Requirements</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section id="endorsements"> 
+      <h3 role="heading" id="h3_endorsements"><span class="secno">5.7 </span>Endorsements</h3> 
+   
+      <p>
+A credential may be endorsed/counter-signed by one or more entities.
+Signatures can be either dependent on one another (chained together), or 
+multiple signatures on original credential (part of a mathematical Set).
+      </p>
+
+      <section id="examples-12"> 
+        <h4 role="heading" id="h4_examples-12"><span class="secno">5.7.1 </span>Examples</h4> 
+        <ul>
+          <li>
+MidBank is attempting to establish a solid credit rating and hires three credit
+ratings agencies to audit its books. Each firm determines that the bank should
+have a AA credit rating and digitally countersigns the same credential 3 times
+to demonstrate the credit worthiness of the bank.
+          </li>
+          <li>
+Two people get married and get a marriage credential which needs to be
+digitally signed by the person that married them and the witness, in that order.
+The credential is first issued by the person that married them, and is then
+counter-signed by the witness.
+          </li>
+          <li>
+A learner named Olivia is choosing among summer internships, some of which 
+offer opportunities to earn badges that are endorsed by her school. These are 
+badges that could be used to fulfill an interest-driven learning graduation 
+requirement her district has recently implemented. With the additional 
+information provided to her by the school’s endorsement of certain badges, 
+her choice among internships is made much simpler. This example came from the
+<a href="https://docs.google.com/document/d/1jzJXInqZCVft432_yFlKC4YIQZs_fv3zEX8Mfh4G6XY/edit">Open Badges Endorsement Framework Working Paper</a>,
+which was created by the
+<a href="http://wiki.badgealliance.org/index.php/Endorsement_Working_Group">Badge Alliance Endorsement Working Group</a>.
+          </li>
+        </ul>
+      </section>
+
+      <section id="details-12"> 
+        <h4 role="heading" id="h4_details-12"><span class="secno">5.7.2 </span>Details</h4> 
+
+        <section id="roles-7"> 
+          <h5 role="heading" id="h5_roles-7"><span class="secno">5.7.2.1 </span>Roles</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section id="requirements-6"> 
+          <h5 role="heading" id="h5_requirements-6"><span class="secno">5.7.2.2 </span>Requirements</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section id="pseudo-anonymity"> 
+      <h3 role="heading" id="h3_pseudo-anonymity"><span class="secno">5.8 </span>Pseudo-anonymity</h3> 
+   
+      <p>
+Access a restricted area of a website using a credential without revealing 
+any personally identifying information. Personally identifying information is 
+available to law enforcement via a court order.
+      </p>
+
+      <section id="examples-13"> 
+        <h4 role="heading" id="h4_examples-13"><span class="secno">5.8.1 </span>Examples</h4> 
+        <ul>
+          <li>
+Roman would like to purchase access to an adult website without revealing any
+personally identifying information. He transmits an age verification credential
+and an an email mixnet credential to the merchant. The merchant is not able
+to use that information to identify Roman.
+          </li>
+        </ul>
+      </section>
+
+      <section id="details-13"> 
+        <h4 role="heading" id="h4_details-13"><span class="secno">5.8.2 </span>Details</h4> 
+
+        <section id="roles-8"> 
+          <h5 role="heading" id="h5_roles-8"><span class="secno">5.8.2.1 </span>Roles</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section id="requirements-7"> 
+          <h5 role="heading" id="h5_requirements-7"><span class="secno">5.8.2.2 </span>Requirements</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section id="identity-aliases"> 
+      <h3 role="heading" id="h3_identity-aliases"><span class="secno">5.9 </span>Identity Aliases</h3> 
+   
+      <p>
+A <a class="tref internalDFN" title="credentialee" href="#dfn-credentialee">credentialee</a> uses a short-identifier text string to lookup
+an <a class="tref internalDFN" title="entity" href="#dfn-entity">entity</a> identity URL.
+      </p>
+
+      <section id="examples-14"> 
+        <h4 role="heading" id="h4_examples-14"><span class="secno">5.9.1 </span>Examples</h4> 
+        <ul>
+          <li>
+Gunther enters a short-identifier that he believes identifies The Smart Store 
+into a UI. The UI displays a certificate of authenticity that indicates the 
+short identifier is in fact for The Smart Store. Gunther uses the short 
+identifier to make a payment to the store. The short identifier is expanded to
+an identity URL and then the identity URL is used to determine the primary
+payment account for the identity URL.
+          </li>
+        </ul>
+      </section>
+
+      <section id="details-14"> 
+        <h4 role="heading" id="h4_details-14"><span class="secno">5.9.2 </span>Details</h4> 
+
+        <section id="roles-9"> 
+          <h5 role="heading" id="h5_roles-9"><span class="secno">5.9.2.1 </span>Roles</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+
+        <section id="requirements-8"> 
+          <h5 role="heading" id="h5_requirements-8"><span class="secno">5.9.2.2 </span>Requirements</h5> 
+     
+          <ul> 
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+  </section>
+
+  <section id="acknowledgements"> 
+    <!--OddPage--><h2 role="heading" id="h2_acknowledgements"><span class="secno">6. </span>Acknowledgements</h2>
+ 
+    <p>
+The editor is thankful to the following contributions from the 
+Web Payments Workshop, the Web Payments Community Group, and the 
+Credentials Community Group, specifically (in alphabetical order): TBD
+    </p>
+
+  </section>
+
+   
+
+
+<div class="extLives"></div></body></html>
