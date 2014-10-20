@@ -18,14 +18,14 @@
 														
 							<div class="col-xs-6 thumb">
 								<figure class="icon-overlay icn-link">
-									<a href="/">Identity Credentials</a>
+									<a href="/specs/source/identity-credentials/">Identity Credentials</a>
 								</figure>
 							</div><!-- /.thumb -->
 						</div><!-- /.row -->
 						<div class="row thumbs gap-xs">
 							<div class="col-xs-6 thumb">
 								<figure class="icon-overlay icn-link">
-									<a href="/">HTTP Signatures</a>
+									<a href="https://web-payments.org/specs/source/http-signatures/">HTTP Signatures</a>
 								</figure>
 							</div><!-- /.thumb -->
 														
