@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <title>W3C TPAC: High-stakes Credentials for the Web</title>
+ 
+ <meta name="author" content="Manu Sporny">
+ <meta name="geo.country" content="US">
+ <meta name="dc.language" content="en">
+ <meta name="description" content="">
+ <meta name="keywords" content="">
+ <meta name="viewport" content="width=device-width">
+ 
+ <link rel="stylesheet" type="text/css" href="css/reset-min.css">
+ <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen" charset="utf-8">
+ <link rel="stylesheet" href="css/print.css" type="text/css" media="print" charset="utf-8">
+ <link rel="stylesheet" type="text/css" href="css/shadowbox.css">
+ <script type="text/javascript" src="js/shadowbox.js"></script>
+</head>
+<body>
+
+ <div id="nav">
+  <div id="title">
+   <h1>High-stakes Credentials for the Web</h1>
+   <h2>by <a href="http://www.linkedin.com/in/manusporny" onclick="window.open(this.href); return false;">Manu Sporny</a></h2>
+   <h2>| Chair, <a href="http://www.w3.org/community/webpayments/" onclick="window.open(this.href); return false;">Web Payments CG</a>, Co-Founder <a href="http://www.w3.org/community/credentials/" onclick="window.open(this.href); return false;">Credentials CG</a></h2>
+  </div>
+  <ul class="slidenav">
+   <li><a id="prevButton" href="#">&vltri; previous</a></li>
+   <li><a id="nextButton" href="#">next &vrtri;</a></li>
+  </ul>
+ </div> <!-- footer -->
+ 
+ <div class="presentation">
+  <div class="slides">
+         
+   <div class="slide cover current">
+    <section class="center intro">
+     <h1 style="font-size: 0.9em;">High-stakes Credentials for the Web</h1>
+     <h2 style="font-size: 0.7em;">A 10,000ft Overview</h2>
+     <div class="instructions-screen">
+    <p>Slide navigation:</p>
+    <p>Press <span class="key">&rarr;</span> key to advance.</p>
+    <p>Toggle notes with the  <span class="key">2</span> key.</p>
+    <p>Zoom in/out: <span class="key">Ctrl or Command</span> + <span class="key">+/-</span></p>
+     </div>
+     <div class="instructions-print">
+    <p>This presentation was printed from an HTML page.</p>
+    <p>A fully interactive version of these slides containing examples and links to further resources can be found at:<br>https://web-payments.com/slides/2014/semtech/.</p>
+     </div>
+    </section>
+   </div>
+
+   <!-- 
+   --------------------------------------------
+   Intro 
+   --------------------------------------------
+   -->
+
+    <div class="slide future">
+      <header><h1>Credentials</h1></header>
+      <subheader><h3>What is a Credential?</h3></subheader>
+        <section class="center"><br>
+        <p style="margin: 2em;">
+A <em>credential</em> is a qualification, achievement, quality, or piece of 
+information about an entity’s background such as a name, government ID, 
+payment provider, home address, or university degree.
+        </p>
+        </section>
+    </div>
+
+    <div class="slide future">
+      <header><h1>What's</h1><h2>Broken</h2></header>
+      <subheader><h3>The Web Platform's current failures</h3></subheader>
+        <section class="center"><br><br>
+          <ul>
+            <li>No standardized, verifiable 3rd party credentials for the Web<br><br></li>
+            <li>If we can't prove who we are, we can't do important things on the Web<br><br></li>
+            <li>Strong identity is central to ownership, finance, democracy, privacy, and prosperity<br><br></li>
+          </ul>
+        </section>
+    </div>
+
+    <div class="slide future">
+      <header><h1>Payments</h1><h2>CG</h2></header>
+      <subheader><h3>What is the Web Payments CG?</h3></subheader>
+        <section class="center">
+          <ul>
+            <li>Unofficial incubator for tech w/ standards-potential, spun out of Web Payments initiative<br><br></li>
+            <li>Pre-standards technology <a href="https://opencreds.org/">community</a><br><br></li>
+            <li>Members include: ETS, Yandex, Badge Alliance (Mozilla spin-out), Connexxus, Deutche Telekom, Standard Treasury, etc.<br><br></li>
+            <li>Open, inclusive, and transparent<br><br></li>
+            <li>Discussion, Use Cases, Requirements, Specs<br><br></li>
+          </ul>
+        </section>
+    </div>
+
+    <div class="slide future">
+      <header><h1>Collaborators</h1></header>
+      <subheader><h3>Where is active collaboration happening?</h3></subheader>
+        <div class="imagecontainer">
+            <img style="margin-top: 12em;" src="images/collaborators.svg"></img>
+        </div>
+    </div>
+
+    <div class="slide future">
+      <header><h1>Brief</h1><h2>History</h2></header>
+      <subheader><h3>1965-2014 Credentials History</h3></subheader>
+        <section class="center"><br>
+          <ul>
+            <li>1965 - 2010 - Hellscape of "identity" failures</span></li>
+            <li>2010 - Credential technology initiative started<br></li>
+            <li>2011 - <a href="https://web-payments.org/">Web Payments CG Founded</a><br></li>
+            <li>2014 - <a href="http://www.badgealliance.org/">Badge Alliance Founded</a><br></li>
+            <li>2014 - <a href="http://www.w3.org/2013/10/payments/minutes/">W3C Web Payments Workshop</a><br></li>
+            <li>2014 - <a href="https://opencreds.org/">Credentials CG spins out</a><br><span style="margin-left: 3em;">(from Web Payments CG)</span><br></li>
+            <li>2014 - <a href="https://web-payments.org/minutes/2014-09-04-igf/">UN IGF Workshop on Web Payments</a><br></li>
+            <li>2014 - <a href="http://www.w3.org/2014/11/TPAC/">W3C TPAC first Web Payments F2F</a><br></li>
+          </ul>
+        </section>
+    </div>
+
+    <div class="slide future">
+      <header><h1>CCG</h1><h2>Focus</h2></header>
+      <subheader><h3>Do not boil the ocean</h3></subheader>
+        <section class="center"><br><br>
+          <ul>
+            <li>Very tight focus by design<br><br></li>
+            <li>Solve storing, transmitting, and verifying credentials on the Web<br><br></li>
+            <li>Do not claim or try to "solve identity"<br><br></li>
+          </ul>
+        </section>
+    </div>
+
+    <div class="slide future">
+      <header><h1>Use</h1><h2>Cases</h2></header>
+      <subheader><h3>Focus and priorities?</h3></subheader>
+        <section class="center"><br>
+          <ul>
+            <li><a href="http://opencreds.org/specs/source/use-cases/">Credentials CG Use Cases</a><br><br></li>
+            <li>Design Criteria: data portability, data rights, flexible access control, legacy support, etc.<br><br></li>
+            <li>Use Cases: verifiable claims, storage, transmission, pseudo-anonymity, composability, etc.<br><br></li>
+          </ul>
+        </section>
+    </div>
+
+    <div class="slide future">
+      <header><h1>Tech</h1><h2>Stack</h2></header>
+      <subheader><h3>What technology is needed for credentials?</h3></subheader>
+        <div class="imagecontainer">
+            <img style="margin-top: 7em;" src="images/technologyStack.svg"></img>
+        </div>
+    </div>
+
+    <div class="slide future">
+      <header><h1>Questions?</h1></header>
+      <subheader><h3>Where do you want to go from here?</h3></subheader>
+        <section class="center"><br><br>
+          <ul>
+            <li>Briefly review <a href="http://opencreds.org/specs/source/use-cases">use cases</a>, <a href="http://opencreds.org/specs/source/roadmap">roadmap</a><br><br></li>
+            <li>Glance at <a href="http://opencreds.org/specs/">pre-standards specifications</a><br><br></li>
+            <li>Look at <a href="https://identus.org/">login demo</a>, <a href="https://curlee.github.io/openbadges-displayer.js/">OpenBadges demo</a>, <a href="https://dev.truecred.com">TrueCred demo</a><br><br></li>
+            <li>Input from <a href="https://web-payments.org/minutes/2014-09-04-igf/">Internet Governance Forum</a><br><br></li>
+          </ul>
+        </section>
+    </div>
+
+    <!-- 
+      --------------------------------------------
+      Thanks 
+      --------------------------------------------
+      -->
+  
+    <div class="slide far-future">
+      <header><h1>Thanks</h1></header>
+      <subheader><h3>Learn more...</h3></subheader>
+      <flag><h4>The End</h4></flag>
+        <section class="center">
+          <h4>This presentation will be posted online at:</h4>
+          <ul>
+            <li><a href="http://opencreds.org/presentations/" onclick="window.open(this.href); return false;">http://opencreds.org/presentations/</a></li>
+          </ul>
+          <h4>Questions, comments or more info:</h4>
+          <ul>
+            <li>Twitter: <a href="https://twitter.com/manusporny">@manusporny</a></li>
+            <li>G+: <a href="https://plus.google.com/102122664946994504971/posts">+Manu Sporny</a></li>
+            <li>Email: <a href="mailto:msporny@digitalbazaar.com">msporny@digitalbazaar.com</a></li>
+          </ul>
+          <div class="credit">
+            <p>This slide deck is based on HTML5 Slideshow by Marcin Wichary, Ernest Delgado, Alex Russell, and Brad Neuberg with CSS additions by Matthew Richmond and Manu Sporny.</p>
+          </div>
+        </section>
+    </div>
+  
+ 
+  </div> <!-- slides -->
+ </div> <!-- presentation -->
+ 
+ 
+ <script>
+      (function() {
+        // Since we don't have the fallback of attachEvent and
+        // other IE only stuff we won't try to run JS for IE.
+        // It will run though when using Google Chrome Frame
+        if (document.all) { return; }
+
+        var currentSlideNo;
+        var notesOn = false;
+        var slides = document.getElementsByClassName('slide');
+        var touchStartX = 0;     
+   
+        // var slide_hash = window.location.hash.replace(/#/, '');
+        // if (slide_hash) {
+        //   for (var i = 0, len = slides.length; i < len; i++) {
+        //     if (slides[i].id == slide_hash) {
+        //       currentSlideNo = i;
+        //       updateSlideClasses(); 
+        //     }
+        //   }
+        // }
+        
+        var spaces = /\s+/, a1 = [""];
+
+        var str2array = function(s) {
+          if (typeof s == "string" || s instanceof String) {
+            if (s.indexOf(" ") < 0) {
+              a1[0] = s;
+              return a1;
+            } else {
+              return s.split(spaces);
+            }
+          }
+          return s;
+        };
+
+        var trim = function(str) {
+          return str.replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+        };
+
+        var addClass = function(node, classStr) {
+          classStr = str2array(classStr);
+          var cls = " " + node.className + " ";
+          for (var i = 0, len = classStr.length, c; i < len; ++i) {
+            c = classStr[i];
+            if (c && cls.indexOf(" " + c + " ") < 0) {
+              cls += c + " ";
+            }
+          }
+          node.className = trim(cls);
+        };
+
+        var removeClass = function(node, classStr) {
+          var cls;
+          if (classStr !== undefined) {
+            classStr = str2array(classStr);
+            cls = " " + node.className + " ";
+            for (var i = 0, len = classStr.length; i < len; ++i) {
+              cls = cls.replace(" " + classStr[i] + " ", " ");
+            }
+            cls = trim(cls);
+          } else {
+            cls = "";
+          }
+          if (node.className != cls) {
+            node.className = cls;
+          }
+        };
+
+        var getSlideEl = function(slideNo) {
+          if (slideNo > 0) {
+            return slides[slideNo - 1];
+          } else {
+            return null;
+          }
+        };
+
+        var getSlideTitle = function(slideNo) {
+          var el = getSlideEl(slideNo);
+          
+          if (el) {
+            return el.getElementsByTagName('header')[0].innerHTML;
+          } else {
+            return null;
+          }
+        };
+        
+        var changeSlideElClass = function(slideNo, className) {
+          var el = getSlideEl(slideNo);
+
+          if (el) {
+            removeClass(el, 'far-past past current future far-future');
+            addClass(el, className);
+          }
+        };
+        
+        var updateSlideClasses = function() {
+          window.location.hash = "slide" + currentSlideNo;
+          changeSlideElClass(currentSlideNo - 2, 'far-past');
+          changeSlideElClass(currentSlideNo - 1, 'past');
+          changeSlideElClass(currentSlideNo, 'current');
+          changeSlideElClass(currentSlideNo + 1, 'future');
+          changeSlideElClass(currentSlideNo + 2, 'far-future');                
+        };
+        
+        var nextSlide = function() {
+          if ( (currentSlideNo < slides.length) && ( !Shadowbox.isOpen() )) {
+            currentSlideNo++;
+          }
+          
+          updateSlideClasses();
+        };
+        
+        var prevSlide = function() {
+          if ( (currentSlideNo > 1) && ( !Shadowbox.isOpen() )) {
+            currentSlideNo--;
+          }
+          updateSlideClasses();
+        };
+        
+        var showNotes = function() {
+          var notes = document.querySelectorAll('.notes');
+          for (var i = 0, len = notes.length; i < len; i++) {
+            notes[i].style.display = (notesOn) ? 'none':'block';
+          }
+          notesOn = (notesOn) ? false:true;
+        };
+
+  var switch3D = function() {
+   if (document.body.className.indexOf('three-d') == -1) {
+    document.getElementsByClassName('presentation')[0].style.webkitPerspective = '1000px';
+    document.body.className += ' three-d';
+   } else {
+    window.setTimeout("document.getElementsByClassName('presentation')[0].style.webkitPerspective = '0';", 2000);
+    document.body.className = document.body.className.replace(/three-d/, '');
+   }
+  };
+
+
+        var handleBodyKeyDown = function(event) {
+          // console.log(event.keyCode);
+          switch (event.keyCode) {
+            case 37: // left arrow
+              prevSlide();
+              break;
+            case 39: // right arrow
+            // case 32: // space
+              nextSlide();
+              break;
+            case 50: // 2
+              showNotes();          
+              break;
+            case 51: // 3
+              switch3D();          
+              break;
+          }
+        };
+
+        var addTouchListeners = function() {
+          document.addEventListener('touchstart', function(e) {
+            touchStartX = e.touches[0].pageX;
+          }, false);
+          document.addEventListener('touchend', function(e) {
+            var pixelsMoved = touchStartX - e.changedTouches[0].pageX;
+            var SWIPE_SIZE = 150;
+            if (pixelsMoved > SWIPE_SIZE) {
+              nextSlide();
+            }
+            else if (pixelsMoved < -SWIPE_SIZE) {
+             prevSlide();
+            }
+          }, false);
+        };
+
+  var addButtonListeners = function() {
+   document.getElementById("prevButton").addEventListener('click', prevSlide, false );
+   document.getElementById("nextButton").addEventListener('click', nextSlide, false );
+  };
+
+        // initialize
+
+        (function() {
+          if (window.location.hash != "") {
+            currentSlideNo = Number(window.location.hash.replace('#slide', ''));
+          } else {
+            currentSlideNo = 1;
+          }
+   
+          document.addEventListener('keydown', handleBodyKeyDown, false);
+   
+          var els = slides;
+          for (var i = 0, el; el = els[i]; i++) {
+            addClass(el, 'slide far-future');
+          }
+          updateSlideClasses(); 
+
+          // add support for finger events (filter it by property detection?)
+   addTouchListeners();
+   addButtonListeners();
+        })();
+      })();
+
+ 
+ /**
+  * Handy method to call a click event on an element
+  * @param {Object} element object to recieve click event
+  * @returns none
+  */
+ function dispatchClickEvent(element) {
+  
+  var event;
+    if (document.createEvent) {
+      event = document.createEvent("HTMLEvents");
+      event.initEvent("click", true, true);
+    } else {
+      event = document.createEventObject();
+      event.eventType = "onclick";
+    }
+
+    if (document.createEvent) {
+      element.dispatchEvent(event);
+    } else {
+      element.fireEvent(event.eventType, event);
+    }
+ }
+ 
+ // ShadowBox
+
+ Shadowbox.init({
+     handleOversize: "drag",
+     modal: true,
+  onOpen: shadowOpen,
+  onClose: shadowClose
+ });
+
+ function shadowOpen(){
+  //alert("Open!");
+  
+  // check to see if show style has been appended
+  if (document.body.className.indexOf('show') == -1) {
+   // no
+   document.body.className += ' hide';
+  } else {
+   // yes
+   document.body.className = document.body.className.replace(/show/, ' hide');
+  }
+  
+ };
+
+ function shadowClose(){
+  //alert("Close!");
+
+  document.body.className = document.body.className.replace(/hide/, ' show');
+ };
+
+
+    </script>
+
+<div id="sb-container"><div id="sb-overlay"></div><div id="sb-wrapper"><div id="sb-title"><div id="sb-title-inner"></div></div><div id="sb-wrapper-inner"><div id="sb-body"><div id="sb-body-inner"></div><div id="sb-loading"><div id="sb-loading-inner"><span>loading</span></div></div></div></div><div id="sb-info"><div id="sb-info-inner"><div id="sb-counter"></div><div id="sb-nav"><a id="sb-nav-close" title="Close" onclick="Shadowbox.close()"></a><a id="sb-nav-next" title="Next" onclick="Shadowbox.next()"></a><a id="sb-nav-play" title="Play" onclick="Shadowbox.play()"></a><a id="sb-nav-pause" title="Pause" onclick="Shadowbox.pause()"></a><a id="sb-nav-previous" title="Previous" onclick="Shadowbox.previous()"></a></div></div></div></div></div></body></html>
