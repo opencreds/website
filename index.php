@@ -56,6 +56,24 @@ Everyone is invited to participate in building the future of credentials online.
         </p>
         <a href="#" class="txt-btn">See how it's built</a>
       </div><!-- /.col -->
+
+      <div class="row">
+      <div class="col-md-8 col-sm-9 center-block text-center">
+        <h1>Learn</h1>
+      </div>
+     
+      <div class="col-md-6 inner-bottom-sm">
+        <h2 class="text-center">Credentials on the Web</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/eWtOg3vSzxI" frameborder="0" allowfullscreen></iframe>
+      </div><!-- /.col -->
+      
+      <div class="col-md-6 inner-bottom-sm">
+        <h2 class="text-center">Linked Data Signatures</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/QdUZaYeQblY" frameborder="0" allowfullscreen></iframe>
+      </div><!-- /.col -->
+      
+      
+      </div><!-- /.row -->
       
       
       </div><!-- /.row -->
