@@ -29,7 +29,7 @@
     <div class="container inner-top">
       
       <div class="row">
-      <div class="col-md-8 col-sm-9 center-block text-center">
+      <div class="col-md-8 center-block text-center">
         <header>
         <h1>Our Work</h1>
         <p>
@@ -57,9 +57,9 @@ Everyone is invited to participate in building the future of credentials online.
         <a href="#" class="txt-btn">See how it's built</a>
       </div><!-- /.col -->
 
-      <div class="row">
-      <div class="col-md-8 col-sm-9 center-block text-center">
-        <h1>Learn</h1>
+      <div class="row inner-top-sm">
+      <div class="col-md-12">
+        <h1 class="text-center">Learn</h1>
       </div>
      
       <div class="col-md-6 inner-bottom-sm">
