@@ -40,6 +40,12 @@ innovate is a fundamental part of what we do.
   <div class="container" id="use-cases">
     <div class="row white">
       <div class="col-md-8 col-md-offset-2 inner-bottom-xs">
+        <h3>Vision</h3>
+        <p>
+          <a href="source/vision">Vision</a>: The vision of the Open Credentials specifications is to support Motherhood and Apple Pie.
+        </p>
+      </div>
+      <div class="col-md-8 col-md-offset-2 inner-bottom-xs">
         <h3>Design</h3>
         <p>
 <a href="source/use-cases">Use Cases</a>:
