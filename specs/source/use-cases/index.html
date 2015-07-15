@@ -84,7 +84,7 @@
   <section id='abstract'> 
     <p> 
 A <em>credential</em> is a qualification, achievement, quality, or piece of 
-information about an <a>entity’s</a> background such as a name, government ID, 
+information about an <a>entity's</a> background such as a name, government ID, 
 payment provider, home address, or university degree.
 The use cases outlined here are provided in order to make progress toward 
 possible future standardization and interoperability of both low and 
@@ -104,7 +104,7 @@ by the group should address.
     <h2>Introduction</h2> 
     <p>
 A <em>credential</em> is a qualification, achievement, quality, or piece of 
-information about an <a>entity’s</a> background such as a name, government ID, 
+information about an <a>entity's</a> background such as a name, government ID, 
 payment provider, home address, or university degree.
 The use cases outlined here are provided in order to make progress toward 
 possible future standardization and interoperability of both low and 
@@ -119,75 +119,12 @@ Create a better introduction to the use cases.
   </section>
 
   <section>
-    <h2>Glossary</h2>
-  
-    <p>
-There is certain terminology used throughout this document that has a very
-specific meaning. In order to state explicitly what that meaning is, the 
-following definitions are provided:
-    </p>
+    <h2>Terminology</h2>
 
-    <dl>
-      <dt><dfn title="entity|entities|entity’s">entity</dfn></dt>
-      <dd>
-a thing with distinct and independent existence such as a person, organization,
-or instance of a software program.
-      </dd>
-      <dt><dfn title="credential|credentials">credential</dfn></dt>
-      <dd>
-a qualification, achievement, quality, or piece of information about an 
-<a>entity’s</a> background such as a name, government ID, 
-payment processor, home address, or university degree.
-      </dd>
-      <dt><dfn>credential exchange</dfn></dt>
-      <dd>
-a transmission of a credential from one <a>entity</a> to another 
-<a>entity</a>.
-      </dd>
-    </dl>
-  </section>
+    <div data-include="../common/terms.html"
+      data-oninclude="opencreds.restrictReferences">
+    </div>
 
-  <section>
-    <h2>Roles</h2>
-  
-    <p>
-Each interaction in a Credentials scenario involves a number of 
-<a>entities</a>. In order to make it clear who the
-actors are, the following roles are defined:
-    </p>
-
-    <dl>
-      <dt><dfn title="credentialee|credentialees|credentialee's">credentialee</dfn></dt>
-      <dd>
-an <a>entity</a> that is in control of a particular 
-<a>credential</a>. Typically an credentialee is also the primary topic 
-of the information in a credential and is the entity that initiates the 
-transmission of the credential.
-      </dd>
-      <dt><dfn>issuer</dfn></dt>
-      <dd>
-an <a>entity</a> that creates and assigns 
-<a>credentials</a> to 
-<a>credentialees</a>.
-      </dd>
-      <dt><dfn title="requestor|requestors|requestor's">requestor</dfn></dt>
-      <dd>
-an <a>entity</a> that requests a <a>credential</a> from an
-<a>credentialee</a>.
-      </dd>
-      <dt><dfn>user agent</dfn></dt>
-      <dd>
-a program, such as a browser or other Web client, that mediates the
-communication between the <a>credentialee</a> and
-the <a>requestor</a>.
-      </dd>
-      <dt><dfn>credential service</dfn></dt>
-      <dd>
-a program, such as a <a>credential</a> storage vault or personal 
-credential wallet, that stores and protects access to an 
-<a>credentialee's</a> credentials.
-      </dd>
-    </dl>
   </section>
 
   <section>

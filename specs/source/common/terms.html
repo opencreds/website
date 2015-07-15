@@ -1,0 +1,80 @@
+<p>
+  This document attempts to communicate the concepts outlined in the
+  Open Credentials space by using specific terms to discuss particular concepts. This
+  terminology is included below and linked to throughout the document to aid
+  the reader:
+</p>
+
+<dl class="termlist">
+  <dt><dfn title="credential|credentials">credential</dfn></dt>
+  <dd>
+    A qualification, achievement, personal quality, aspect of an <a>entity's</a>
+    background such as a name, government ID, payment processor, home
+    address, or university degree, or verifiable statement by an entity about
+    another entity. Credentials may be stored in <a>identity documents</a>.
+  </dd>
+  <dt><dfn title="credentialee|credentialees|credentialee's">credentialee</dfn></dt>
+  <dd>
+    An <a>entity</a> that is in control of a particular 
+    <a>credential</a>. Typically an credentialee is also the primary topic 
+    of the information in a credential and is the entity that initiates the 
+    transmission of the credential.
+  </dd>
+  <dt><dfn>credential exchange</dfn></dt>
+  <dd>
+    A transmission of a <a>credential</a> from one <a>entity</a> to another 
+    <a>entity</a>.
+  </dd>
+  <dt><dfn>credential service</dfn></dt>
+  <dd>
+    A program, such as a <a>credential</a> storage vault or personal 
+    credential wallet, that stores and protects access to an 
+    <a>credentialee's</a> credentials.
+  </dd>
+  <dt><dfn title="entity|entities|entity's">entity</dfn></dt>
+  <dd>
+    A thing with distinct and independent existence such as a person, organization,
+    or instance of a software program.
+  </dd>
+  <dt><dfn>identity</dfn></dt>
+  <dd>
+    A set of information that can be used to identify a particular entity such as 
+    a person, software agent, or organization. An entity may have multiple 
+    identities associated with it.
+  </dd>
+  <dt><dfn title="identity document|identity documents">identity document</dfn></dt>
+  <dd>
+    A Web-based document that contains statements about a 
+    particular <a>identity</a>. Identity documents MUST be accessible in
+    JSON-LD [[!JSON-LD]] format and MAY be accessible in other RDF-compatible formats.
+  </dd>
+  <dt><dfn>identity document URL</dfn></dt>
+  <dd>
+    An identity document URL consists of an HTTP or HTTPS scheme and denotes an <a>identity</a>. For example: 
+    <code>https://example.org/identities/manu</code>.
+  </dd>
+  <dt><dfn title="identity owner|identity owner's">identity owner</dfn></dt>
+  <dd>
+    An entity that is in control of a particular <a>identity document</a>.
+  </dd>
+  <dt><dfn title="identity provider|identity provider's">identity provider</dfn></dt>
+  <dd>
+    A website providing access to one or more <a>identity documents</a>.
+  </dd>
+  <dt><dfn>issuer</dfn></dt>
+  <dd>
+    An <a>entity</a> that creates and assigns <a>credentials</a> to
+    <a>credentialees</a>.
+  </dd>
+  <dt><dfn title="requestor|requestors|requestor's">requestor</dfn></dt>
+  <dd>
+    An <a>entity</a> that requests a <a>credential</a> from an
+<a>credentialee</a> and is requesting to access and/or modify an <a>identity document</a>.
+  </dd>
+  <dt><dfn>user agent</dfn></dt>
+  <dd>
+    A program, such as a browser or other Web client, that mediates the
+    communication between the <a>credentialee</a> and
+    the <a>requestor</a>.
+  </dd>
+</dl>
