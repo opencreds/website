@@ -84,7 +84,7 @@
   <section id='abstract'> 
     <p> 
 A <em>credential</em> is a qualification, achievement, quality, or piece of 
-information about an entity’s background such as a name, government ID, 
+information about an <a>entity’s</a> background such as a name, government ID, 
 payment provider, home address, or university degree.
 The use cases outlined here are provided in order to make progress toward 
 possible future standardization and interoperability of both low and 
@@ -104,7 +104,7 @@ by the group should address.
     <h2>Introduction</h2> 
     <p>
 A <em>credential</em> is a qualification, achievement, quality, or piece of 
-information about an entity’s background such as a name, government ID, 
+information about an <a>entity’s</a> background such as a name, government ID, 
 payment provider, home address, or university degree.
 The use cases outlined here are provided in order to make progress toward 
 possible future standardization and interoperability of both low and 
@@ -128,15 +128,15 @@ following definitions are provided:
     </p>
 
     <dl>
-      <dt><dfn>entity</dfn></dt>
+      <dt><dfn title="entity|entities|entity’s">entity</dfn></dt>
       <dd>
 a thing with distinct and independent existence such as a person, organization,
 or instance of a software program.
       </dd>
-      <dt><dfn>credential</dfn></dt>
+      <dt><dfn title="credential|credentials">credential</dfn></dt>
       <dd>
 a qualification, achievement, quality, or piece of information about an 
-<a title="entity">entity’s</a> background such as a name, government ID, 
+<a>entity’s</a> background such as a name, government ID, 
 payment processor, home address, or university degree.
       </dd>
       <dt><dfn>credential exchange</dfn></dt>
@@ -152,12 +152,12 @@ a transmission of a credential from one <a>entity</a> to another
   
     <p>
 Each interaction in a Credentials scenario involves a number of 
-<a title="entity">entities</a>. In order to make it clear who the
+<a>entities</a>. In order to make it clear who the
 actors are, the following roles are defined:
     </p>
 
     <dl>
-      <dt><dfn>credentialee</dfn></dt>
+      <dt><dfn title="credentialee|credentialees|credentialee's">credentialee</dfn></dt>
       <dd>
 an <a>entity</a> that is in control of a particular 
 <a>credential</a>. Typically an credentialee is also the primary topic 
@@ -167,10 +167,10 @@ transmission of the credential.
       <dt><dfn>issuer</dfn></dt>
       <dd>
 an <a>entity</a> that creates and assigns 
-<a title="credential">credentials</a> to 
-<a title="credentialee">credentialees</a>.
+<a>credentials</a> to 
+<a>credentialees</a>.
       </dd>
-      <dt><dfn>requestor</dfn></dt>
+      <dt><dfn title="requestor|requestors|requestor's">requestor</dfn></dt>
       <dd>
 an <a>entity</a> that requests a <a>credential</a> from an
 <a>credentialee</a>.
@@ -185,7 +185,7 @@ the <a>requestor</a>.
       <dd>
 a program, such as a <a>credential</a> storage vault or personal 
 credential wallet, that stores and protects access to an 
-<a title="credentialee">credentialee's</a> credentials.
+<a>credentialee's</a> credentials.
       </dd>
     </dl>
   </section>
@@ -233,7 +233,7 @@ re-assign any of the credentials.
    
       <p>
 Ensure credentials may be dynamically annotated with acceptable use information
-when transmitted to <a title="requestor">requestors</a>.
+when transmitted to <a>requestors</a>.
       </p>
 
       <section> 
@@ -431,9 +431,9 @@ related to areas of specialization.
 
         <p>
 This is the base use case for the credentials work. It establishes the need for
-a way to make claims about an <a title="entity">entity</a> and
+a way to make claims about an <a>entity</a> and
 a way to cryptographically verify that the claims were made by a particular
-<a title="issuer">issuer</a>.
+<a>issuer</a>.
         </p>
 
         <section> 
@@ -472,7 +472,7 @@ a way to cryptographically verify that the claims were made by a particular
    
       <p>
 Store a <a>credential</a> via the Web in a way that is easy to share with 
-a <a title="requestor">requestor</a> given authorization by the 
+a <a>requestor</a> given authorization by the 
 <a>credentialee</a>. Ensure that the credential is easy to 
 synchronize between devices.
       </p>
@@ -534,10 +534,10 @@ to a <a>requestor</a> MUST be specified.
    
       <p>
 A <a>credentialee</a> requests access to a restricted portion of a
-<a title="requestor">requestor's</a> website. The requestor interactively
-requests one or more <a title="credential">credentials</a> previously 
-stored with the credentialee's <a>credential service</a>. The 
-credentialee authorizes the transmission of the credentials to the requestor.
+<a>requestor's</a> website. The <a>requestor</a> interactively
+requests one or more <a>credentials</a> previously 
+stored with the <a>credentialee's</a> <a>credential service</a>. The 
+credentialee authorizes the transmission of the credentials to the <a>requestor</a>.
       </p>
 
       <section> 
@@ -585,7 +585,7 @@ allowing her to finalize the transaction.
       <h2>Non-interactive Transmission</h2> 
    
       <p>
-A <a>requestor</a> requests <a title="credential">credentials</a> 
+A <a>requestor</a> requests <a>credentials</a> 
 from a <a>credential service</a> that have been pre-authorized to be 
 accessed through a non-interactive channel.
       </p>
