@@ -1,118 +1,81 @@
 <!DOCTYPE html> 
 <html> 
-  <head> 
+  <head>
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
     <title>Credentials Community Group Roadmap</title> 
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/> 
-    <!-- 
-      === NOTA BENE ===
-      For the three scripts below, if your spec resides on dev.w3 you can check them
-      out in the same tree and use relative links so that they'll work offline,
-     --> 
-    <script src='../../respec-w3c-common.js' class='remove'></script> 
-    <script src='../../opencreds-common.js' class='remove'></script> 
+      <script src='http://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
+      <script src='../common/common.js' class='remove'></script> 
     <script type="text/javascript" class="remove">
       var respecConfig = {
-          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-          specStatus:           "CG-DRAFT",
-          
-          // the specification's short name, as in http://www.w3.org/TR/short-name/
-          shortName:            "web-payments-roadmap",
- 
-          // if you wish the publication date to be other than today, set this
-          // publishDate:  "2009-08-06",
- 
-          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
-          // and its maturity status
-          // previousPublishDate:  "1977-03-15",
-          // previousMaturity:  "WD",
- 
-          // if there a publicly available Editor's Draft, this is the link
-          edDraftURI:           "http://opencreds.org/specs/source/roadmap/",
- 
-          // if this is a LCWD, uncomment and set the end of its review period
-          // lcEnd: "2009-08-05",
- 
-          // editors, add as many as you like
-          // only "name" is required
-          editors:  [
-              { name: "Manu Sporny", url: "http://digitalbazaar.com/",
-                company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
-          ],
- 
-          // authors, add as many as you like. 
-          // This is optional, uncomment if you have authors as well as editors.
-          // only "name" is required. Same format as editors.
- 
-          //authors:  [
-          //    { name: "Your Name", url: "http://example.org/",
-          //      company: "Your Company", companyURL: "http://example.com/" },
-          //],
+        // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+        specStatus:           "CG-DRAFT",
+        
+        // the specification's short name, as in http://www.w3.org/TR/short-name/
+        shortName:            "web-payments-roadmap",
 
-          // name of the WG
-          wg:           "W3C Credentials Community Group",
-          
-          // URI of the public WG page
-          wgURI:        "http://www.w3.org/community/credentials/",
-          
-          // name (with the @w3c.org) of the public mailing to which comments are due
-          wgPublicList: "public-credentials@w3.org",
+        // if you wish the publication date to be other than today, set this
+        // publishDate:  "2009-08-06",
 
-          // URI of the patent status for this WG, for Rec-track documents
-          // !!!! IMPORTANT !!!!
-          // This is important for Rec-track documents, do not copy a patent URI from a random
-          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
-          // Team Contact.
-          wgPatentURI:  "",
-          maxTocLevel: 4,
-          preProcess: [ opencreds.preProcess ], /*,
-          alternateFormats: [ {uri: "diff-20111214.html", label: "diff to previous version"} ],
-          */
-          localBiblio:  {
-            'OPEN-BADGES': {
-              title: 'Open Badges',
-              href: 'https://github.com/openbadges/openbadges-specification',
-              authors: ['Brian Brennan', 'Mike Larsson', 'Chris McAvoy', 
-                'Nate Otto', 'Kerri Lemoie'],
-              status:   'BA-DRAFT',
-              publisher:  'Badge Alliance Standard Working Group'
-            },
-            'IDENTITY-CREDENTIALS': {
-              title: 'Identity Credentials',
-              href: 'http://opencreds.org/specs/source/identity-credentials/',
-              authors: ['Manu Sporny', 'Dave Longley'],
-              status:   'CG-DRAFT',
-              publisher:  'W3C Credentials Community Group'
-            },
-            'RDF-NORMALIZATION': {
-              title: 'RDF Dataset Normalization',
-              href: 'http://json-ld.org/spec/latest/rdf-graph-normalization/',
-              authors: ['Dave Longley', 'Manu Sporny'],
-              status:   'CG-DRAFT',
-              publisher:  'W3C JSON for Linking Data Community Group'
-            },
-            'SECURE-MESSAGING': {
-              title: 'Secure Messaging',
-              href: 'https://web-payments.org/specs/source/secure-messaging/',
-              authors: ['Dave Longley', 'Manu Sporny', 'David I. Lehn'],
-              status:   'CG-DRAFT',
-              publisher:  'W3C Credentials Community Group'
-            },
-            'WEB-COMMERCE': {
-              title: 'Web Commerce',
-              href: 'https://web-payments.org/specs/source/web-commerce/',
-              authors: ['Dave Longley', 'Manu Sporny', 'David I. Lehn'],
-              status:   'CG-DRAFT',
-              publisher:  'W3C Credentials Community Group'
-            },
-            'WEB-COMMERCE-API': {
-              title: 'Web Commerce API',
-              href: 'https://web-payments.org/specs/source/web-commerce-api/',
-              authors: ['Manu Sporny', 'Dave Longley', 'David I. Lehn'],
-              status:   'CG-DRAFT',
-              publisher:  'W3C Credentials Community Group'
-            }
-          }
-      };
+        // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+        // and its maturity status
+        // previousPublishDate:  "1977-03-15",
+        // previousMaturity:  "WD",
+ 
+        // extend the bibliography entries
+        localBiblio: opencreds.localBiblio,
+
+        // if there a publicly available Editor's Draft, this is the link
+        edDraftURI:           "http://opencreds.org/specs/source/roadmap/",
+
+        // if this is a LCWD, uncomment and set the end of its review period
+        // lcEnd: "2009-08-05",
+
+        // editors, add as many as you like
+        // only "name" is required
+        editors:  [
+            { name: "Manu Sporny", url: "http://digitalbazaar.com/",
+              company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
+        ],
+
+        // authors, add as many as you like. 
+        // This is optional, uncomment if you have authors as well as editors.
+        // only "name" is required. Same format as editors.
+
+        //authors:  [
+        //    { name: "Your Name", url: "http://example.org/",
+        //      company: "Your Company", companyURL: "http://example.com/" },
+        //],
+
+        // name of the WG
+        wg:           "W3C Credentials Community Group",
+        
+        // URI of the public WG page
+        wgURI:        "http://www.w3.org/community/credentials/",
+        
+        // name (with the @w3c.org) of the public mailing to which comments are due
+        wgPublicList: "public-credentials@w3.org",
+
+        // URI of the patent status for this WG, for Rec-track documents
+        // !!!! IMPORTANT !!!!
+        // This is important for Rec-track documents, do not copy a patent URI from a random
+        // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+        // Team Contact.
+        wgPatentURI:  "",
+
+        otherLinks: [{
+          key: "Version control",
+          data: [{
+            value: "Github Repository",
+            href: "https://github.com/opencreds/website"
+          }, {
+            value: "Issues",
+            href: "https://github.com/opencreds/website/issues"
+          }]
+        }],
+
+        maxTocLevel: 4
+     };
     </script> 
   </head> 
   <body> 

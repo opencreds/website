@@ -3,13 +3,8 @@
   <head> 
     <title>Credentials Community Group Use Cases</title> 
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/> 
-    <!-- 
-      === NOTA BENE ===
-      For the three scripts below, if your spec resides on dev.w3 you can check them
-      out in the same tree and use relative links so that they'll work offline,
-     --> 
-    <script src='../../respec-w3c-common.js' class='remove'></script> 
-    <script src='../../opencreds-common.js' class='remove'></script> 
+      <script src='http://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
+    <script src='../common/common.js' class='remove'></script> 
     <script class='remove'> 
       var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
@@ -71,9 +66,17 @@
           // Team Contact.
           wgPatentURI:  "",
 
-          preProcess: [ opencreds.preProcess ]/*,
-          alternateFormats: [ {uri: "diff-20111214.html", label: "diff to previous version"} ],
-          */
+          otherLinks: [{
+            key: "Version control",
+            data: [{
+              value: "Github Repository",
+              href: "https://github.com/opencreds/website"
+            }, {
+              value: "Issues",
+              href: "https://github.com/opencreds/website/issues"
+            }]
+          }]
+
       };
     </script> 
   </head> 
@@ -81,7 +84,7 @@
   <section id='abstract'> 
     <p> 
 A <em>credential</em> is a qualification, achievement, quality, or piece of 
-information about an entity’s background such as a name, government ID, 
+information about an <a>entity's</a> background such as a name, government ID, 
 payment provider, home address, or university degree.
 The use cases outlined here are provided in order to make progress toward 
 possible future standardization and interoperability of both low and 
@@ -101,7 +104,7 @@ by the group should address.
     <h2>Introduction</h2> 
     <p>
 A <em>credential</em> is a qualification, achievement, quality, or piece of 
-information about an entity’s background such as a name, government ID, 
+information about an <a>entity's</a> background such as a name, government ID, 
 payment provider, home address, or university degree.
 The use cases outlined here are provided in order to make progress toward 
 possible future standardization and interoperability of both low and 
@@ -116,75 +119,12 @@ Create a better introduction to the use cases.
   </section>
 
   <section>
-    <h2>Glossary</h2>
-  
-    <p>
-There is certain terminology used throughout this document that has a very
-specific meaning. In order to state explicitly what that meaning is, the 
-following definitions are provided:
-    </p>
+    <h2>Terminology</h2>
 
-    <dl>
-      <dt><tdef>entity</tdef></dt>
-      <dd>
-a thing with distinct and independent existence such as a person, organization,
-or instance of a software program.
-      </dd>
-      <dt><tdef>credential</tdef></dt>
-      <dd>
-a qualification, achievement, quality, or piece of information about an 
-<tref title="entity">entity’s</tref> background such as a name, government ID, 
-payment processor, home address, or university degree.
-      </dd>
-      <dt><tdef>credential exchange</tdef></dt>
-      <dd>
-a transmission of a credential from one <tref>entity</tref> to another 
-<tref>entity</tref>.
-      </dd>
-    </dl>
-  </section>
+    <div data-include="../common/terms.html"
+      data-oninclude="opencreds.restrictReferences">
+    </div>
 
-  <section>
-    <h2>Roles</h2>
-  
-    <p>
-Each interaction in a Credentials scenario involves a number of 
-<tref title="entity">entities</tref>. In order to make it clear who the
-actors are, the following roles are defined:
-    </p>
-
-    <dl>
-      <dt><tdef>credentialee</tdef></dt>
-      <dd>
-an <tref>entity</tref> that is in control of a particular 
-<tref>credential</tref>. Typically an credentialee is also the primary topic 
-of the information in a credential and is the entity that initiates the 
-transmission of the credential.
-      </dd>
-      <dt><tdef>issuer</tdef></dt>
-      <dd>
-an <tref>entity</tref> that creates and assigns 
-<tref title="credential">credentials</tref> to 
-<tref title="credentialee">credentialees</tref>.
-      </dd>
-      <dt><tdef>requestor</tdef></dt>
-      <dd>
-an <tref>entity</tref> that requests a <tref>credential</tref> from an
-<tref>credentialee</tref>.
-      </dd>
-      <dt><tdef>user agent</tdef></dt>
-      <dd>
-a program, such as a browser or other Web client, that mediates the
-communication between the <tref>credentialee</tref> and
-the <tref>requestor</tref>.
-      </dd>
-      <dt><tdef>credential service</tdef></dt>
-      <dd>
-a program, such as a <tref>credential</tref> storage vault or personal 
-credential wallet, that stores and protects access to an 
-<tref title="credentialee">credentialee's</tref> credentials.
-      </dd>
-    </dl>
   </section>
 
   <section>
@@ -201,7 +141,7 @@ while designing the overall credentials system.
       <h2>Data Portability</h2> 
    
       <p>
-Ensure credentials may be easily moved from one <tref>credential service</tref> 
+Ensure credentials may be easily moved from one <a>credential service</a> 
 to another.
       </p>
 
@@ -230,7 +170,7 @@ re-assign any of the credentials.
    
       <p>
 Ensure credentials may be dynamically annotated with acceptable use information
-when transmitted to <tref title="requestor">requestors</tref>.
+when transmitted to <a>requestors</a>.
       </p>
 
       <section> 
@@ -285,7 +225,7 @@ bypass the credential-based login and use a username/password login instead.
       <h2>Flexible Access Control</h2> 
    
       <p>
-Ensure that a <tref>credentialee</tref> may provide access to their credentials
+Ensure that a <a>credentialee</a> may provide access to their credentials
 in an interactive and non-interactive manner. Access granted by the credentilee
 may be revoked at a later time by the credentialee.
       </p>
@@ -396,9 +336,9 @@ in the set of Credentials 1.0 specifications.
       <h2>Verifiable Claims</h2> 
    
       <p>
-A <tref>requestor</tref> cryptographically verifies that an 
-<tref>issuer</tref> has made a particular set of claims about an 
-<tref>entity</tref>. A claim would consist of an assertion about a particular
+A <a>requestor</a> cryptographically verifies that an 
+<a>issuer</a> has made a particular set of claims about an 
+<a>entity</a>. A claim would consist of an assertion about a particular
 qualification, achievement, or attribute of the entity.
       </p>
 
@@ -428,9 +368,9 @@ related to areas of specialization.
 
         <p>
 This is the base use case for the credentials work. It establishes the need for
-a way to make claims about an <tref title="entity">entity</tref> and
+a way to make claims about an <a>entity</a> and
 a way to cryptographically verify that the claims were made by a particular
-<tref title="issuer">issuer</tref>.
+<a>issuer</a>.
         </p>
 
         <section> 
@@ -438,13 +378,13 @@ a way to cryptographically verify that the claims were made by a particular
      
           <ul> 
             <li>
-<tref>credentialee</tref>
+<a>credentialee</a>
             </li>
             <li>
-<tref>issuer</tref>
+<a>issuer</a>
             </li>
             <li>
-<tref>requestor</tref>
+<a>requestor</a>
             </li>
           </ul>
         </section>
@@ -468,9 +408,9 @@ a way to cryptographically verify that the claims were made by a particular
       <h2>Storage</h2> 
    
       <p>
-Store a <tref>credential</tref> via the Web in a way that is easy to share with 
-a <tref title="requestor">requestor</tref> given authorization by the 
-<tref>credentialee</tref>. Ensure that the credential is easy to 
+Store a <a>credential</a> via the Web in a way that is easy to share with 
+a <a>requestor</a> given authorization by the 
+<a>credentialee</a>. Ensure that the credential is easy to 
 synchronize between devices.
       </p>
 
@@ -494,13 +434,13 @@ credentials from his CredVaultCorp vault on a regular basis.
      
           <ul> 
             <li>
-<tref>credentialee</tref>
+<a>credentialee</a>
             </li>
             <li>
-<tref>issuer</tref>
+<a>issuer</a>
             </li>
             <li>
-<tref>credential service</tref>
+<a>credential service</a>
             </li>
           </ul>
         </section>
@@ -510,16 +450,16 @@ credentials from his CredVaultCorp vault on a regular basis.
      
           <ul> 
             <li>
-The mechanism for writing a <tref>credential</tref> to a website MUST be 
+The mechanism for writing a <a>credential</a> to a website MUST be 
 specified.
             </li>
             <li>
-Transferring a <tref>credential</tref> from one device to another MUST be 
-specified and MUST be <tref>credentialee</tref> initiated.
+Transferring a <a>credential</a> from one device to another MUST be 
+specified and MUST be <a>credentialee</a> initiated.
             </li>
             <li>
-Transmitting a <tref>credential</tref> from a <tref>credential service</tref>
-to a <tref>requestor</tref> MUST be specified.
+Transmitting a <a>credential</a> from a <a>credential service</a>
+to a <a>requestor</a> MUST be specified.
             </li>
           </ul>
         </section>
@@ -530,11 +470,11 @@ to a <tref>requestor</tref> MUST be specified.
       <h2>Interactive Transmission</h2> 
    
       <p>
-A <tref>credentialee</tref> requests access to a restricted portion of a
-<tref title="requestor">requestor's</tref> website. The requestor interactively
-requests one or more <tref title="credential">credentials</tref> previously 
-stored with the credentialee's <tref>credential service</tref>. The 
-credentialee authorizes the transmission of the credentials to the requestor.
+A <a>credentialee</a> requests access to a restricted portion of a
+<a>requestor's</a> website. The <a>requestor</a> interactively
+requests one or more <a>credentials</a> previously 
+stored with the <a>credentialee's</a> <a>credential service</a>. The 
+credentialee authorizes the transmission of the credentials to the <a>requestor</a>.
       </p>
 
       <section> 
@@ -582,8 +522,8 @@ allowing her to finalize the transaction.
       <h2>Non-interactive Transmission</h2> 
    
       <p>
-A <tref>requestor</tref> requests <tref title="credential">credentials</tref> 
-from a <tref>credential service</tref> that have been pre-authorized to be 
+A <a>requestor</a> requests <a>credentials</a> 
+from a <a>credential service</a> that have been pre-authorized to be 
 accessed through a non-interactive channel.
       </p>
 
@@ -633,7 +573,7 @@ credential.
       <h2>Need-to-Know</h2> 
 
       <p>
-A <tref>credentialee</tref> accesses a restricted portion of a website 
+A <a>credentialee</a> accesses a restricted portion of a website 
 without revealing secrets that are not vital in order to be granted access.
       </p>
 
@@ -874,8 +814,8 @@ to use that information to identify Roman.
       <h2>Identity Aliases</h2> 
    
       <p>
-A <tref>credentialee</tref> uses a short-identifier text string to lookup
-an <tref>entity</tref> identity URL.
+A <a>credentialee</a> uses a short-identifier text string to lookup
+an <a>entity</a> identity URL.
       </p>
 
       <section> 
