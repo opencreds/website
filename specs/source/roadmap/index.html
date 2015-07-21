@@ -21,9 +21,12 @@
         // and its maturity status
         // previousPublishDate:  "1977-03-15",
         // previousMaturity:  "WD",
- 
+
         // extend the bibliography entries
         localBiblio: opencreds.localBiblio,
+
+        issueBase: "https://github.com/opencreds/website/issues/",
+        issueAPI:  "https://api.github.com/repos/opencreds/website/issues",
 
         // if there a publicly available Editor's Draft, this is the link
         edDraftURI:           "http://opencreds.org/specs/source/roadmap/",
@@ -77,6 +80,7 @@
         maxTocLevel: 4
      };
     </script> 
+    <script src="https://tobie.github.io/respec-gh-issues/respec-gh-issues.js" async class="remove"></script>
   </head> 
   <body> 
     <section id='abstract'> 
@@ -106,7 +110,7 @@ is intended for those people that want to understand all of the technical
 pieces being proposed, how they fit together, and the development timeline
 for each technology.
       </p>
-      <p class="issue">
+      <p class="ednote">
 Readers should understand that this roadmap document is a work in progress
 and while many of the technologies discussed in this document have been
 implemented and are in production, others may be changed or modified heavily
@@ -116,15 +120,24 @@ roadmap, not the final roadmap for version 1.0.
     </section>
 
     <section>
+      <h2>Terminology</h2>
+
+      <div data-include="../common/terms.html"
+        data-oninclude="opencreds.restrictReferences">
+      </div>
+
+    </section>
+
+    <section>
       <h2>Technology Stack</h2>
       <p>
 The Credentials technology stack is designed on generally accepted design
 principles outlined for the Architecture of the World Wide Web[[WEBARCH]]. It
-also heavily re-uses W3C and IETF technology, such as JSON-LD [[JSON-LD-SYNTAX]]
+also heavily re-uses W3C and IETF technology, such as JSON-LD [[JSON-LD]]
 and HTTP [[RFC7230]]. A high-level diagram of the technology stack is shown 
 below for reference:
 
-<img id="diagram-stack" 
+<img id="diagram-stack" alt="Technology Stack"
   style="display: block; margin-left: auto; margin-right: auto; 
   max-height:100%; max-width:75%;" src="technologyStack.svg">
 
@@ -156,7 +169,7 @@ protocol that can be used effectively in many different contexts and
 for which implementations can evolve independently over time.
         </dd>
 
-        <dt>JSON for Linking Data [[JSON-LD-SYNTAX]]</dt>
+        <dt>JSON for Linking Data [[JSON-LD]]</dt>
         <dd>
 JSON-LD is a lightweight syntax to serialize Linked Data in JSON [[RFC4627]]. 
 Its design allows existing JSON to be interpreted as Linked Data with minimal 
@@ -226,7 +239,7 @@ base technologies to be re-used by other Web-based standards. Thus, there is
 a natural order of progression in developing these technologies, from low-level
 to high-level:
 
-<img id="diagram-timeline" 
+<img id="diagram-timeline" alt="Timeline"
   style="display: block; margin-left: auto; margin-right: auto; 
   max-height:100%; max-width:75%;" src="timeline.svg">
 
@@ -239,7 +252,7 @@ to high-level:
 The following organizations are expected to be directly involved in the
 creation of the technologies outlined in this roadmap:
 
-<img id="diagram-timeline" 
+<img id="collaborators" alt="Active Collaborators"
   style="display: block; margin-left: auto; margin-right: auto; 
   max-height:100%; max-width:75%;" src="collaborators.svg">
       
