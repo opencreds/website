@@ -24,7 +24,7 @@ function dirContents($dir)
   <div class="container">
     <div class="row white">
       <div class="col-md-8 col-md-offset-2 inner-bottom-xs">
-        <h1>Specificatons</h1>
+        <h1>Specifications</h1>
         <p>
 The Open Credentials specs are available under an open, patent and royalty-free 
 license. Just like all other successful open Web technologies, the freedom to 
@@ -40,13 +40,22 @@ innovate is a fundamental part of what we do.
   <div class="container" id="use-cases">
     <div class="row white">
       <div class="col-md-8 col-md-offset-2 inner-bottom-xs">
-        <h3>Vision</h3>
-        <p>
-          <a href="source/vision">Vision</a>: The vision of the Open Credentials specifications is to support Motherhood and Apple Pie.
-        </p>
-      </div>
-      <div class="col-md-8 col-md-offset-2 inner-bottom-xs">
         <h3>Design</h3>
+        <p>
+          <a href="source/vision">Vision</a>: 
+The vision statement of the W3C Credentials Community Group describes the 
+principles upon which an Open Credentials architecture should be built.
+        </p>
+        
+        <p>
+<a href="source/glossary">Glossary</a>:
+
+A unified glossary for all Open Credentials work in the Credentials Community
+Group.
+
+<?php dirContents("ED/glossary"); ?>
+        </p>
+
         <p>
 <a href="source/use-cases">Use Cases</a>:
 
@@ -59,6 +68,16 @@ qualifications and achievements. The following use cases focus on concrete
 scenarios that the technology created by the group should enable.
 <?php dirContents("ED/use-cases"); ?>
         </p>
+
+        <p>
+<a href="source/roadmap">Roadmap</a>:
+
+Outlines the proposed technology stack and development timeline for the set 
+of technologies being worked on by the Credentials Community Group.
+
+<?php dirContents("ED/glossary"); ?>
+        </p>
+
       </div><!-- col-md-10 -->
     </div><!-- row -->
   </div><!-- container -->
