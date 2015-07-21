@@ -116,11 +116,20 @@ roadmap, not the final roadmap for version 1.0.
     </section>
 
     <section>
+      <h2>Terminology</h2>
+
+      <div data-include="../common/terms.html"
+        data-oninclude="opencreds.restrictReferences">
+      </div>
+
+    </section>
+
+    <section>
       <h2>Technology Stack</h2>
       <p>
 The Credentials technology stack is designed on generally accepted design
 principles outlined for the Architecture of the World Wide Web[[WEBARCH]]. It
-also heavily re-uses W3C and IETF technology, such as JSON-LD [[JSON-LD-SYNTAX]]
+also heavily re-uses W3C and IETF technology, such as JSON-LD [[JSON-LD]]
 and HTTP [[RFC7230]]. A high-level diagram of the technology stack is shown 
 below for reference:
 
@@ -156,7 +165,7 @@ protocol that can be used effectively in many different contexts and
 for which implementations can evolve independently over time.
         </dd>
 
-        <dt>JSON for Linking Data [[JSON-LD-SYNTAX]]</dt>
+        <dt>JSON for Linking Data [[JSON-LD]]</dt>
         <dd>
 JSON-LD is a lightweight syntax to serialize Linked Data in JSON [[RFC4627]]. 
 Its design allows existing JSON to be interpreted as Linked Data with minimal 
