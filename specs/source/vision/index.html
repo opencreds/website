@@ -41,8 +41,13 @@
         // editors, add as many as you like
         // only "name" is required
         editors:  [
-            { name: "Gregg Kellogg", url: "http://greggkellogg.net",
-              company: "Kellogg Associates" }
+          { name: "Eric Korb" },
+          { name: "Joe Kaplan" },
+          { name: "Matt Stone"},
+          { name: "Manu Sporny", url: "http://digitalbazaar.com/",
+            company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
+          { name: "Gregg Kellogg", url: "http://greggkellogg.net/",
+            company: "Kellogg Associates", w3cid: "44770" }
         ],
 
         otherLinks: [{
@@ -80,51 +85,78 @@
   </head>
 <body>
   <section id='abstract'>
-    <p>
-This document is the architecture vision statment of the W3C Credentials Community Group. It describes the principles upon which an Open Credentials architecture should be built.
-    </p>
+    <p>This document is the architecture vision statment of the W3C Credentials Community Group. It describes the principles upon which a Credentials architecture should be built.</p>
+    <p>The <a href="https://www.w3.org/community/credentials/">mission</a> of the Credentials Community Group is to standardize a mechanism for exchanging provably-authentic claims via the Web. Examples of claims may be qualifications, achievements, qualities, or pieces of information about an entity such as a name, government ID, payment provider, home address, or university degree.</p>
   </section>
 
-  <section id='sotd'>
-    <p>
-This document represents the consensus of the Credentials Community Group as of the publication 
-date of this document. See the <a href="https://lists.w3.org/Archives/Public/public-credentials/xxx">xxx</a>.
-    </p>
+  <section id='sotd'></section>
+
+  <section>
+    <h2>Terminology</h2>
+
+    <div data-include="../common/terms.html"
+      data-oninclude="opencreds.restrictReferences">
+    </div>
+
   </section>
+
   <section>
     <h2>Web Principles</h2>
     <p>
 Any architecture grounded in the Web should respect well-known Web principles such as:
     </p>
     <ul>
-      <li>Adhering to Web architecture fundamentals</li>
-      <li>Supporting network independence</li>
-      <li>Supporting device independence</li>
-      <li>Providing accessibility for payers and payees with disabilities</li>
-      <li>Being machine-readable where possible to enable automation and engagement of non-human entities</li>
-      <li>Protecting the privacy of all participants</li>
-      <li>Being open and usable by anyone, including those who are not yet connected to the Web</li>
+      <li>Adhering to Web architecture fundamentals,</li>
+      <li>Supporting network independence,</li>
+      <li>Supporting device independence,</li>
+      <li>Providing accessibility for <a>issuers</a> and <a>requestors</a> with disabilities,</li>
+      <li>Being machine-readable where possible to enable automation and engagement of non-human entities,</li>
+      <li>Protecting the privacy of all participants, and</li>
+      <li>Being open and usable by anyone, including those who are not yet connected to the Web.</li>
     </ul>
   </section>
   
   <section>
-    <h2>Desireable properties of an Open Credentials Architecture</h2>
+    <h2>Desireable properties of a Credentials Architecture</h2>
+    <p class="ednote">put the goals from exec summary here?</p>
     <p>
-In addition to the priciples above, the following are desirable properties specific to a Web payments architecture:
+A number of W3C member organizations are proposing the creation of a new standardization activity around credentials on the Web with the following goals in mind:
     </p>
+    <ul>
+      <li><strong>Interoperability</strong> and <strong>Portability</strong>. We want to ensure that an open credential can be used by as broad of a range of organizations as possible. We firmly support the notion that a recipient of a credential should be able to store, archive, and migrate credentials throughout their lifetime with relative ease.</li>
+      <li><strong>Scalability</strong>. The credentialing solution should be usable by the 3 billion people using the Web today, and the 6 billion people that will be using the Web by the year 2020.</li>
+      <li><strong>Verifiability</strong>. The veracity of claims made by a credential should be verifiable using the credential itself.</li>
+      <li><strong>Privacy Enhancing</strong> and <strong>Recipient Controlled</strong>. We want a system that protects the privacy of the individual or organization using the credential by placing the recipient in control of who is allowed to access their credential.</li>
+      <li><strong>Extensible</strong>. Our desire is to construct a foundation where different industry vertical-specific solutions can be built without unnecessary central coordination.</li>
+      <li><strong>Accessible</strong>. The credentialing solution should be accessible and therefore also usable by the 10% of the world population with disabilities.</li>
+      <li><strong>Patent and Royalty-free</strong>. We are building public infrastructure whose growth should not be limited by patents and royalties. Credentials affect everyone and the technology to create them must be open and free.</li>
+    </ul>
+    <p>In addition to the principles above, the following are desirable properties specific to a Credentials architecture:</p>
+
     <section>
-      <h3>xxx</h3>
-      <p>xxx.</p>
-    </section>
+      <h3>Provides Issuers and Consumers Choice</h3>
+      <p class="ednote">FIXME</p>
+    </section> 
+
+    <section>
+      <h3>Improves the User Experience</h3>
+      <p class="ednote">recipient controlled, these are “high stakes”</p>
+    </section> 
+
+    <section>
+      <h3>Supports a Wide Spectrum of Security and Privacy Needs to Meet Industry Expectations</h3>
+      <p class="ednote">FIXME</p>
+    </section> 
+
+    <section>
+      <h3>Facilitates Compliance with Legal &amp; Regulatory Obligations</h3>
+      <p class="ednote">FIXME</p>
+    </section> 
   </section>
 
   <section class="appendix">
     <h2>Acknowledgements</h2>
-    <p>
-The editors wish to thank the participants of the
-<a href="https://www.w3.org/community/credentials/">Credentials Community Group</a>
-for discussions about and contributions to this document.
-    </p>
+    <p>The editors wish to thank the participants of the <a href="https://www.w3.org/community/credentials/">Credentials Community Group</a> for discussions about and contributions to this document.</p>
   </section>
 
   </body>
