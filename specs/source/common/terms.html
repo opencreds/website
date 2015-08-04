@@ -6,75 +6,102 @@
 </p>
 
 <dl class="termlist">
-  <dt><dfn data-lt="credential|credentials">credential</dfn></dt>
+  <dt><dfn lt="credential|credentials">credential</dfn></dt>
   <dd>
-    A qualification, achievement, personal quality, aspect of an <a>entity's</a>
-    background such as a name, government ID, payment processor, home
-    address, or university degree, or verifiable statement by an entity about
-    another entity. Credentials may be stored in <a>identity documents</a>.
+A qualification, achievement, personal quality, aspect of an <a>entity's</a>
+background such as a name, government ID, payment processor, home
+address, or university degree, or verifiable statement by an entity about
+another entity. Credentials may be stored in <a>identity documents</a>.
   </dd>
-  <dt><dfn data-lt="credentialee|credentialees|credentialee's">credentialee</dfn></dt>
+  <dt><dfn lt="credential consumer|credential consumers|credential consumer's">credential consumer</dfn></dt>
   <dd>
-    An <a>entity</a> that is in control of a particular 
-    <a>credential</a>. Typically an credentialee is also the primary topic 
-    of the information in a credential and is the entity that initiates the 
-    transmission of the credential.
+An <a>entity</a> that requests a <a>credential</a> from a
+<a>recipient</a> for processing.
   </dd>
   <dt><dfn>credential exchange</dfn></dt>
   <dd>
-    A transmission of a <a>credential</a> from one <a>entity</a> to another 
-    <a>entity</a>.
+A transmission of a <a>credential</a> from one <a>entity</a> to another
+<a>entity</a>.
   </dd>
   <dt><dfn>credential service</dfn></dt>
   <dd>
-    A program, such as a <a>credential</a> storage vault or personal 
-    credential wallet, that stores and protects access to an 
-    <a>credentialee's</a> credentials.
+A program, such as a <a>credential</a> storage vault or personal
+credential wallet, that stores and protects access to an
+<a>recipient's</a> credentials.
   </dd>
-  <dt><dfn data-lt="entity|entities|entity's">entity</dfn></dt>
+  <dt><dfn lt="decentralized identifier|decentralized identifiers|DID|DIDs">decentralized identifier</dfn></dt>
   <dd>
-    A thing with distinct and independent existence such as a person, organization,
-    or instance of a software program.
+A portable identifier that is associated with an <a>entity</a>. These
+identifiers are most often used in a <a>credential</a> and are associated
+with <a>recipients</a> such that the <a>credential</a> itself can be easily
+ported from one <a>identity provider</a>.
+  </dd>
+  <dt><dfn lt="decentralized identifier document|decentralized identifier documents|DID document|DID documents">decentralized identifier document</dfn></dt>
+  <dd>
+A document that is accessible via the <a>WebDHT</a> and contains information
+related to a particular <a>decentralized identifier</a> such as the
+associated <a>identity provider</a> and public key information.
+  </dd>
+  <dt><dfn lt="entity|entities|entity's">entity</dfn></dt>
+  <dd>
+A thing with distinct and independent existence such as a person, organization,
+or instance of a software program.
   </dd>
   <dt><dfn>identity</dfn></dt>
   <dd>
-    A set of information that can be used to identify a particular entity such as 
-    a person, software agent, or organization. An entity may have multiple 
-    identities associated with it.
+A set of information that can be used to identify a particular entity such as
+a person, software agent, or organization. An entity may have multiple
+identities associated with it.
   </dd>
-  <dt><dfn data-lt="identity document|identity documents">identity document</dfn></dt>
+  <dt><dfn lt="identity document|identity documents">identity document</dfn></dt>
   <dd>
-    A Web-based document that contains statements about a 
-    particular <a>identity</a>. Identity documents MUST be accessible in
-    JSON-LD [[!JSON-LD]] format and MAY be accessible in other RDF-compatible formats.
+A Web-based document that contains statements about a
+particular <a>identity</a>. Identity documents MUST be accessible in
+JSON-LD [[!JSON-LD]] format and MAY be accessible in other RDF-compatible formats.
   </dd>
   <dt><dfn>identity document URL</dfn></dt>
   <dd>
-    An identity document URL consists of an HTTP or HTTPS scheme and denotes an <a>identity</a>. For example: 
-    <code>https://example.org/identities/manu</code>.
+An identity document URL consists of an HTTP or HTTPS scheme and denotes an <a>identity</a>. For example:
+<code>https://example.org/identities/manu</code>.
   </dd>
-  <dt><dfn data-lt="identity owner|identity owner's">identity owner</dfn></dt>
+  <dt><dfn lt="identity owner|identity owner's">identity owner</dfn></dt>
   <dd>
-    An entity that is in control of a particular <a>identity document</a>.
+An entity that is in control of a particular <a>identity document</a>.
   </dd>
-  <dt><dfn data-lt="identity provider|identity provider's">identity provider</dfn></dt>
+  <dt><dfn lt="identity provider|identity provider's">identity provider</dfn></dt>
   <dd>
-    A website providing access to one or more <a>identity documents</a>.
+A website providing access to one or more <a>identity documents</a>.
   </dd>
-  <dt><dfn data-lt="issuer|issuers|issuer's">issuer</dfn></dt>
+  <dt><dfn lt="issuer|issuers|issuer's">issuer</dfn></dt>
   <dd>
-    An <a>entity</a> that creates and assigns <a>credentials</a> to
-    <a>credentialees</a>.
+An <a>entity</a> that creates a <a>credential</a> and associates it
+with a particular <a>recipient</a>.
   </dd>
-  <dt><dfn data-lt="requestor|requestors|requestor's">requestor</dfn></dt>
+  <dt><dfn lt="recipient|recipients|recipient's">recipient</dfn></dt>
   <dd>
-    An <a>entity</a> that requests a <a>credential</a> from an
-<a>credentialee</a> and is requesting to access and/or modify an <a>identity document</a>.
+An <a>entity</a> that is in control of a particular
+<a>credential</a>. Typically a recipient is also the primary topic
+of the information in a credential and is the <a>entity</a> that initiates
+the transmission of the credential.
   </dd>
   <dt><dfn>user agent</dfn></dt>
   <dd>
-    A program, such as a browser or other Web client, that mediates the
-    communication between the <a>credentialee</a> and
-    the <a>requestor</a>.
+A program, such as a browser or other Web client, that mediates the
+communication between <a>recipients</a>, <a>issuers</a> and
+<a>credential consumers</a>.
+  </dd>
+  <dt><dfn>WebDHT</dfn></dt>
+  <dd>
+A mechanism that is used to discover the software services, such as an
+<a>identity provider</a>, associated with an <a>entity</a>.
+Technically speaking, it is
+a Web-based decentralized hashtable built on Web architecture principles that
+is used to map cryptographic hashes to <a>decentralized identifiers</a> and
+<a>decentralized identifiers</a> to <a>decentralized identifier documents</a>.
+The technology is used to map cryptographic hashes of email addresses and
+passphrases to <a>decentralized identifier documents</a> which can then be
+used to discover an <a>entity's</a> <a>identity provider</a>. The technology is
+one way of solving the
+<a href="http://indiewebcamp.com/NASCAR_problem">NASCAR service bootstrap problem</a>.
   </dd>
 </dl>
