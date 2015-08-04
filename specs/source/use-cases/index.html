@@ -128,7 +128,7 @@ Create a better introduction to the use cases.
     <h2>Terminology</h2>
 
     <div data-include="../common/terms.html"
-      data-oninclude="opencreds.restrictReferences">
+      data-oninclude="rescrictReferences">
     </div>
 
   </section>
@@ -176,7 +176,7 @@ re-assign any of the credentials.
    
       <p>
 Ensure credentials may be dynamically annotated with acceptable use information
-when transmitted to <a>requestors</a>.
+when transmitted to <a>credential consumers</a>.
       </p>
 
       <section> 
@@ -231,9 +231,9 @@ bypass the credential-based login and use a username/password login instead.
       <h2>Flexible Access Control</h2> 
    
       <p>
-Ensure that a <a>credentialee</a> may provide access to their credentials
+Ensure that a <a>recipient</a> may provide access to their credentials
 in an interactive and non-interactive manner. Access granted by the credentilee
-may be revoked at a later time by the credentialee.
+may be revoked at a later time by the <a>recipient</a>.
       </p>
 
       <section> 
@@ -342,7 +342,7 @@ in the set of Credentials 1.0 specifications.
       <h2>Verifiable Claims</h2> 
    
       <p>
-A <a>requestor</a> cryptographically verifies that an 
+A <a>credential consumer</a> cryptographically verifies that an 
 <a>issuer</a> has made a particular set of claims about an 
 <a>entity</a>. A claim would consist of an assertion about a particular
 qualification, achievement, or attribute of the entity.
@@ -384,13 +384,13 @@ a way to cryptographically verify that the claims were made by a particular
      
           <ul> 
             <li>
-<a>credentialee</a>
+<a>recipient</a>
             </li>
             <li>
 <a>issuer</a>
             </li>
             <li>
-<a>requestor</a>
+<a>credential consumer</a>
             </li>
           </ul>
         </section>
@@ -415,8 +415,8 @@ a way to cryptographically verify that the claims were made by a particular
    
       <p>
 Store a <a>credential</a> via the Web in a way that is easy to share with 
-a <a>requestor</a> given authorization by the 
-<a>credentialee</a>. Ensure that the credential is easy to 
+a <a>credential consumer</a> given authorization by the 
+<a>recipient</a>. Ensure that the credential is easy to 
 synchronize between devices.
       </p>
 
@@ -440,7 +440,7 @@ credentials from his CredVaultCorp vault on a regular basis.
      
           <ul> 
             <li>
-<a>credentialee</a>
+<a>recipient</a>
             </li>
             <li>
 <a>issuer</a>
@@ -461,11 +461,11 @@ specified.
             </li>
             <li>
 Transferring a <a>credential</a> from one device to another MUST be 
-specified and MUST be <a>credentialee</a> initiated.
+specified and MUST be <a>recipient</a> initiated.
             </li>
             <li>
 Transmitting a <a>credential</a> from a <a>credential service</a>
-to a <a>requestor</a> MUST be specified.
+to a <a>credential consumer</a> MUST be specified.
             </li>
           </ul>
         </section>
@@ -476,11 +476,11 @@ to a <a>requestor</a> MUST be specified.
       <h2>Interactive Transmission</h2> 
    
       <p>
-A <a>credentialee</a> requests access to a restricted portion of a
-<a>requestor's</a> website. The <a>requestor</a> interactively
+A <a>recipient</a> requests access to a restricted portion of a
+<a>credential consumer's</a> website. The <a>credential consumer</a> interactively
 requests one or more <a>credentials</a> previously 
-stored with the <a>credentialee's</a> <a>credential service</a>. The 
-credentialee authorizes the transmission of the credentials to the <a>requestor</a>.
+stored with the <a>recipient's</a> <a>credential service</a>. The 
+<a>recipient</a> authorizes the transmission of the credentials to the <a>credential consumer</a>.
       </p>
 
       <section> 
@@ -528,7 +528,7 @@ allowing her to finalize the transaction.
       <h2>Non-interactive Transmission</h2> 
    
       <p>
-A <a>requestor</a> requests <a>credentials</a> 
+A <a>credential consumer</a> requests <a>credentials</a> 
 from a <a>credential service</a> that have been pre-authorized to be 
 accessed through a non-interactive channel.
       </p>
@@ -579,7 +579,7 @@ credential.
       <h2>Need-to-Know</h2> 
 
       <p>
-A <a>credentialee</a> accesses a restricted portion of a website 
+A <a>recipient</a> accesses a restricted portion of a website 
 without revealing secrets that are not vital in order to be granted access.
       </p>
 
@@ -820,7 +820,7 @@ to use that information to identify Roman.
       <h2>Identity Aliases</h2> 
    
       <p>
-A <a>credentialee</a> uses a short-identifier text string to lookup
+A <a>recipient</a> uses a short-identifier text string to lookup
 an <a>entity</a> identity URL.
       </p>
 

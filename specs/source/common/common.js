@@ -66,51 +66,55 @@ var opencreds = {
       status:   'CG-DRAFT',
       publisher:  'W3C Credentials Community Group'
     }
-  },
-
-  // We should be able to remove terms that are not actually
-  // referenced from the common definitions
-  rescrictReferences: function (utils, content) {
-    var termNames = [] ;
-    var base = document.createElement("div");
-    base.innerHTML = content;
-
-    // strategy: Traverse the content finding all of the terms defined
-    $.each(base.querySelectorAll("dfn"), function(i, item) {
-        var $t = $(item) ;
-        var title = $t.dfnTitle();
-        var n = $t.makeID("dfn", title);
-        if (n) {
-            termNames[n] = $t.parent() ;
-        }
-    });
-
-    // add a handler to come in after all the definitions are resolved
-
-    respecEvents.sub('end', function(message) {
-        if (message == 'core/link-to-dfn') {
-            // all definitions are linked
-            $("a.internalDFN").each(function () {
-                var $item = $(this) ;
-                var r = $item.attr('href').replace(/^#/,"") ;
-                if (termNames[r]) {
-                    delete termNames[r] ;
-                }
-            });
-    // delete any terms that were not referenced.
-            Object.keys(termNames).forEach(function(term) {
-                var $p = $("#"+term) ;
-                if ($p) {
-                    var t = $p.dfnTitle();
-                    $p.parent().next().remove();
-                    $p.remove() ;
-                    if (respecConfig.definitionMap[t]) {
-                        delete respecConfig.definitionMap[t];
-                    }
-                }
-            });
-        }
-    });
-    return (base.innerHTML);
   }
 };
+
+
+// We should be able to remove terms that are not actually
+// referenced from the common definitions
+function rescrictReferences(utils, content) {
+  var termNames = [] ;
+  var base = document.createElement("div");
+  base.innerHTML = content;
+
+  // strategy: Traverse the content finding all of the terms defined
+  $.each(base.querySelectorAll("dfn"), function(i, item) {
+      var $t = $(item);
+      $t.addClass('dfn-unused');
+      var titles = $t.getDfnTitles();
+      $.each(titles, function() {
+        termNames[this] = $t ;
+      });
+  });
+
+  // add a handler to come in after all the definitions are resolved
+  respecEvents.sub('end', function(message) {
+      if (message == 'core/link-to-dfn') {
+        // all definitions are linked
+        $("a.internalDFN").each(function () {
+          var $item = $(this) ;
+          var r = $item.attr('href').replace(/^#dfn-/,"") ;
+          if (termNames[r]) {
+            $('dfn#dfn-' + r).removeClass('dfn-unused') ;
+          }
+        });
+
+        // Remove unused definition from the definition map
+        for (var term in termNames) {
+          var $dfn = $(termNames[term]);
+          if ($dfn.hasClass('dfn-unused') &&
+              respecConfig.definitionMap[term]) {
+            delete respecConfig.definitionMap[term];
+          }
+        }
+
+        // delete any unused dfn elements and scope
+        $('dfn.dfn-unused').each(function() {
+          var $p = $(this).parent();
+          $p.next().remove();
+          $p.remove() ;
+        });
+      }
+  });
+  return (base.innerHTML);
+}
