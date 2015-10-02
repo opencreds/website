@@ -70,10 +70,10 @@ main {
 p {
 	margin-bottom: 20px;
 }
-p a {
+p a, li a {
 	border-bottom: 1px solid #73879C;
 }
-p a:hover {
+p a:hover, li a:hover {
 	border-color: transparent;
 }
 a {

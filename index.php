@@ -46,7 +46,7 @@
         <p class="text-small">
 A <em><strong>credential</strong></em> is a qualification, achievement, quality, or piece of information about an entity’s background such as a name, government ID, payment provider, home address, or university degree. The work we do is about helping you store and transmit these credentials online.
         </p>
-        <a href="#" class="txt-btn">Learn more</a>
+        <a href="intro" class="txt-btn">Learn more</a>
       </div><!-- /.col -->
       
       <div class="col-md-6 inner-bottom-sm">
@@ -54,7 +54,7 @@ A <em><strong>credential</strong></em> is a qualification, achievement, quality,
         <p class="text-small">
 Everyone is invited to participate in building the future of credentials online. Web developers, students, researchers, non-profits, and for-profits alike. This work affects all of us, so all of us should have a voice.
         </p>
-        <a href="#" class="txt-btn">See how it's built</a>
+        <a href="https://www.w3.org/community/credentials/" class="txt-btn">See how it's built</a>
       </div><!-- /.col -->
 
       <div class="row inner-top-sm">
