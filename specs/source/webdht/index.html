@@ -5,7 +5,8 @@
     <title>A Decentralized Hashtable for the Web</title>
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
     <script src='http://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
-    <script src='../common/common.js' class='remove'></script> 
+    <script src='curl-w3c-common' class='remove'></script>
+    <script src='../common/common.js' class='remove'></script>
     <script class='remove'>
       var respecConfig = {
         // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
@@ -101,11 +102,163 @@
 
   </section>
 
-  <section>
-    <h2>Claiming Space in the DHT</h2>
-    <p>
 
+
+  <section>
+    <h2>Decentralized Identifier Registration Algorithm</h2>
+    <p>
+The following algorithm specifies how to register a decentralized
+identifier in the WebDHT. The algorithm takes a <var>private key</var>,
+a <var>public key</var>, and stores a <tref>DID document</tref>
+in the WebDHT.
     </p>
+
+    <p class="issue">
+The discovery and storage mechanism for the final
+WebDHT is still an area of active research and debate. The fundamental
+technology used will most likely be a security hardened version of
+Kademlia DHT algorithms that have gained widespread use in peer-to-peer
+systems like tracker-less Bittorrent networks.
+    </p>
+
+    <ol class="algorithm">
+      <li>
+Create the <var>decentralized identifier</var> by generating a
+version 4 UUID [[UUID]] and pre-pending the string <code>did:</code>
+to the identifier. Example:
+<code>did:a8ebdaf1-3c47-45d1-addc-26ce643b9a0c</code>
+      </li>
+      <li>
+Create the <var>public key URL</var>. The URL value MUST be
+compatible with the Linked Data Signatures [[LD-SIGNATURES]]
+specification. The URL SHOULD be a DID-based URL that points
+to a resource in the <a>DID document</a>. The URL MAY
+be an HTTP-based URL or any other sort of dereferenceable URL.
+Example:
+<code>did:a8ebdaf1-3c47-45d1-addc-26ce643b9a0c/keys/1</code>
+      </li>
+      <li>
+Set the <a>DID document</a> to a JSON-LD document with atleast the
+following key-value pairs:
+<dl style="margin-left: 1em;">
+<dt><code>@context</code><dt>
+<dd><code>https://w3id.org/identity/v1</code></dd>
+<dt><code>id</code><dt>
+<dd>
+The value of the <var>decentralized identifier</var>.
+</dd>
+<dt><code>accessControl</code><dt>
+<dd>
+  <dl style="margin-left: 1em;">
+  <dt><code>writePermission</code><dt>
+  <dd>
+An array of public key identifiers or other
+<var>decentralized identifiers</var> that are allowed to modify this
+document. At a minimum, one entry MUST exist:
+    <dl style="margin-left: 1em;">
+    <dt><code>id</code><dt>
+    <dd>
+The value of the <var>public key URL</var>.
+    </dd>
+    <dt><code>type</code><dt>
+    <dd><code>CryptographicKey</code></dd>
+  </dd>
+</dd>
+<dt><code>publicKey</code><dt>
+<dd>
+  <dl style="margin-left: 1em;">
+    <dt><code>id</code><dt>
+    <dd>
+The value of the <var>public key URL</var>.
+    </dd>
+    <dt><code>type</code><dt>
+    <dd><code>CryptographicKey</code></dd>
+    <dt><code>owner</code><dt>
+    <dd>
+The value of the <var>decentralized identifier</var>.
+    </dd>
+    <dt><code>publicKeyPem</code><dt>
+    <dd>
+The result of base-64 encoding the public key in PEM format.
+    </dd>
+  </dd>
+</dd>
+      </li>
+      <li>
+Add a signature to the <a>DID Document</a> by executing the
+<a href="//web-payments.org/specs/source/ld-signatures/index.html#signature-algorithm">Linked Data Signatures algorithm</a>.
+      </li>
+      <li>
+Discover the nodes in the WebDHT that will store the <a>DID document</a> and
+for each node:
+        <ol class="algorithm">
+          <li>
+Discover the <code>didStorageRequest</code> endpoint.
+          </li>
+          <li>
+Perform an HTTP POST to the <code>didStorageRequest</code> endpoint with the
+<a>DID document</a> as the body of the request.
+          </li>
+          <li>
+Execute the <a href="proof-of-patience-algorithm">Proof of Patience</a>
+algorithm and re-post the <a>DID document</a> when the proof has been
+fulfilled.
+          </li>
+          <li>
+This algorithm returns successfully when the acceptable number of copies
+have been written to the WebDHT. The algorithm fails otherwise.
+        </ol>
+      </li>
+    </ol>
+    <p>
+If successful, the result of the algorithm listed above will be an entry in
+the WebDHT where the key is the <var>decentralized identifier</var> and the
+value is similar in form to the following example document:
+    </p>
+    <pre class="example" title="Basic document associated with DID entry in WebDHT">
+{
+  "@context": "https://w3id.org/identity/v1",
+  "id": "did:a8ebdaf1-3c47-45d1-addc-26ce643b9a0c",
+  "accessControl": {
+    "writePermission": [
+      {
+        "id": "did:a8ebdaf1-3c47-45d1-addc-26ce643b9a0c/keys/1",
+        "type": "CryptographicKey"
+      },
+      {
+        "id": "did:780c5356-b4ab-473d-97f6-aeb524794eb9",
+        "type": "Identity"
+      }
+    ]
+  },
+  "publicKey": [
+    {
+      "id": "did:a8ebdaf1-3c47-45d1-addc-26ce643b9a0c/keys/1",
+      "type": "CryptographicKey",
+      "owner": "did:a8ebdaf1-3c47-45d1-addc-26ce643b9a0c",
+      "publicKeyPem": "-----BEGIN PUBLIC KEY-----\r\n
+      MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmPUHbAM58QX957aRuE1H\r\n
+      AN0iYjfjs4I/waRPW/0RiFcVccFh2DYra56oT9IW2XJyxxchm0LMQwOmtb2N/ro+\r\n
+      r73gvOqms2RyTHsdcX4aYZKdIdhIN3s9GVoYwREVvpaWH2ulJhujB1hO/XYfAADB\r\n
+      cwjxVMQ7a0Cdv1R/eaM0oQk3CHGAPnB8EaDAWzkcJ9FwCf/PPdIf3X6qtGICX4Ei\r\n
+      LypDHkVodTL3SxpjMkSIJK87O5/x6HDWtA+tgaYxIJxnCY0P1ssUpmuxuacZfhN9\r\n
+      jaT8NUIKYAb+9z+zL0Ba8o4niSQVDt4W3r/LCF7Mj8Ps0nF05lW3Ymwz4C6ENO1L\r\n
+      lQIDAQAB\r\n-----END PUBLIC KEY-----\r\n"
+    }
+  ],
+  "signature": {
+    "type": "GraphSignature2012",
+    "created": "2015-10-23T02:10:21Z",
+    "creator": "did:a8ebdaf1-3c47-45d1-addc-26ce643b9a0c/keys/1",
+    "signatureValue": "cNJGLFqT/d/90D4GFzvPwaJ66hHKUIgSPcJmm++oiP+wSHjtov8
+    4/hI4lVrNmYp9WdXRrCNSIko9wzots1QdKkoleFMUftAclVXfERuvnhsFlMTBO7FKRCM5I
+    X6D8Ec+SRKG7C8d3Hy6DBPPRtRrDeZr7YpeggUBaA/IfejaDfCRzBgwcWaXqt21MQXmins
+    Rud7g/pYrAwsnGag9B8bwjzyKKpZgrZQ5AVcc40tuIdIsddEuckzEjFpBZs9wHtGlgnybI
+    4apZ90waD2SM+oLi19jnUcY4GQSZ/id3MIlr6BYeTv86fzDq4IHT2kp32foVgjidzFL+aK
+    WMZOsQyKPiw=="
+  }
+}
+    </pre>
   </section>
 
   <section>
