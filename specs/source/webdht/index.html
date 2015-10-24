@@ -84,23 +84,49 @@
     <p>
 The Web currently does not have a mechanism where people and
 organizations can claim identifiers that they control. Identifiers,
-such as those rooted in domain names, are
-often rented by people and organizations and thus cannot be used for long-term
-identifiers. The danger is that if the rent is not paid, all data associated
-with the
-identifier is temporarily or permanently lost. This document specifies a
-rent-free mechanism where people and
-organizations can cryptographically claim identifiers that they control
-and store data at those identifiers.
+such as those rooted in domain names like emails addresses and
+website addresses, are often rented by people and organizations and
+thus cannot be used for long-term identifiers. The danger is that if the
+rent is not paid, all data associated with the identifier is temporarily
+or permanently lost. This document specifies a rent-free mechanism where
+people and organizations can cryptographically claim identifiers that
+they control and store data at those identifiers.
     </p>
   </section>
 
-  <section id='sotd'></section>
+  <section id='sotd'>
+    <p>
+This is an experimental specification that is currently undergoing rapid
+change and is not ready for widespread implementation. The reference
+implementation of this technology can be found on
+<a href="https://github.com/digitalbazaar/authorization.io/">Github</a>
+    </p>
+  </section>
 
   <section>
     <h2>Introduction</h2>
     <p>
-
+The Web currently does not have a mechanism where people and
+organizations can claim identifiers that they control. Identifiers,
+such as those rooted in domain names like emails addresses and
+website addresses, are often rented by people and organizations and
+thus cannot be used for long-term identifiers. The danger is that if the
+rent is not paid, all data associated with the identifier is temporarily
+or permanently lost.
+    </p>
+    <p>
+The reason this problem exists is because it's a particularly hard problem
+to solve and there was no time to build out the solution when the Web was
+starting its rapid rise in the late 1990s. The solutions that we have in
+place today, particularly DNS, HTTP, and URLs, are powerful tools that have
+scaled the Web to the billions of people that use it today.
+    </p>
+    <p>
+However, as the Web grows and becomes more personal, there is a growing
+need for a type of dereference-able identifier that can be created and
+owned by people and organizations without the need for a central organization
+or federation of organizations to control the namespace. Having such a
+scheme would enable more personal and organizational freedom on the Web.
     </p>
   </section>
 
@@ -108,9 +134,8 @@ and store data at those identifiers.
     <h2>Terminology</h2>
 
     <div data-include="../common/terms.html"
-         data-oninclude="rescrictReferences">
+      data-oninclude="rescrictReferences">
     </div>
-
   </section>
 
 
