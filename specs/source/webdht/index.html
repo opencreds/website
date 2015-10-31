@@ -10,7 +10,7 @@
     <script class='remove'>
       var respecConfig = {
         // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-        specStatus:           "ED",
+        specStatus:           "CG-DRAFT",
 
         // the specification's short name, as in http://www.w3.org/TR/short-name/
         shortName:            "webdht",
@@ -88,8 +88,8 @@ such as those rooted in domain names like emails addresses and
 website addresses, are often rented by people and organizations and
 thus cannot be used for long-term identifiers. The danger is that if the
 rent is not paid, all data associated with the identifier is temporarily
-or permanently lost. This document specifies a rent-free mechanism where
-people and organizations can cryptographically claim identifiers that
+or permanently inaccessible. This document specifies a rent-free mechanism
+where people and organizations can cryptographically claim identifiers that
 they control and store data at those identifiers.
     </p>
   </section>
@@ -112,7 +112,7 @@ such as those rooted in domain names like emails addresses and
 website addresses, are often rented by people and organizations and
 thus cannot be used for long-term identifiers. The danger is that if the
 rent is not paid, all data associated with the identifier is temporarily
-or permanently lost.
+or permanently inaccessible.
     </p>
     <p>
 The reason this problem exists is because it's a particularly hard problem
@@ -137,8 +137,6 @@ scheme would enable more personal and organizational freedom on the Web.
       data-oninclude="rescrictReferences">
     </div>
   </section>
-
-
 
   <section>
     <h2>Decentralized Identifier Registration Algorithm</h2>
@@ -229,10 +227,10 @@ Discover the nodes in the WebDHT that will store the <a>DID document</a> and
 for each node:
         <ol class="algorithm">
           <li>
-Discover the <code>didStorageRequest</code> endpoint.
+Discover the <code>storageRequest</code> endpoint.
           </li>
           <li>
-Perform an HTTP POST to the <code>didStorageRequest</code> endpoint with the
+Perform an HTTP POST to the <code>storageRequest</code> endpoint with the
 <a>DID document</a> as the body of the request.
           </li>
           <li>
@@ -298,26 +296,225 @@ value is similar in form to the following example document:
   </section>
 
   <section>
+    <h2>Creating an Alias in the DHT</h2>
+    <p>
+When creating <a>DID document</a> entries in the DHT, it is useful to also
+create aliases for those entries to enable human-based lookup of identifiers.
+For example, enabling the lookup of a <a>decentralized identifier</a> using
+an email address and passphrase would help people boostrap the discovery
+process using information that is easy for them to remember.
+    </p>
+
+    <p>
+The following algorithm specifies how to register an alias to a
+<a>decentralized identifier</a> in the WebDHT. The algorithm takes a
+<var>hash value</var> and stores an associated <var>alias document</var>
+in the WebDHT.
+    </p>
+
+    <ol class="algorithm">
+      <li>
+Create the <var>hash value</var> by using a well known hashing algorithm and
+running it over a set of provided input text and then pre-pending the
+hash algorithm identifier and a colon <code>:</code> to the hashing algorithm
+output. For example, ask a person
+for an email address and a passphrase, concatenate the input, and perform a
+SHA-256 of the input which should result in the following example
+<var>hash value</var>: <code>sha256:8cd07f3a5ff98f2a78cfc366c13fb123eb8d29c1ca37c79df190425d5b9e424d</code>.
+      </li>
+      <li>
+Set the <var>alias document</var> to a JSON-LD document with atleast the
+following key-value pairs:
+<dl style="margin-left: 1em;">
+<dt><code>@context</code><dt>
+<dd><code>https://w3id.org/identity/v1</code></dd>
+<dt><code>id</code><dt>
+<dd>
+The value of the <var>decentralized identifier</var>.
+</dd>
+</dl>
+      </li>
+      <li>
+Add a signature to the <var>alias document</var> by executing the
+<a href="//web-payments.org/specs/source/ld-signatures/index.html#signature-algorithm">Linked Data Signatures algorithm</a>.
+      </li>
+      <li>
+Discover the nodes in the WebDHT that will store the <var>alias document</var> and
+for each node:
+        <ol class="algorithm">
+          <li>
+Discover the <code>storageRequest</code> endpoint.
+          </li>
+          <li>
+Perform an HTTP POST to the <code>storageRequest</code> endpoint with the
+<var>alias document</var> as the body of the request.
+          </li>
+          <li>
+Execute the <a href="proof-of-patience-algorithm">Proof of Patience</a>
+algorithm and re-post the <var>alias document</var> when the proof has been
+fulfilled.
+          </li>
+          <li>
+This algorithm returns successfully when the acceptable number of copies
+have been written to the WebDHT. The algorithm fails otherwise.
+        </ol>
+      </li>
+    </ol>
+    <p>
+If successful, the result of the algorithm listed above will be an entry in
+the WebDHT where the key is the <var>hash value</var> and the
+value is similar in form to the following example document:
+    </p>
+    <pre class="example" title="Basic document associated with DID entry in WebDHT">
+{
+  "@context": "https://w3id.org/identity/v1",
+  "id": "did:a8ebdaf1-3c47-45d1-addc-26ce643b9a0c",
+  "signature": {
+    "type": "GraphSignature2012",
+    "created": "2015-10-23T02:40:21Z",
+    "creator": "did:a8ebdaf1-3c47-45d1-addc-26ce643b9a0c/keys/1",
+    "signatureValue": "cNJGLFqT/d/90D4GFzvPwaJ66hHKUIgSPcJmm++oiP+wSHjtov8
+    4/hI4lVrNmYp9WdXRrCNSIko9wzots1QdKkoleFMUftAclVXfERuvnhsFlMTBO7FKRCM5I
+    X6D8Ec+SRKG7C8d3Hy6DBPPRtRrDeZr7YpeggUBaA/IfejaDfCRzBgwcWaXqt21MQXmins
+    Rud7g/pYrAwsnGag9B8bwjzyKKpZgrZQ5AVcc40tuIdIsddEuckzEjFpBZs9wHtGlgnybI
+    4apZ90waD2SM+oLi19jnUcY4GQSZ/id3MIlr6BYeTv86fzDq4IHT2kp32foVgjidzFL+aK
+    WMZOsQyKPiw=="
+  }
+}
+    </pre>
+  </section>
+
+  <section>
     <h2>Updating Documents in the DHT</h2>
     <p>
 
     </p>
+    <p>
+The following algorithm specifies how to update a <a>DID document</a> that
+has been previously stored in the WebDHT. The algorithm takes a
+<a>decentralized public keys associated with the identifier</a> and stores a <tref>DID document</tref>
+in the WebDHT.
+    </p>
+
+    <ol class="algorithm">
+      <li>
+Add a signature to the <a>DID Document</a> by executing the
+<a href="//web-payments.org/specs/source/ld-signatures/index.html#signature-algorithm">Linked Data Signatures algorithm</a>.
+      </li>
+      <li>
+Discover the nodes in the WebDHT that will store the <a>DID document</a> and
+for each node:
+        <ol class="algorithm">
+          <li>
+Discover the <code>storageRequest</code> endpoint.
+          </li>
+          <li>
+Perform an HTTP POST to the <code>storageRequest</code> endpoint with the
+<a>DID document</a> as the body of the request.
+          </li>
+          <li>
+This algorithm returns successfully if the minimum information
+exists in the <a>DID document</a>, the signature is valid, and when the
+acceptable number of copies have been written to the WebDHT.
+The algorithm fails otherwise.
+        </ol>
+      </li>
+    </ol>
+
+    <p class="note">
+Updates do not require the execution of the Proof of Patience algorithm as
+the storage nodes need only check the existing public keys associated with
+the <a>DID document</a> and verify the signature of the updated
+<a>DID document</a> to result in a successful write to the WebDHT.
+    </p>
+
   </section>
 
   <section>
-    <h2>Data Survivability and Replication</h2>
+    <h2>Data Survivability</h2>
     <p>
-
+In order for this technology to be broadly useful to society, it is important
+that data stored in the WebDHT has excellent survivability characteristics.
+The data stored on the network must be available as the system scales to
+billions of devices using it, undergoes nation-state attacks, suffers
+large failures and disruptions to the underlying communication networks, and
+is affected by clients with a high network churn rate. A number of data
+survivability considerations are listed and analyzed below with respect to
+the algorithms provided in this document.
     </p>
+
+    <section>
+      <h3>Replication Requirements</h3>
+      <p class="issue">
+In order for data to survive most of the issues listed above, a high
+mirroring rate is necessary. The algorithm to calculate the proper mirroring
+rate is still under development.
+      </p>
+    </section>
+
+    <section>
+      <h3>Storage Location Randomness</h3>
+      <p class="issue">
+In order to survive a number of attack scenarios, it is best to have the
+storage and mirroring locations be effectively chosen at random, but while
+providing good discovery times. The algorithm to calculate the storage
+location selection is still under development.
+      </p>
+    </section>
+
   </section>
 
   <section>
-    <h2>Attacks on the DHT</h2>
+    <h2>Security Considerations</h2>
+    <p>
+In order for this technology to be broadly useful to society, it is important
+that the protocols and data used have certain security characteristics that
+don't make it susceptible to attacks that would cripple the communication
+channels or corrupt the data stored in the system.
+    </p>
+
+    <section>
+      <h3>Distributed Dential of Service Attacks</h3>
+      <p class="issue">
+It should be assumed that private organizations and nation-states may
+attack the WebDHT to try and disrupt activity since there are economic
+and political incentives to do so. Many of the attack preventions rely on
+slowing down requests using techniques like Proof-of-Patience, or ensuring
+that all data is digitally signed to provide data protection. A thorough
+analysis on DDoS attacks on each endpoint and system component is still
+needed.
+      </p>
+    </section>
+
+    <section>
+      <h3>Attacks on Decentralized Identifiers</h3>
+      <p class="issue">
+An attacker may target a particular individual or organization in the
+WebDHT to prevent that target from interacting with the broader network.
+Some of the protections to prevent this sort of attack include
+randomizing and migrating the storage and mirror location so that it is
+difficult to predict where all of the mirrors will be at a particular point
+in time. A thorough anaysis on targeted attacks on decentralized identifiers
+is still needed.
+      </p>
+    </section>
+
+  </section>
+
+  <section>
+    <h2>Privacy Considerations</h2>
     <p>
 
     </p>
-  </section>
 
+    <section>
+      <h3>All Stored Data is Public</h3>
+      <p>
+
+      </p>
+    </section>
+
+  </section>
 
   <section class="appendix">
     <h2>Acknowledgements</h2>
