@@ -43,7 +43,19 @@
         // only "name" is required
         editors:  [
           { name: "Manu Sporny", url: "http://digitalbazaar.com/",
-            company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" }
+            company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
+          { name: "Dave Longley", url: "http://digitalbazaar.com/",
+            company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/"}
+        ],
+
+        // authors, add as many as you like.
+        // This is optional, uncomment if you have authors as well as editors.
+        // only "name" is required. Same format as editors.
+        authors:  [
+            { name: "Manu Sporny", url: "http://digitalbazaar.com/",
+              company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
+            { name: "Dave Longley", url: "http://digitalbazaar.com/",
+              company: "Digital Bazaar", companyURL: "http://digitalbazaar.com/"}
         ],
 
         otherLinks: [{
@@ -83,14 +95,15 @@
   <section id='abstract'>
     <p>
 The Web currently does not have a mechanism where people and
-organizations can claim identifiers that they control. Identifiers,
-such as those rooted in domain names like emails addresses and
-website addresses, are often rented by people and organizations and
-thus cannot be used for long-term identifiers. The danger is that if the
-rent is not paid, all data associated with the identifier is temporarily
-or permanently inaccessible. This document specifies a rent-free mechanism
-where people and organizations can cryptographically claim identifiers that
-they control and store data at those identifiers.
+organizations can claim identifiers that they have sole ownership over.
+Identifiers, such as those rooted in domain names like emails addresses and
+website addresses, are effectively rented by people and organizations rather
+than owned. Therefore, their use as long-term identifiers is dependent upon
+parameters outside of their control. One danger is that if the rent is not
+paid, all data associated with the identifier can be made temporarily or
+permanently inaccessible. This document specifies a mechanism where people
+and organizations can cryptographically claim ownership over identifiers such
+that they control them and the documents that that refer to.
     </p>
   </section>
 
@@ -107,22 +120,24 @@ implementation of this technology can be found on
     <h2>Introduction</h2>
     <p>
 The Web currently does not have a mechanism where people and
-organizations can claim identifiers that they control. Identifiers,
-such as those rooted in domain names like emails addresses and
-website addresses, are often rented by people and organizations and
-thus cannot be used for long-term identifiers. The danger is that if the
-rent is not paid, all data associated with the identifier is temporarily
-or permanently inaccessible.
+organizations can claim identifiers that they have sole ownership over.
+Identifiers, such as those rooted in domain names like emails addresses and
+website addresses, are effectively rented by people and organizations rather
+than owned. Therefore, their use as long-term identifiers is dependent upon
+parameters outside of their control. One danger is that if the rent is not
+paid, all data associated with the identifier can be made temporarily or
+permanently inaccessible.
     </p>
     <p>
-The reason this problem exists is because it's a particularly hard problem
+The main reason this problem exists is two fold: it's a particularly hard one
 to solve and there was no time to build out the solution when the Web was
-starting its rapid rise in the late 1990s. The solutions that we have in
-place today, particularly DNS, HTTP, and URLs, are powerful tools that have
-scaled the Web to the billions of people that use it today.
+starting its rapid rise in the late 1990s. The solutions for creating
+identifiers that we have in place today, particularly DNS, HTTP, and URLs, are
+powerful tools that have scaled the Web to the billions of people that use it
+today.
     </p>
     <p>
-However, as the Web grows and becomes more personal, there is a growing
+However, as the Web expands and becomes more personal, there is a growing
 need for a type of dereference-able identifier that can be created and
 owned by people and organizations without the need for a central organization
 or federation of organizations to control the namespace. Having such a
@@ -149,8 +164,8 @@ in the WebDHT.
 
     <p class="issue">
 The discovery and storage mechanism for the final
-WebDHT is still an area of active research and debate. The fundamental
-technology used will most likely be a security hardened version of
+WebDHT is still an area of active research and debate. One possible
+technology that may be used is a security hardened version of
 Kademlia DHT algorithms that have gained widespread use in peer-to-peer
 systems like tracker-less Bittorrent networks.
     </p>
@@ -213,7 +228,7 @@ The value of the <var>decentralized identifier</var>.
     </dd>
     <dt><code>publicKeyPem</code><dt>
     <dd>
-The result of base-64 encoding the public key in PEM format.
+The public key in PEM format.
     </dd>
   </dd>
 </dd>
@@ -281,7 +296,7 @@ value is similar in form to the following example document:
     }
   ],
   "signature": {
-    "type": "GraphSignature2012",
+    "type": "LinkedDataSignature2015",
     "created": "2015-10-23T02:10:21Z",
     "creator": "did:a8ebdaf1-3c47-45d1-addc-26ce643b9a0c/keys/1",
     "signatureValue": "cNJGLFqT/d/90D4GFzvPwaJ66hHKUIgSPcJmm++oiP+wSHjtov8
@@ -293,6 +308,12 @@ value is similar in form to the following example document:
   }
 }
     </pre>
+
+    <p class="issue">
+The Proof-of-Patience mechanism on its own is insufficient to protect the
+network from DDoS attacks. More mechanisms need to be employed.
+    </p>
+
   </section>
 
   <section>
@@ -301,8 +322,9 @@ value is similar in form to the following example document:
 When creating <a>DID document</a> entries in the DHT, it is useful to also
 create aliases for those entries to enable human-based lookup of identifiers.
 For example, enabling the lookup of a <a>decentralized identifier</a> using
-an email address and passphrase would help people boostrap the discovery
-process using information that is easy for them to remember.
+an email address and passphrase would help people bootstrap the discovery
+process using information that is easy for them to remember. The actual
+email address and passphrase are not stored in the WebDHT.
     </p>
 
     <p>
@@ -315,7 +337,7 @@ in the WebDHT.
     <ol class="algorithm">
       <li>
 Create the <var>hash value</var> by using a well known hashing algorithm and
-running it over a set of provided input text and then pre-pending the
+running it over a set of provided input text and then prepending the
 hash algorithm identifier and a colon <code>:</code> to the hashing algorithm
 output. For example, ask a person
 for an email address and a passphrase, concatenate the input, and perform a
@@ -370,7 +392,7 @@ value is similar in form to the following example document:
   "@context": "https://w3id.org/identity/v1",
   "id": "did:a8ebdaf1-3c47-45d1-addc-26ce643b9a0c",
   "signature": {
-    "type": "GraphSignature2012",
+    "type": "LinkedDataSignature2015",
     "created": "2015-10-23T02:40:21Z",
     "creator": "did:a8ebdaf1-3c47-45d1-addc-26ce643b9a0c/keys/1",
     "signatureValue": "cNJGLFqT/d/90D4GFzvPwaJ66hHKUIgSPcJmm++oiP+wSHjtov8
@@ -453,12 +475,15 @@ rate is still under development.
     </section>
 
     <section>
-      <h3>Storage Location Randomness</h3>
+      <h3>Storage Location Control</h3>
       <p class="issue">
 In order to survive a number of attack scenarios, it is best to have the
-storage and mirroring locations be effectively chosen at random, but while
-providing good discovery times. The algorithm to calculate the storage
-location selection is still under development.
+storage node addresses and storage and mirroring locations be chosen in a way
+that is not under the control of the storage nodes (or any party), but rather,
+for example, controlled by an algorithm that must be properly implemented for
+the network to function. At the same time, good discovery times must be
+provided. The algorithms to calculate the storage location selection and
+storage node address locations is still under development.
       </p>
     </section>
 
@@ -480,9 +505,9 @@ It should be assumed that private organizations and nation-states may
 attack the WebDHT to try and disrupt activity since there are economic
 and political incentives to do so. Many of the attack preventions rely on
 slowing down requests using techniques like Proof-of-Patience, or ensuring
-that all data is digitally signed to provide data protection. A thorough
-analysis on DDoS attacks on each endpoint and system component is still
-needed.
+that all data is digitally signed to provide data protection. More techniques
+are needed and a thorough analysis on DDoS attacks on each endpoint and system
+component is still required.
       </p>
     </section>
 
@@ -492,10 +517,9 @@ needed.
 An attacker may target a particular individual or organization in the
 WebDHT to prevent that target from interacting with the broader network.
 Some of the protections to prevent this sort of attack include
-randomizing and migrating the storage and mirror location so that it is
-difficult to predict where all of the mirrors will be at a particular point
-in time. A thorough anaysis on targeted attacks on decentralized identifiers
-is still needed.
+deterministically selecting storage node and data addresses in a way that
+makes it infeasible to spoof information on the network. A thorough anaysis on
+targeted attacks on decentralized identifiers is still needed.
       </p>
     </section>
 
