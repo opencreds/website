@@ -8,7 +8,7 @@
 <dl class="termlist">
   <dt><dfn data-lt="claims">claim</dfn></dt>
   <dd>
-A statement made by an <a>identity</a> about another <a>identity</a>.
+A statement made by an <a>entity</a> about an <a>identity</a>.
   </dd>
   <dt><dfn data-lt="creators">creator</dfn></dt>
   <dd>
@@ -17,10 +17,10 @@ For example, the key that created a <a>digital signature</a>.
   </dd>
   <dt><dfn data-lt="credential|credentials">credential</dfn></dt>
   <dd>
-A qualification, achievement, personal quality, aspect of an <a>identity's</a>
-background such as a name, government ID, payment processor, home
-address, or university degree typically used to indicate suitability.
-Credentials may be stored in <a>identity documents</a>.
+A set of claims that refer to a qualification, achievement, personal quality,
+aspect of an <a>identity</a> such as a name, government ID, preferred payment
+processor, home address, or university degree typically used to indicate
+suitability.
   </dd>
   <dt><dfn data-lt="credential consumers|credential consumer's">credential consumer</dfn></dt>
   <dd>
@@ -68,12 +68,12 @@ A mathematical scheme for demonstrating the authenticity of a digital message.
   <dt><dfn data-lt="entities|entity's">entity</dfn></dt>
   <dd>
 A thing with distinct and independent existence such as a person, organization,
-or instance of a software program.
+concept, or device.
   </dd>
   <dt><dfn data-lt="identities|identity's">identity</dfn></dt>
   <dd>
 A set of information that can be used to identify a particular
-<a>entity</a> such as a person, software agent, or organization. An
+<a>entity</a> such as a person, organization, concept, or device. An
 <a>entity</a> may have multiple identities associated with it.
   </dd>
   <dt><dfn data-lt="identity documents">identity document</dfn></dt>
@@ -86,7 +86,7 @@ JSON-LD [[!JSON-LD]] format and MAY be accessible in other RDF-compatible format
   <dd>
 An <a>entity</a> that is in control of a particular <a>identity document</a>.
   </dd>
-  <dt><dfn data-lt="identity provider's">identity provider</dfn></dt>
+  <dt><dfn data-lt="identity provider's|IdP|IdP's">identity provider</dfn></dt>
   <dd>
 A software service that manages one or more <a>identities</a> and their
 associated <a>credentials</a> on behalf of an <a>entity</a>. It typically
@@ -97,33 +97,33 @@ handles requests to store <a>credentials</a> issued by an
   <dt><dfn data-lt="issuers|issuer's">issuer</dfn></dt>
   <dd>
 An <a>entity</a> that creates a <a>credential</a> and associates it
-with a particular <a>recipient</a>.
+with a particular <a>holder</a>.
   </dd>
-  <dt><dfn data-lt="recipients|recipient's">recipient</dfn></dt>
+  <dt><dfn data-lt="holders|holder's|recipient|recipients">holder</dfn></dt>
   <dd>
-An <a>entity</a> that is in control of a particular
-<a>credential</a>. Typically a recipient is also the primary topic
-of the information in a credential and is the <a>entity</a> that initiates
-the transmission of the credential.
+An <a>entity</a> that is in control of a particular <a>credential</a>.
+Typically a holder's identity is also the primary subject of the information
+in a credential. A holder is often the <a>entity</a> that initiates the
+transmission of a credential.
   </dd>
   <dt><dfn>user agent</dfn></dt>
   <dd>
 A program, such as a browser or other Web client, that mediates the
-communication between <a>recipients</a>, <a>issuers</a> and
+communication between <a>holders</a>, <a>issuers</a> and
 <a>credential consumers</a>.
   </dd>
   <dt><dfn>WebDHT</dfn></dt>
   <dd>
 A mechanism that is used to discover the software services, such as an
 <a>identity provider</a>, associated with an <a>entity</a>.
-Technically speaking, it is
-a Web-based decentralized hashtable built on Web architecture principles that
-is used to map cryptographic hashes to <a>decentralized identifiers</a> and
-<a>decentralized identifiers</a> to <a>decentralized identifier documents</a>.
-The technology is used to map cryptographic hashes of email addresses and
-passphrases to <a>decentralized identifier documents</a> which can then be
-used to discover an <a>entity's</a> <a>identity provider</a>. The technology is
-one way of solving the
+Technically speaking, it is a Web-based decentralized hashtable built on Web
+architecture principles that is used to map cryptographic hashes to
+<a>decentralized identifiers</a> and <a>decentralized identifiers</a> to
+<a>decentralized identifier documents</a>. The technology is used to map
+cryptographic hashes of email addresses and passphrases to
+<a>decentralized identifier documents</a> which can then be used to discover
+an <a>entity's</a> <a>identity provider</a>. The technology is one way of
+solving the
 <a href="http://indiewebcamp.com/NASCAR_problem">NASCAR service bootstrap problem</a>.
   </dd>
 </dl>
