@@ -170,6 +170,15 @@ Kademlia DHT algorithms that have gained widespread use in peer-to-peer
 systems like tracker-less Bittorrent networks.
     </p>
 
+    <p class="issue">
+The mechanism for generating a DID is likely to change to one based on
+a cryptographic hash of a public key. Once an identifier is claimed, the
+key used is not necessarily significant, unlike in systems that use
+blockchain technology, ie: the key can sign a change to the DID document
+granting authorization to other keys, such that the loss of the original
+claiming key does not result in the loss of control over the identity.
+    </p>
+
     <ol class="algorithm">
       <li>
 Create the <var>decentralized identifier</var> by generating a
