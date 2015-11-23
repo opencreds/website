@@ -27,13 +27,26 @@ var opencreds = {
     "HTTP-SIGNATURES": {
       aliasOf: "http-signatures"
     },
-    "JSON-PATCH": {
-      aliasOf: "json-patch"
+    "MACAROONS": {
+      title: 'Macaroons',
+      // TODO: create spec
+      href: 'http://macaroons.io/',
+      authors: ['Arnar Birgisson', 'Joe Gibbs Politz', 'Úlfar Erlingsson',
+        'Ankur Taly', 'Michael Vrable', 'Mark Lentczner'],
+      status: 'unofficial',
+      publisher: 'Credentials Community Group'
+    },
+    'CREDENTIAL-MANAGEMENT': {
+      title: 'Credential Management Level 1',
+      href: 'https://w3c.github.io/webappsec-credential-management/',
+      authors: ['Mike West'],
+      status: 'WG-DRAFT',
+      publisher: 'Web Application Security Working Group'
     },
     'OPEN-BADGES': {
       title: 'Open Badges',
       href: 'https://github.com/openbadges/openbadges-specification',
-      authors: ['Brian Brennan', 'Mike Larsson', 'Chris McAvoy', 
+      authors: ['Brian Brennan', 'Mike Larsson', 'Chris McAvoy',
         'Nate Otto', 'Kerri Lemoie'],
       status:   'BA-DRAFT',
       publisher:  'Badge Alliance Standard Working Group'
