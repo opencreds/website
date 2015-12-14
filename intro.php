@@ -44,7 +44,7 @@ A <strong><em>credential</em></strong> is a qualification, achievement, quality,
           </li>
 <strong>Ownership</strong> - where an entity presents proof of ownership of a particular asset or a right to perform specific operations against a resource. Examples are ownership of securities that entitles the entity to dividend payments or the authority to transact on an account.
           </li>
-          </li>
+          <li>
 <strong>Internet of Things (IoT)</strong> - where a machine presents credentials that enable it to act on behalf of its owner in a limited capacity, and where that machine can delegate certain tasks to other machines in an ad-hoc way.
           </li>
         </ul>
