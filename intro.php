@@ -28,20 +28,20 @@ A <strong><em>credential</em></strong> is a qualification, achievement, quality,
         <ul>
           <li>
 <strong>Education</strong> - where academic credentials and co-curricular activities are recognized and exchanged among learners, institutions, employers or consumers.
-          <li>
           </li>
+          <li>
 <strong>Workplace</strong> - where an applicant’s certified skill or license is a condition for employment, professional development and promotability.
-          <li>
           </li>
+          <li>
 <strong>Civil Society</strong> - where access to social benefits and contracts may be based on verifiable conditions such as marital status.
-          <li>
           </li>
+          <li>
 <strong>Payments</strong> - where the legal right to purchase a product depends on the verifiable age or location of the buyer.
-          <li>
           </li>
+          <li>
 <strong>Identity</strong> - where an entity presents credentials to prove their identity or qualification.
-          <li>
           </li>
+          <li>
 <strong>Ownership</strong> - where an entity presents proof of ownership of a particular asset or a right to perform specific operations against a resource. Examples are ownership of securities that entitles the entity to dividend payments or the authority to transact on an account.
           </li>
           <li>
