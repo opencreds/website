@@ -205,11 +205,33 @@ by the group should address.
   <section>
       <!-- Editor - Shane -->
       <h2>How a Verifiable Claim Might be Used</h2>
-      <p>Just to provide a basis for how discussion, this section
+      <p>Just to provide a basis for discussion, this section
       illustrates a simple example of how a claim might be used in a
       typical commerce situation.  Please remember that it is just an
       example, and should not be thought of as the canonical way such
       a system must be implemented.  First, consider this diagram:</p>
+      <img alt='Example Flow Diagram' style='display:block; margin:auto' src="example.svg"/>
+      <ol>
+          <li>Jane decides to shop on the web site 
+          WinesOfTheWorld.example.com (merchant).</li>
+          <li>The merchant's site requires Jane be 21 years of age and
+          requests Jane prove this (via a user agent-supported API call).</li>
+          <li>Jane's user agent asks her <a>claim vault</a> for the
+          proof.</li>
+          <li>The <a>claim vault</a> shows her three Verifiable Claims
+          it knows of that
+          can assert this claim (e.g., her passport, driving
+          license, and birth certificate).</li>
+          <li>Jane selects one of these and authorizes that it be
+          shared with the merchant.</li>
+          <li>The claim vault returns the selected claim as a response
+          to the user agent-supported API call, which in turn delivers
+          it to the merchant.</li>
+          <li>The merchant's server verifies that the claim is valid
+          and satisfies the requirement.</li>
+          <li>The merchant redirects the user agent to the web site
+          with appropriate authorization.</li>
+      </ol>
   </section>
 
   <section>
