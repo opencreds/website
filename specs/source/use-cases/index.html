@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Credentials Community Group Use Cases</title>
+    <title>Verifiable Claims Task Force Use Cases</title>
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
-      <script src='http://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
+    <script src='http://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
     <script src='../common/common.js' class='remove'></script>
     <script class='remove'>
       var respecConfig = {
@@ -11,7 +11,7 @@
           specStatus:           "CG-DRAFT",
 
           // the specification's short name, as in http://www.w3.org/TR/short-name/
-          shortName:            "credentials-use-cases",
+          shortName:            "verifiable-claims-use-cases",
 
           // if you wish the publication date to be other than today, set this
           // publishDate:  "2009-08-06",
@@ -40,6 +40,8 @@
           // editors, add as many as you like
           // only "name" is required
           editors:  [
+              { name: "Shane McCarron", url: "http://digitalbazaar.com/",
+                company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
               { name: "Manu Sporny", url: "http://digitalbazaar.com/",
                 company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
           ],
@@ -89,16 +91,51 @@
 
       };
     </script>
+    <style type="text/css">
+dl {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+dt,
+dd {
+  line-height: 1.42857143;
+}
+dl.dl-horizontal > dt {
+  font-weight: bold;
+}
+@media (min-width: 768px), print {
+  .dl-horizontal {
+    margin-bottom: 4em;
+  }
+  .dl-horizontal dt {
+    font-weight: normal;
+    float: left;
+    width: 160px;
+    clear: left;
+    overflow: hidden;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .dl-horizontal dd {
+    margin-left: 180px;
+  }
+  .dl-horizontal dd > ul {
+    padding-left: 20px;
+    margin: 0px;
+  }
+}
+    </style>
   </head>
 <body>
   <section id='abstract'>
     <p>
-A <em>credential</em> is a qualification, achievement, quality, or piece of
+A <em>verifiable claim</em> is a qualification, achievement, quality, or piece of
 information about an <a>entity's</a> background such as a name, government ID,
 payment provider, home address, or university degree.
 The use cases outlined here are provided in order to make progress toward
 possible future standardization and interoperability of both low and
-high-stakes credentials with the goals of storing, transmitting, and receiving
+high-stakes <a>claims</a> with the goals of storing, transmitting, and receiving
 digitally verifiable proof of qualifications and achievements.
 The following use cases focus on concrete scenarios that the technology created
 by the group should address.
@@ -106,38 +143,153 @@ by the group should address.
   </section>
 
   <section id='sotd'>
-    <p>
-    </p>
+      <p>This document is an early version being used as an integration point for 
+      a variety of use cases assembled from throughout the industry.  As the document
+      becomes more mature this status will be updated accordingly.</p>
   </section>
 
   <section>
+    <!-- Editor - Shane -->
     <h2>Introduction</h2>
     <p>
-A <em>credential</em> is a qualification, achievement, quality, or piece of
-information about an <a>entity's</a> background such as a name, government ID,
-payment provider, home address, or university degree.
-The use cases outlined here are provided in order to make progress toward
-possible future standardization and interoperability of both low and
-high-stakes credentials with the goals of storing, transmitting, and receiving
-digitally verifiable proof of qualifications and achievements.
-The following use cases focus on concrete scenarios that the technology created
-by the group should address.
+    The Verifiable Claims Task Force at the W3C is investigating
+    the requirements around secure, verifiable, and richly descriptive
+    "<a>claims</a>".  The goal of the Task Force is to determine if
+    there is a sufficient understanding and need to merit the creation
+    of a W3C Working Group to develop Recommendations in this space.
     </p>
-    <p class="ednote">
-Create a better introduction to the use cases.
-    </p>
+    <div class="note">
+        This document does NOT attempt to define an architecture for
+        the support of Verifiable Claims.  Having said that, its very
+        structure reflects some assumptions about how claims might be
+        used in the real world.  These assumptions are
+        derived from the use cases, not vice-versa.  Any solution that
+        satisfies the complete collection of essential use cases would
+        meet the requirements reflected by this document.
+    </div>
+    <section>
+        <h3>Importance of this Work</h3>
+
+        <p>People need to make many kinds of claims as part of their
+        everyday lives.  
+        As more important business moves to the Internet, people need
+        to be able to transmit instantly <em>verifiable</em> claims about their
+        accomplishments and qualifications. From educational records
+        to payment account access, the next generation of web
+        applications will authorize users to perform actions based on
+        rich sets of credentials issued by trusted parties.
+        Human-mediated decisions about job applications, collaboration
+        and professional development will depend on filtering and
+        analyzing growing amounts of data about individuals'
+        experience and accomplishments. 
+        </p>
+        <p>Standardization of digital <a>claim</a> technologies makes it
+        possible for many stakeholders to issue, earn, and trust these
+        essential records about their counterparties, without being
+        locked into proprietary platforms.</p>
+    </section>
+    <section>
+        <h3>How to Read This Document</h3>
+        <p>This document is organized around the basic operations that
+        might be performed on a Verifiable Claim.  For each of these
+        operations, and for the additional section "Uncategorized /
+        General", the document captures some high level use cases
+        grouped by the requirement they represent.
+        Each use case contains information about its motivation, relative
+        priority, and one or more examples to help define the target
+        beneficiaries of its support.
+        </p>
+    </section>
+  </section>
+
+  <section>
+      <!-- Editor - Shane -->
+      <h2>How a Verifiable Claim Might be Used</h2>
+      <p>Just to provide a basis for how discussion, this section
+      illustrates a simple example of how a claim might be used in a
+      typical commerce situation.  Please remember that it is just an
+      example, and should not be thought of as the canonical way such
+      a system must be implemented.  First, consider this diagram:</p>
   </section>
 
   <section>
     <h2>Terminology</h2>
 
     <div data-include="../common/terms.html"
-      data-oninclude="rescrictReferences">
+      data-oninclude="restrictReferences">
     </div>
 
   </section>
 
   <section>
+      <h2>Use Cases</h2>
+      <p class="ednote">
+      Each use case in this section should have a unique human
+      assigned identifier that starts with "uc".  The first example
+      use case below, which everyone should feel free to use a
+      template, has the id "uc-example".  In order to disambuguate,
+      please ensure that the subsection is added into the prefix (e.g.,
+      uc-issuing-my-new-use-case). Also, please use hyphens instead
+      of camel case.
+      </p>
+      <section>
+          <h2>Example</h2>
+          <section>
+              <h3 id="uc-example">Example Requirement and Use Cases</h3>
+              <dl class="dl-horizontal">
+                  <dt>Requirement</dt>
+                  <dd>The general requirement (e.g., it must be
+                  possible for anyone to issue a verifiable
+                  claim).</dd>
+                  <dt>Motivation</dt>
+                  <dd>A description of the motivation behind this
+                  class of requirement</dd>
+                  <dt>Phase</dt>
+                  <dd>Just a relative gauge of how important it is to
+                  support this functionality (Phase I, Phase II,
+                  Someday maybe).</dd>
+                  <dt>Scenarios</dt>
+                  <dd>Johnny has this situation and it would be
+                  addressed by this requirement.</dd>
+                  <dd>Jane has a really different need, but it turns
+                  out that it devolves to this basic requirement.</dd>
+                  <dd>And oh wow, so does Big Corporation!  It's a
+                  miracle! </dd>
+              </dl>
+          </section>
+      </section>
+      <section>
+          <h2>Issuing Claims</h2>
+      </section>
+
+      <section>
+          <h2>Revoking Claims</h2>
+      </section>
+
+      <section>
+          <h2>Consuming Claims</h2>
+      </section>
+
+      <section>
+          <h2>Managing and Sharing Claims</h2>
+      </section>
+
+      <section>
+          <h2>Endorsing Claims</h2>
+      </section>
+
+      <section>
+          <h2>Uncategorized / General</h2>
+      </section>
+
+  </section>
+
+
+
+  <!-- 
+
+  ORIGINAL CONTENT FOR REFERENCE
+
     <h2>An Overview of Phases of Credential Usage</h2>
 
     <p>While the credentials specifications are intended to allow for their use in a variety of industries and scenarios, there are consistent phases to the procedure as defined below.</p>
@@ -205,9 +357,6 @@ re-assign any of the credentials.
 
       <section>
         <h3>Details</h3>
-        <p>
-
-        </p>
       </section>
     </section>
 
@@ -233,9 +382,6 @@ ensure that it isn't re-transmitted to 3rd parties for advertising purposes.
 
       <section>
         <h3>Details</h3>
-        <p>
-
-        </p>
       </section>
     </section>
 
@@ -261,9 +407,6 @@ bypass the credential-based login and use a username/password login instead.
 
       <section>
         <h3>Details</h3>
-        <p>
-
-        </p>
       </section>
     </section>
 
@@ -302,9 +445,6 @@ credentials.
 
       <section>
         <h3>Details</h3>
-        <p>
-
-        </p>
       </section>
     </section>
 
@@ -333,9 +473,6 @@ education credentials.
 
       <section>
         <h3>Details</h3>
-        <p>
-
-        </p>
       </section>
     </section>
 
@@ -363,9 +500,6 @@ align the data in both systems with the other.
 
       <section>
         <h3>Details</h3>
-        <p>
-
-        </p>
       </section>
     </section>
 
@@ -725,6 +859,7 @@ a way to cryptographically verify that the claims were made by a particular
     </section>
   </section>
 
+  -->
   <section>
     <h2>Acknowledgements</h2>
 
