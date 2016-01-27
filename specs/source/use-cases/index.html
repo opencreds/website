@@ -269,7 +269,9 @@ by the group should address.
                   <dd>A description of the motivation behind this
                   class of requirement</dd>
                   <dt>Phase</dt>
-                  <dd>Just a relative gauge of how important it is to
+                  <dd>For now use values from this list:
+                  "Essential", "Nice to have", "Optional".
+                  Just a relative gauge of how important it is to
                   support this functionality (Phase I, Phase II,
                   Someday maybe).</dd>
                   <dt>Scenarios</dt>
@@ -300,10 +302,75 @@ by the group should address.
       </section>
 
       <section>
-      <!-- Editor - Shane -->
+          <!-- Editor - Shane -->
           <h2>Endorsing Claims</h2>
-      </section>
+          <section>
+              <h3 id="uc-endorsing-counter-signatures">Recipient Collects Counter-signatures for Credential</h3>
+              <dl class="dl-horizontal">
+                  <dt>Requirement</dt>
+                  <dd>It MUST be possible for independent parties to
+                  "sign" a credential</dd>
+                  <dt>Motivation</dt>
+                  <dd>Some credentials may require that they be
+                  endorsed by specific <a>entities</a> in order to be
+                  valid.</dd>
+                  <dd>A credential is only as valuable as
+                  the <a>entity</a> that makes the claim and the trust
+                  a <a>credential consumer</a> has in that
+                  <a>entity</a>.  That trust can be bolstered if the
+                  claim is endorsed by additional <a>entities</a>.
+                  </dd>
+                  <dt>Phase</dt>
+                  <dd>Essential</dd>
+                  <dt>Scenarios</dt>
+                  <dd>Two people get married and get a marriage credential which needs
+                  to be digitally signed by the person that married them and the
+                  witness, in that order. The credential is first issued by the person
+                  that married them, and is then counter-signed by the witness.</dd>
+                  <dd>MidBank is attempting to establish a solid credit rating and hires
+                  three credit ratings agencies to audit its books. Each firm determines
+                  that the bank should have a AA credit rating and digitally
+                  countersigns the same credential 3 times to demonstrate the credit
+                  worthiness of the bank.</dd>
+                  <dd>Olivia is choosing among summer internships, some of which offer
+                  opportunities to earn badges that are endorsed by her school. These
+                  are badges that could be used to fulfill an interest-driven learning
+                  graduation requirement her district has recently implemented. With the
+                  additional information provided to her by the school’s endorsement of
+                  certain badges, her choice among internships is made much simpler.
+                  This example came from the Open Badges Endorsement Framework Working
+                  Paper, which was created by the Badge Alliance Endorsement Working
+                  Group.</dd>
+              </dl>
+          </section>
+          <section>
+              <h3 id="uc-endorsing-self-claims">Endorsement on
+                  self-claims</h3>
 
+              <dl class="dl-horizontal">
+                  <dt>Requirement</dt>
+                  <dd>It MUST be possible for an <a>entity</a> to endorse a self-made claim by a
+                  recipient that asserts something specific about herself, such as a
+                  qualification, attribute, or the attainment of a particular defined
+                  achievement.</dd>
+                  <dt>Motivation</dt>
+                  <dd>An organization or individual can endorse a self-made claim by a
+                  recipient that asserts something specific about herself, such as a
+                  qualification, attribute, or the attainment of a particular defined
+                  achievement.</dd>
+                  <dt>Phase</dt>
+                  <dd>Essential</dd>
+                  <dt>Scenarios</dt>
+                  <dd>After Mandy issues herself a credential with the supporting
+                  evidence and information, she reaches out to her previous clients
+                  including various sized organizations for which she’s done development
+                  work requesting they endorse the self-issued credential. Several
+                  organizations oblige and endorse the credential.</dd>
+              </dl>
+
+          </section>
+
+      </section>
       <section>
           <h2>Uncategorized / General</h2>
       </section>
@@ -502,6 +569,7 @@ by the group should address.
 <p>Credential recipients should have the ability to repudiate any credential issued to them, which could take the form of takedown requests to platforms where harmful, or misleading information about them is available.</p>
 <p>Privacy</p>
 <p>Credential Service must establish a takedown request procedure</p>
+<!-- moved into section 4.5 
 <p>Endorsing</p>
 <p>Recipient Collects Counter-signatures for Credential</p>
 <p>Endorsement</p>
@@ -514,6 +582,7 @@ by the group should address.
 <p>After Mandy issues herself a credential with the supporting evidence and information, she reaches out to her previous clients including various sized organizations for which she’s done development work requesting they endorse the self-issued credential. Several organizations oblige and endorse the credential.</p>
 <p>Motivation</p>
 <p>An organization or individual can endorse a self-made claim by a recipient that asserts something specific about herself, such as a qualification, attribute, or the attainment of a particular defined achievement.</p>
+-->
 </section>
 
 
