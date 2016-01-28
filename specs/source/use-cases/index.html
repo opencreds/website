@@ -124,7 +124,10 @@ dl.dl-horizontal > dt {
     padding-left: 20px;
     margin: 0px;
   }
+  .dl-horizontal dd + dt { border-top: solid thin grey; }
+  dl.dl-horizontal dt:not(:first-child) + dd { border-top: solid thin grey; }
 }
+.dl-horizontal dd + dd { border-top: dotted thin grey; }
     </style>
   </head>
 <body>
