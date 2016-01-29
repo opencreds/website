@@ -44,6 +44,7 @@
                 company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
               { name: "Manu Sporny", url: "http://digitalbazaar.com/",
                 company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
+              { name: "Gregg Kellogg", url: "http://greggkellogg.net/", w3cid: "44770" },
           ],
 
           // authors, add as many as you like.
@@ -102,6 +103,9 @@ dd {
 }
 dl.dl-horizontal > dt {
   font-weight: bold;
+}
+dl.dl-horizontal > dd {
+  padding-bottom: 10px;;
 }
 @media (min-width: 768px), print {
   .dl-horizontal {
@@ -286,7 +290,37 @@ by the group should address.
       </section>
       -->
       <section>
-          <h2>Issuing Claims</h2>
+        <!-- Editor - @gkellogg -->
+        <h2>Issuing Claims</h2>
+        <section>
+          <h3 id="uc-issuing-claims">Issuing Claims</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for anyone to issue a verifiable claim.</dd>
+            <dt>Motivation</dt>
+            <dd>An <a>entity</a>, such as an end user (<a>holder</a>),
+              wishes to make a <a>claim</a> and would like it to be endorsed by a
+              different <a>entity</a> (<a>issuer</a>) which may be trusted by
+              potiential consumer (<a>credential consumer</a>).</dd>
+            <dt>Phase</dt>
+            <dd>Essential.</dd>
+            <dt>Scenarios</dt>
+            <dd>Asako just passed the final test to receive a drivers
+              license. As she is still a new driver, and may be pulled over
+              for a traffic violation, she would like to receive a verfiable
+              claim that she has right to drive a car (<a>claim</a>). She
+              requests a verifiable claim from the certifying authority
+              (<a>issuer</a>) that she can use to prove to the officer
+              (<a>credential consumer</a>) that her <a>claim</a> is
+              valid.
+            </dd>
+            <dd>Jane would like to get a digitally signed credential for her checking
+              account at MidBank. MidBank offers to provide a credential asserting
+              that Jane has an account at MidBank and has access to her associated
+              checking account.</dd>
+          </dl>
+          <img alt='Example credential creation flow' style='display:block; margin:auto' src="uc-issuing-claims.svg"/>
+        </section>
       </section>
 
       <section>
