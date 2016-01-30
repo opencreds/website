@@ -327,7 +327,22 @@ by the group should address.
       </section>
 
       <section>
-          <h2>Revoking Claims</h2>
+        <h2 id="ic-revoking-claims">Revoking Claims</h2>
+        <section>
+          <h3 id="uc-issuer-revokes">Issuer Revokes Claim</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for the issuer of a claim to
+            revoke it, after which it will no longer pass verification
+            procedures.</dd>
+            <dt>Motivation</dt>
+            <dd>An <a>entity</a> (<a>issuer</a>) discovers that a <a>claim</a> they have issued and are endorsing for an end user (<a>holder</a>), is no longer valid and wishes to revoke the issued claim.</dd>
+            <dt>Phase</dt>
+            <dd>Essential</dd>
+            <dt>Scenarios</dt>
+            <dd>&nbsp;</dd>
+          </dl>
+        </section>
       </section>
 
       <section>
@@ -427,9 +442,6 @@ by the group should address.
 <p>The issuer customizes the credential template / badge for a particular recipient. The credential/badge may be digitally signed.</p>
 <p>Recipient Stores Credential</p>
 <p>The recipient stores the credential in a credential vault or other long-term storage location.</p>
-<p>Revoking</p>
-<p>Issuer Revokes Credential</p>
-<p>An issuer revokes a previously issued credential, after which it will no longer pass verification procedures.</p>
 <p>Consuming</p>
 <p>Credential Consumer Requests Credential</p>
 <p>A credential consumer application requests that a recipient provide one or more credentials.</p>
@@ -528,8 +540,6 @@ by the group should address.
 <p>Sammie earns credentials for every book she’s read in her reading club. Her credentials are downloaded to an app on her ipad which gives her discounts on purchases of future books.</p>
 <p>Motivation</p>
 <p>A recipient of a digital credential may store it on a variety of platforms or media. Credentials must be portable.</p>
-<p>Revoking</p>
-<p>Issuer Revokes Credential</p>
 <p>Consuming</p>
 <p>Credential Consumer Requests Credential</p>
 <p>Interactive Request</p>
