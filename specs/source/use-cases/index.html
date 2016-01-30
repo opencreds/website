@@ -339,6 +339,50 @@ by the group should address.
         </section>
 
         <section>
+          <h3 id="uc-self-asserted-claims">Self-asserted Claims</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for anyone to issue a verifiable claim about themselves.</dd>
+            <dt>Motivation</dt>
+            <dd>An <a>entity</a>, such as an end user (<a>holder</a>),
+              wishes to make a <a>claim</a> and which they endorse themselves, acting as an
+              <a>issuer</a>.</dd>
+            <dt>Phase</dt>
+            <dd>Nice to have.</dd>
+            <dt>Scenarios</dt>
+            <dd>
+              <p>Purpose  The Country Government does not want to build a centralised repository for citizen’s self-asserted credentials such as contact details and perhaps other claimed attributes such as partner’s name, etc. Alternatively, the objective is to support the marketplace to develop an ecosystem of local or global providers that offer the citizen a range of options to choose from. A standard could enable an approach that would remove dependence on any particular technology or platform as the choice of repository for an individual’s self-asserted profile – for example, personal mobile device, open cloud service, commercial provider website.</p> 
+              <p>Agency and citizen requirements:</p>
+              <ul>
+              <li>The government agency requires an applicant’s contact details – that is self-asserted credentials; for example, email address, mobile phone, postal address, to complete their registration process for the agency’s online service.</li>
+              <li>If the customer changes one of these attributes, the agency would like the option of being notified.</li>
+              <li>The citizen wants the means to select specific contact details from their existing self-managed profile to share with this particular government agency.</li>
+              <li>If the citizen changes one of these attributes they want to be able to simply update their profile without explicitly notifying each government agency or organisation.</li>
+              </ul>
+              <p>Use case – register with service provider</p>
+              <ol>
+                <li>Jane applies to the government agency for a social welfare entitlement.</li>
+                <li>The agency requires Jane to authenticate and she uses her federated login credentials.</li>
+                <li>The agency requests Jane’s full name, date of birth, citizenship and validated bank account.</li>
+                <li>Jane opts to assert her online core identity, citizenship and validated bank account credentials from the authoritative providers.</li>
+                <li>The agency requests Jane’s contact details.</li>
+                <li>Jane opts to provide these from her online profile.</li>
+                <li>The agency initiates a request to a credential/attribute brokering service.</li>
+                <li>The brokering service checks Jane’s authentication token.</li>
+                <li>The brokering service retrieves Jane’s identity, citizenship and validated bank account from the respective authoritative credential/attribute providers.</li>
+                <li>The brokering service retrieves Jane’s profile from her preferred contact details repository mechanism (personal mobile device, open cloud service, commercial provider website, etc.).</li>
+                <li>Jane selects some specific contact details.</li>
+                <li>Jane provides information sharing consent (if not previously provided) to share identity, citizenship, bank account and contact details with the requesting government agency.</li>
+                <li>The brokering service returns the respective credentials to the requesting agency.</li>
+                <li>The requesting agency provides Jane with the requested welfare entitlement.</li>
+              </ol>
+            </dd>
+            <dd>Related use cases  Other use cases for contact details would include initial create and manage contact details profile, service provider checks for contact details credential change, citizen notifies multiple service providers about a credential change.</dd>
+          </dl>
+          <img alt='Example credential creation flow' style='display:block; margin:auto' src="uc-issuing-claims.svg"/>
+        </section>
+
+        <section>
           <h3 id="uc-issuing-lti">Learning Tools Interoperability</h3>
           <dl class="dl-horizontal">
             <dt>Requirement</dt>
@@ -491,8 +535,6 @@ by the group should address.
                   <p>From the processor perspective, issues surrounding the merchant integration of retail with web shopping - there is great interest in cases where a customer will pay online and then pick up in in-store; or if a customer were to place the order online and then pay at the pick-up.  Additional areas of concern from instances of Card not present or online shipping where items may be delivered in split shipments requiring multiple authorizations or an item is on back order and the customer wants to complete the transaction - or even instances of advanced orders contingent on future availability.</p>
                   <hr>
                   <p>A customer presents a driver’s license to buy alcohol. In the same transaction, the customer buys other items and presents a SNAP card for payment. The previously presented driver’s license should be used as an authentication for both methods of payment without relying on the competence of the clerk.</p>
-                  <hr>
-                  <p>Self-asserted contact details use case.   Purpose  The Country Government does not want to build a centralised repository for citizen’s self-asserted credentials such as contact details and perhaps other claimed attributes such as partner’s name, etc. Alternatively, the objective is to support the marketplace to develop an ecosystem of local or global providers that offer the citizen a range of options to choose from. A standard could enable an approach that would remove dependence on any particular technology or platform as the choice of repository for an individual’s self-asserted profile – for example, personal mobile device, open cloud service, commercial provider website.     Agency and citizen requirements  •    The government agency requires an applicant’s contact details – that is self-asserted credentials; for example, email address, mobile phone, postal address, to complete their registration process for the agency’s online service.  •    If the customer changes one of these attributes, the agency would like the option of being notified.  •    The citizen wants the means to select specific contact details from their existing self-managed profile to share with this particular government agency.  •    If the citizen changes one of these attributes they want to be able to simply update their profile without explicitly notifying each government agency or organisation.  Use case – register with service provider  1.       Jane applies to the government agency for a social welfare entitlement.  2.       The agency requires Jane to authenticate and she uses her federated login credentials.  3.       The agency requests Jane’s full name, date of birth, citizenship and validated bank account.  4.       Jane opts to assert her online core identity, citizenship and validated bank account credentials from the authoritative providers.  5.       The agency requests Jane’s contact details.  6.       Jane opts to provide these from her online profile.  7.       The agency initiates a request to a credential/attribute brokering service.  8.       The brokering service checks Jane’s authentication token.  9.       The brokering service retrieves Jane’s identity, citizenship and validated bank account from the respective authoritative credential/attribute providers.  10.   The brokering service retrieves Jane’s profile from her preferred contact details repository mechanism (personal mobile device, open cloud service, commercial provider website, etc.).  11.   Jane selects some specific contact details.  12.   Jane provides information sharing consent (if not previously provided) to share identity, citizenship, bank account and contact details with the requesting government agency.  13.   The brokering service returns the respective credentials to the requesting agency.  14.   The requesting agency provides Jane with the requested welfare entitlement.  Related use cases  Other use cases for contact details would include initial create and manage contact details profile, service provider checks for contact details credential change, citizen notifies multiple service providers about a credential change.</p>
                   <hr>
                   <p>The Company runs experience-based certification programs exchange of credentials could unfold in two ways: 1)  Issuing credentials on the validity of a certificate after successful assessment of candidates 2) Candidates bringing in evidence of certain activities necessary to comply with conformance requirements e.g. “I have maintained my profession by following xyz course”</p>
                   <hr>
