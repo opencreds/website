@@ -41,7 +41,7 @@
           // only "name" is required
           editors:  [
               { name: "Shane McCarron", url: "http://digitalbazaar.com/",
-                company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
+                company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/", w3cid: "23346" },
               { name: "Manu Sporny", url: "http://digitalbazaar.com/",
                 company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
               { name: "Gregg Kellogg", url: "http://greggkellogg.net/", w3cid: "44770" },
@@ -156,7 +156,7 @@ by the group should address.
   </section>
 
   <section>
-    <!-- Editor - Shane -->
+    <!-- Editor - @halindrome -->
     <h2>Introduction</h2>
     <p>
     The Verifiable Claims Task Force at the W3C is investigating
@@ -210,7 +210,7 @@ by the group should address.
   </section>
 
   <section>
-      <!-- Editor - Shane -->
+      <!-- Editor - @halindrome -->
       <h2>How a Verifiable Claim Might be Used</h2>
       <p>Just to provide a basis for discussion, this section
       illustrates a simple example of how a claim might be used in a
@@ -441,7 +441,7 @@ by the group should address.
       </section>
 
       <section>
-          <!-- Editor - Shane -->
+          <!-- Editor - @halindrome -->
           <h2>Endorsing Claims</h2>
           <section>
               <h3 id="uc-endorsing-counter-signatures">Recipient Collects Counter-signatures for Credential</h3>
@@ -485,7 +485,6 @@ by the group should address.
           <section>
               <h3 id="uc-endorsing-self-claims">Endorsement on
                   self-claims</h3>
-
               <dl class="dl-horizontal">
                   <dt>Requirement</dt>
                   <dd>It MUST be possible for an <a>entity</a> to endorse a self-made claim by a
@@ -506,7 +505,44 @@ by the group should address.
                   work requesting they endorse the self-issued credential. Several
                   organizations oblige and endorse the credential.</dd>
               </dl>
-
+          </section>
+          <section>
+              <h3 id="uc-endorsing-issuers">Endorsement of Issuers</h3>
+              <dl class="dl-horizontal">
+                  <dt>Requirement</dt>
+                  <dd>It MUST be possible for an <a>entity</a> to endorse certificates 
+                  associated with an <a>issuer</a>.</dd>
+                  <dt>Motivation</dt>
+                  <dd>A credential is only as strong as the trust <a>credential consumers</a> have in 
+                  the credential's <a>issuer</a>.  In order to enhance that trust, an issuer may choose
+                  to have their own credentials available and endorsed by other, (supposedly) more
+                  trusted entities.  A credential consumer could examine these endorsements to
+                  determine if <a>entities</a> they trust already trust this issuer - thereby
+                  increasing theirn owk trust in the issuer.</dd>
+                  <dt>Phase</dt>
+                  <dd>Nice to have</dd>
+                  <dt>Scenarios</dt>
+                  <dd>Jim shares a Verifiable Claim with a prospective employer about the results of taking 
+                  a certification course.
+                  The claim was issued by the course provider - Bob's School o' Programming.  
+                  The employer's system looks at the claim, but is not familiar with the issuer. 
+                  The issuer has included a URI for their own Verifiable Claim in the certification,
+                  and the employer's system retrieves that.  
+                  The issuer's claim was issued by "Big Computer Corporation", a multi-national that
+                  the employer's system <em>is</em> familiar with.
+                  The system decides that it can trust the issuer, and therefore Jim's Verifiable
+                  Claim.</dd>
+                  <dd>Big Testing Service (BTS) provides online test management for a large collection of
+                  training organizations - connecting those organizations to various online testing
+                  providers and capturing test results. Systems such as LTI (Learning Tools Interoperability) 
+                  can be used by BTS to certify that they are who they are, and the
+                  online testing providers are who they claim to be.  Unfortunately, LTI does not
+                  extend to the tire of BTS' clients, nor to the end users who are taking the tests.  
+                  Organizations outside of that
+                  community need a way to know that Verifiable Claims issued by BTS and their clients
+                  are valid.  Endorsement of the BTS claims by the online testing providers, and
+                  endorsement of BTS clients by BTS, helps establish the trusted relationship.</dd>
+              </dl>
           </section>
 
       </section>
@@ -684,7 +720,7 @@ by the group should address.
                   <hr>
                   <p><em>Issuing</em><br>Probably a knowledge-based certificate programs such as XYZ would benefit to in issuing completion of a XYZ exam.</p>
                   <hr>
-                  <p><em>Endorsing</em><br>We need to know why we can trust a certain issuer to make specific claims, so we need endorsement</p>
+                  <p><!-- moved into section 4.5 --><em>Endorsing</em><br>We need to know why we can trust a certain issuer to make specific claims, so we need endorsement</p>
                   <hr>
                   <p><em>Consuming</em><br>Many other use cases - examples include reversing payments (refunds/chargebacks), status enquiries</p>
                   <hr>
@@ -798,7 +834,7 @@ by the group should address.
                   <p><em>Sharing / Management</em><br>The existing technologies work in a closed ecosystem and in point-to-point transfers where the parties are known in advance of the transaction.  They do not work in an open, user-controlled ecosystem where credentials are bundled and shared in a variety of ways across diverse contexts.  We need tools that allow credential validation, user controlled use and sharing, identity validation and association with the credential, and automated digital credential consumption within a transaction or application.</p>
                   <hr>
                   <ul>
-                      <li><em>Endorsement</em><br>LTI is very useful to us.  But it’s credentialing
+                      <li><!-- Moved into section 4.5 --><em>Endorsement</em><br>LTI is very useful to us.  But it’s credentialing
                       strength is limited to ensuring that identity of the <em>institution</em> we’re
                       connect to (OAuth 1.0 signing).  We currently rely on the business relationship
                       to ensure that the institution properly identifies the user and the user’s
