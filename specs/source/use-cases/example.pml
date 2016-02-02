@@ -1,4 +1,17 @@
 @startuml
+'/ !includeurl https://raw.githubusercontent.com/opencreds/website/master/specs/source/common/skin.pml 
+!ifndef SKIN_INCLUDED
+skinparam {
+    backgroundColor transparent
+    defaultFontName Lucida Sans
+    shadowing false
+}
+skinparam sequence {
+    DividerBackgroundColor transparent
+    LifeLineBackgroundColor transparent
+}
+!endif
+
 Autonumber
 
 Actor Jane
@@ -18,7 +31,7 @@ End note
 merchant->UA: Request proof of age
 UA->CV: Need proof of age
 CV->Jane: Displays relevant credentials
-Jane->CV: Picks a credentials
+Jane->CV: Selects a credential
 CV->merchant: Use this credential as proof of age
 merchant->merchant: Verify
 merchant->UA: Redirect to web site
