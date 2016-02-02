@@ -1,0 +1,1 @@
+skinparam defaultFontName Lucida Sans
