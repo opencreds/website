@@ -435,6 +435,66 @@ by the group should address.
 
       <section>
         <h2 id="ic-consuming-claims">Consuming Claims</h2>
+        <section>
+          <h3 id="uc-consuming-interactive-request">Credential
+          Consumer Interactively Requests Credential</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for a consumer to request a
+            credential interactively.</dd>
+            <dt>Motivations</dt>
+            <dd>A requestor may request to view credentials from a
+            credential service that stores them. The service forwards
+            the request to the credential recipient, who interactively
+            authorizes transmission of some or all of the requested
+            credentials to the requestor.</dd>
+            <dd>Basic website login can be implemented using a
+            credential.</dd>
+            <dt>Phase</dt>
+            <dd>Essential</dd>
+            <dt>Scenarios</dt>
+            <dd>Roxy visits the FineWines.com website and selects a
+            number of wines to purchase. The website requests a
+            proof-of-age and shipping address credential from
+            Roxy. Roxy's IronVaultCorp credential service delivers
+            both credentials, allowing her to finalize the
+            transaction.</dd>
+            <dd>A bank would like to perform &quot;Know Your
+            Customer&quot; clearing on a new customer by checking to
+            see that they are a citizen of Finland and that they have
+            a current national ID card issued to them by their
+            government.</dd>
+            <dd>Jorge reads an article on BreakingNews.com and wants
+            to engage in a discussion in the comments section. The
+            website requests a verified email address credential to
+            log him into the site. Jorge’s credential service delivers
+            the credential, authorizing him to start posting
+            comments.</dd>
+            <dd>Mona sends an international/wire transfer that
+            requests credentials for both the sender and receiver,
+            greatly reducing the risk for the remittance by manually
+            mis-keying the source and destination of the funds.</dd>
+            <dd>Josie is a healthcare worker that has created a
+            profile on a professional social network to make herself
+            readily available for new opportunities in the
+            workforce. She lists her employment history and
+            credentials including degrees, certificates and digital
+            badges. The website requests verification of her
+            credential claims in order for her credentials to
+            post. The website pings various credential vaults in which
+            Josie stores her credentials and verifies them before
+            allowing Josie to post them.</dd>
+            <dd>Seraph initiates a transfer of $45,000 USD to her
+            parents in Pakistan. She is asked to provide a credential
+            used during the high-value transfer, further demonstrating
+            that the correct person is authorizing the transfer.</dd>
+            <dd>Janet visits SamanthasClub.com, and wants to view the
+            member-only section of the site. The website requests her
+            membership credential, which she provides. The website
+            confirms her membership credential is valid and grants her
+            access to the member-only portion of the site.</dd>
+          </dl>
+        </section>
       </section>
 
       <section>
@@ -1054,7 +1114,7 @@ by the group should address.
                       </ul></dd>
                       <dt><em>Motivation</em></dt>
                       <dd>A requestor may request to view credentials from a credential service that stores them. The service forwards the request to the credential recipient, who interactively authorizes transmission of some or all of the requested credentials to the requestor.</dd>
-                      <dd>Basic website login can be implemented using a credential.</dd>
+                      <dd>Basic website login can be implemented using a credential.<span class="ednote">Scenarios and motivations above added as consuming use case (@burnburn).</span></dd>
                   </dl>
                   <dl class="dl-horizontal">
                       <dt><strong>Legacy Support</strong></dt>
