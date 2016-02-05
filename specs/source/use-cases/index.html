@@ -336,6 +336,13 @@ by the group should address.
               a license (<a>credential</a>) for the eTextbook if non currently
               exists. Finally it presents the eTextbook contents to the
               student.</dd>
+            <dd>The Company runs experience-based certification programs
+              issuing credentials could unfold in two ways: 1) Issuing
+              credentials on the validity of a certificate after successful
+              assessment of candidates 2) Candidates bringing in evidence of
+              certain activities necessary to comply with conformance
+              requirements e.g. “I have maintained my profession by following
+              xyz course.”</dd>
           </dl>
         </section>
 
@@ -383,7 +390,7 @@ by the group should address.
         </section>
 
         <section>
-          <h3 id="uc-issuing-lti">Delegating Credential Creating</h3>
+          <h3 id="uc-issuing-delegation">Delegating Credential Creation</h3>
           <dl class="dl-horizontal">
             <dt>Requirement</dt>
             <dd>It MUST be possible for an <a>issuer</a> to delegate issuing credentials to end users.</dd>
@@ -395,6 +402,42 @@ by the group should address.
             <dd>MidBank offers to provide credentials to account holders, such as Jane.
               CredentialsRUs provides a service for busniesses such as MidBank to use
               for providing such credentials.</dd>
+          </dl>
+        </section>
+
+        <section>
+          <h3 id="uc-issuing-verifiability">Credential Verifiability</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for a <a>credential consumer</a> to verify credentials as genuine.</dd>
+            <dt>Motivation</dt>
+            <dd>An <a>issuer</a> MUST be able to sign a credential which can be verified by an arbitrary third party (<s>credential consumer</s>).</dd>
+            <dt>Phase</dt>
+            <dd>Essential.</dd>
+            <dt>Scenarios</dt>
+            <dd>Company creates credential and signs with a private key.
+              Part of the signed data includes the location of the
+              corresponding public key. A third party having received the
+              credential can retrieve the public key and verify that the
+              credential signature is valid. Through other means, they can
+              choose to trust Company as a valid issuer of
+              credentials including claims that they require.</dd>
+          </dl>
+        </section>
+
+        <section>
+          <h3 id="uc-issuing-i18n">Credential Internationalization</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for a <a>credential consumer</a> operating in one language to understand credentials issued in a different language.</dd>
+            <dt>Motivation</dt>
+            <dd>Issuers and Credential Consumers often operate in different languages, and the basis of the credential MUST be described in a way which supports interpreting it in multiple language.</dd>
+            <dt>Phase</dt>
+            <dd>Essential.</dd>
+            <dt>Scenarios</dt>
+            <dd>Company creates a credential with claims.
+              Such claims need to either be described in multiple languages,
+              or the claim definition allows an indirection to describe the claim in different languages.</dd>
           </dl>
         </section>
       </section>
@@ -692,7 +735,7 @@ by the group should address.
                   <hr>
                   <p><em>General</em><br>Company provides services to hundreds of thousands of financial decision makers around the globe, and uses proprietary authentication mechanisms to provide access to these services. Many of our clients would benefit from being able to leverage our authentication mechanisms in their own web applications, whether those applications connect to Company services or are independent, but today it is difficult to achieve that integration due to the lack of standardization in this area. We also have a rapidly growing community of third-party application developers who provide applications to our clients, and integration of those applications with our authentication mechanisms is complicated by the proprietary nature of the mechanisms.  If Company was able to offer a standards-based credential provider that was usable by our clients in any compatible browser and by any compatible application, using only W3C Recommendation-defined APIs and protocols, this would be very beneficial to our ecosystem.</p>
                   <hr>
-                  <p><em>Issuing</em><br>We wish to issue personal credentials to people who have met our requirements (exam or other evaluation).  We need these credentials to be verifiable as genuine by third parties. We need this to work in multiple languages,</p>
+                  <p><em>Issuing</em><br>We wish to issue personal credentials to people who have met our requirements (exam or other evaluation).  We need these credentials to be verifiable as genuine by third parties. We need this to work in multiple languages. <span class="ednote">Added as issuing use case (@gkellogg).</span></p>
                   <hr>
                   <p><em>Issuing</em><br>Company is a the leading provider of electronic textbooks to higher-ed.  A large percentage (near 75%) of integrations with our partner institutions launch (open) an eTextbook through the IMSGlobal standard: Learning Tools Interoperability (LTI).  At present Company processes about two million LTI launches per month.  So the primary use case is: Student logs on to their learning system (LMS) and clicks an eTextbook icon that they would like to study.  Our LTI integration broker needs to subscribe the student if it’s their first visit.  Furthermore it needs to issue a license for the eTextbook if non currently exists.  Finally it presents the eTextbook contents to the student. <span class="ednote">Added as issuing use case (@gkellogg).</span></p>
                   <hr>
@@ -717,7 +760,7 @@ by the group should address.
                   <hr>
                   <p><em>Consuming</em><br>A customer presents a driver’s license to buy alcohol. In the same transaction, the customer buys other items and presents a SNAP card for payment. The previously presented driver’s license should be used as an authentication for both methods of payment without relying on the competence of the clerk.</p>
                   <hr>
-                  <p><em>Issuing, Consuming</em><br>The Company runs experience-based certification programs exchange of credentials could unfold in two ways: 1)  Issuing credentials on the validity of a certificate after successful assessment of candidates 2) Candidates bringing in evidence of certain activities necessary to comply with conformance requirements e.g. “I have maintained my profession by following xyz course”</p>
+                  <p><em>Issuing, Consuming</em><br>The Company runs experience-based certification programs exchange of credentials could unfold in two ways: 1)  Issuing credentials on the validity of a certificate after successful assessment of candidates 2) Candidates bringing in evidence of certain activities necessary to comply with conformance requirements e.g. “I have maintained my profession by following xyz course.” <span class="ednote">Added as issuing use case (@gkellogg).</p>
                   <hr>
                   <p><em>Managing / Sharing</em><br>Actors: job seekers/learners/employers Purpose: Credential discovery, identification, and comparison  By means of the Web, individual learners and organizations needing to make sense of the rapidly growing credential marketplace in order to make education/training and job seeking decisions want to quickly discover, identify, and compare available credentials and credential providers based on a number of criteria including, but not limited to: (1) type of credential, (2) scope of credential application (e.g., job types, geographic areas), (3) transfer value, (4) competencies addressed; (5) mechanisms of assessment, (6) prerequisite competencies, and (7) accreditation/endorsement status.</p>
                   <hr>
