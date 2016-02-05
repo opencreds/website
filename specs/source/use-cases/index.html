@@ -317,6 +317,7 @@ by the group should address.
               (<a>issuer</a>) that she can use to prove to the officer
               (<a>credential consumer</a>) that her <a>claim</a> is
               valid.
+              <img alt='Example credential creation flow' style='display:block; margin:auto' src="uc-issuing-claims.svg"/>
             </dd>
             <dd>Jane would like to get a digitally signed credential for her checking
               account at MidBank. MidBank offers to provide a credential asserting
@@ -336,7 +337,6 @@ by the group should address.
               exists. Finally it presents the eTextbook contents to the
               student.</dd>
           </dl>
-          <img alt='Example credential creation flow' style='display:block; margin:auto' src="uc-issuing-claims.svg"/>
         </section>
 
         <section>
@@ -383,31 +383,18 @@ by the group should address.
         </section>
 
         <section>
-          <h3 id="uc-issuing-lti">Learning Tools Interoperability</h3>
+          <h3 id="uc-issuing-lti">Delegating Credential Creating</h3>
           <dl class="dl-horizontal">
             <dt>Requirement</dt>
-            <dd>It MUST be possible for anyone to issue a verifiable claim.</dd>
+            <dd>It MUST be possible for an <a>issuer</a> to delegate issuing credentials to end users.</dd>
             <dt>Motivation</dt>
-            <dd>An <a>entity</a>, such as an end user (<a>holder</a>),
-              wishes to make a <a>claim</a> and would like it to be endorsed by a
-              different <a>entity</a> (<a>issuer</a>) which may be trusted by
-              potiential consumer (<a>credential consumer</a>).</dd>
+            <dd>An <a>issuer</a> would like to provide credentials for end users while delegating the technical aspects of this to a third party. A credential authority would be able to authorize 1 or more credential issuers which would in turn be able to issue secure credentials that are accepted as valid and acceptable by consumers of the authority's credentials.</dd>
             <dt>Phase</dt>
-            <dd>Essential.</dd>
+            <dd>Nice to have.</dd>
             <dt>Scenarios</dt>
-            <dd>Asako just passed the final test to receive a drivers
-              license. As she is still a new driver, and may be pulled over
-              for a traffic violation, she would like to receive a verfiable
-              claim that she has right to drive a car (<a>claim</a>). She
-              requests a verifiable claim from the certifying authority
-              (<a>issuer</a>) that she can use to prove to the officer
-              (<a>credential consumer</a>) that her <a>claim</a> is
-              valid.
-            </dd>
-            <dd>Jane would like to get a digitally signed credential for her checking
-              account at MidBank. MidBank offers to provide a credential asserting
-              that Jane has an account at MidBank and has access to her associated
-              checking account.</dd>
+            <dd>MidBank offers to provide credentials to account holders, such as Jane.
+              CredentialsRUs provides a service for busniesses such as MidBank to use
+              for providing such credentials.</dd>
           </dl>
         </section>
       </section>
@@ -670,7 +657,7 @@ by the group should address.
                   <h1>4. What is the most compelling Credentials use case that your organization would like to see better integrated into the Web that would be helped by one or more new standards in the space?</h1>
                   <p><em>Consuming</em><br>Company would like to be able to attach authenticated user identity to their outcome results for their performance during time at educational institutions using our software to facilitate their learning and assessment.  Company relies on strong identity assertions to prevent fraudulent access to our systems and data, and a standards based approach would lower our need to invent and maintain a proprietary solution to this problem.</p>
                   <hr>
-                  <p><em>Issuing</em><br>Provide an interoperable standard for credentials on the web that allows for delegated issuance of standard web-based credentials to end users of a system.  As an example, a credential authority would be able to authorize 1 or more credential issuers which would in turn be able to issue secure credentials that are accepted as valid and acceptable by consumers of the authorities credentials.</p>
+                  <p><em>Issuing</em><br>Provide an interoperable standard for credentials on the web that allows for delegated issuance of standard web-based credentials to end users of a system.  As an example, a credential authority would be able to authorize 1 or more credential issuers which would in turn be able to issue secure credentials that are accepted as valid and acceptable by consumers of the authorities credentials. <span class="ednote">Added as issuing use case (@gkellogg).</span></p>
                   <hr>
                   <p><em>Managing and Sharing</em><br>We would like to let credential earners compose their credentials into representations that meet the needs of particular requestors, such as when job applicants package up a resume for the needs of a certain position opening. We would like to be able to better match up a particular credential against various parties’ needs for credentials, in an expressive way. “I am looking for a candidate who has experience with ‘scrum-based agile software development’”, for example.</p>
                   <hr>
