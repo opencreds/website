@@ -319,10 +319,10 @@ by the group should address.
               valid.
               <img alt='Example credential creation flow' style='display:block; margin:auto' src="uc-issuing-claims.svg"/>
             </dd>
-            <dd>Jane would like to get a digitally signed credential for her checking
-              account at MidBank. MidBank offers to provide a credential asserting
-              that Jane has an account at MidBank and has access to her associated
-              checking account.</dd>
+            <dd>Jane would like to get a digitally signed credential for her
+              checking account at MidBank. MidBank offers to provide a
+              credential asserting that Jane has an account at MidBank and has
+              access to her associated checking account.</dd>
             <dd>Company is a the leading provider of electronic textbooks to
               higher-ed. A large percentage (near 75%) of integrations with our
               partner institutions launch (open) an eTextbook through the
@@ -350,42 +350,84 @@ by the group should address.
           <h3 id="uc-self-asserted-claims">Self-asserted Claims</h3>
           <dl class="dl-horizontal">
             <dt>Requirement</dt>
-            <dd>It MUST be possible for anyone to issue a verifiable claim about themselves.</dd>
+            <dd>It MUST be possible for anyone to issue a verifiable claim
+              about themselves.</dd>
             <dt>Motivation</dt>
             <dd>An <a>entity</a>, such as an end user (<a>holder</a>),
-              wishes to make a <a>claim</a> and which they endorse themselves, acting as an
-              <a>issuer</a>.</dd>
+              wishes to make a <a>claim</a> and which they endorse themselves,
+              acting as an <a>issuer</a>.</dd>
             <dt>Phase</dt>
             <dd>Nice to have.</dd>
             <dt>Scenarios</dt>
             <dd>
-              <p>Purpose  The Country Government does not want to build a centralised repository for citizen’s self-asserted credentials such as contact details and perhaps other claimed attributes such as partner’s name, etc. Alternatively, the objective is to support the marketplace to develop an ecosystem of local or global providers that offer the citizen a range of options to choose from. A standard could enable an approach that would remove dependence on any particular technology or platform as the choice of repository for an individual’s self-asserted profile – for example, personal mobile device, open cloud service, commercial provider website.</p> 
+              <p>Purpose  The Country Government does not want to build a
+                centralised repository for citizen’s self-asserted credentials
+                such as contact details and perhaps other claimed attributes
+                such as partner’s name, etc. Alternatively, the objective is to
+                support the marketplace to develop an ecosystem of local or
+                global providers that offer the citizen a range of options to
+                choose from. A standard could enable an approach that would
+                remove dependence on any particular technology or platform as
+                the choice of repository for an individual’s self-asserted
+                profile – for example, personal mobile device, open cloud
+                service, commercial provider website.</p>
               <p>Agency and citizen requirements:</p>
               <ul>
-              <li>The government agency requires an applicant’s contact details – that is self-asserted credentials; for example, email address, mobile phone, postal address, to complete their registration process for the agency’s online service.</li>
-              <li>If the customer changes one of these attributes, the agency would like the option of being notified.</li>
-              <li>The citizen wants the means to select specific contact details from their existing self-managed profile to share with this particular government agency.</li>
-              <li>If the citizen changes one of these attributes they want to be able to simply update their profile without explicitly notifying each government agency or organisation.</li>
+              <li>The government agency requires an applicant’s
+                contact details – that is self-asserted credentials; for
+                example, email address, mobile phone, postal address, to
+                complete their registration process for the agency’s online
+                service.</li>
+              <li>If the customer changes one of these attributes,
+                the agency would like the option of being notified.</li>
+              <li>The citizen wants the means to select specific contact
+                details from their existing self-managed profile to share with
+                this particular government agency.</li>
+              <li>If the citizen changes one of these attributes they
+                want to be able to simply update their profile without
+                explicitly notifying each government agency or
+                organisation.</li>
               </ul>
               <p>Use case – register with service provider</p>
               <ol>
-                <li>Jane applies to the government agency for a social welfare entitlement.</li>
-                <li>The agency requires Jane to authenticate and she uses her federated login credentials.</li>
-                <li>The agency requests Jane’s full name, date of birth, citizenship and validated bank account.</li>
-                <li>Jane opts to assert her online core identity, citizenship and validated bank account credentials from the authoritative providers.</li>
+                <li>Jane applies to the government agency for a
+                  social welfare entitlement.</li>
+                <li>The agency requires Jane to authenticate and she
+                  uses her federated login credentials.</li>
+                <li>The agency requests Jane’s full name, date of birth,
+                  citizenship and validated bank account.</li>
+                <li>Jane opts to assert her online core identity,
+                  citizenship and validated bank account credentials from the
+                  authoritative providers.</li>
                 <li>The agency requests Jane’s contact details.</li>
                 <li>Jane opts to provide these from her online profile.</li>
-                <li>The agency initiates a request to a credential/attribute brokering service.</li>
-                <li>The brokering service checks Jane’s authentication token.</li>
-                <li>The brokering service retrieves Jane’s identity, citizenship and validated bank account from the respective authoritative credential/attribute providers.</li>
-                <li>The brokering service retrieves Jane’s profile from her preferred contact details repository mechanism (personal mobile device, open cloud service, commercial provider website, etc.).</li>
+                <li>The agency initiates a request to a
+                  credential/attribute brokering service.</li>
+                <li>The brokering service checks Jane’s authentication
+                  token.</li>
+                <li>The brokering service retrieves Jane’s identity,
+                  citizenship and validated bank account from the respective
+                  authoritative credential/attribute providers.</li>
+                <li>The brokering service retrieves Jane’s profile from
+                  her preferred contact details repository mechanism (personal
+                  mobile device, open cloud service, commercial provider
+                  website, etc.).</li>
                 <li>Jane selects some specific contact details.</li>
-                <li>Jane provides information sharing consent (if not previously provided) to share identity, citizenship, bank account and contact details with the requesting government agency.</li>
-                <li>The brokering service returns the respective credentials to the requesting agency.</li>
-                <li>The requesting agency provides Jane with the requested welfare entitlement.</li>
+                <li>Jane provides information sharing consent
+                  (if not previously provided) to share identity, citizenship,
+                  bank account and contact details with the requesting
+                  government agency.</li>
+                <li>The brokering service returns the respective
+                  credentials to the requesting agency.</li>
+                <li>The requesting agency provides Jane with the
+                  requested welfare entitlement.</li>
               </ol>
             </dd>
-            <dd>Related use cases  Other use cases for contact details would include initial create and manage contact details profile, service provider checks for contact details credential change, citizen notifies multiple service providers about a credential change.</dd>
+            <dd>Related use cases  Other use cases for contact details
+              would include initial create and manage contact details profile,
+              service provider checks for contact details credential change,
+              citizen notifies multiple service providers about a credential
+              change.</dd>
           </dl>
         </section>
 
@@ -393,15 +435,21 @@ by the group should address.
           <h3 id="uc-issuing-delegation">Delegating Credential Creation</h3>
           <dl class="dl-horizontal">
             <dt>Requirement</dt>
-            <dd>It MUST be possible for an <a>issuer</a> to delegate issuing credentials to end users.</dd>
+            <dd>It MUST be possible for an <a>issuer</a> to
+              delegate issuing credentials to end users.</dd>
             <dt>Motivation</dt>
-            <dd>An <a>issuer</a> would like to provide credentials for end users while delegating the technical aspects of this to a third party. A credential authority would be able to authorize 1 or more credential issuers which would in turn be able to issue secure credentials that are accepted as valid and acceptable by consumers of the authority's credentials.</dd>
+            <dd>An <a>issuer</a> would like to provide credentials for
+              end users while delegating the technical aspects of this to a
+              third party. A credential authority would be able to authorize 1
+              or more credential issuers which would in turn be able to issue
+              secure credentials that are accepted as valid and acceptable by
+              consumers of the authority's credentials.</dd>
             <dt>Phase</dt>
             <dd>Nice to have.</dd>
             <dt>Scenarios</dt>
-            <dd>MidBank offers to provide credentials to account holders, such as Jane.
-              CredentialsRUs provides a service for busniesses such as MidBank to use
-              for providing such credentials.</dd>
+            <dd>MidBank offers to provide credentials to account holders,
+              such as Jane. CredentialsRUs provides a service for busniesses
+              such as MidBank to use for providing such credentials.</dd>
           </dl>
         </section>
 
@@ -409,9 +457,12 @@ by the group should address.
           <h3 id="uc-issuing-verifiability">Credential Verifiability</h3>
           <dl class="dl-horizontal">
             <dt>Requirement</dt>
-            <dd>It MUST be possible for a <a>credential consumer</a> to verify credentials as genuine.</dd>
+            <dd>It MUST be possible for a <a>credential consumer</a> to
+              verify credentials as genuine.</dd>
             <dt>Motivation</dt>
-            <dd>An <a>issuer</a> MUST be able to sign a credential which can be verified by an arbitrary third party (<s>credential consumer</s>).</dd>
+            <dd>An <a>issuer</a> MUST be able to sign a credential
+              which can be verified by an arbitrary third party (<s>credential
+              consumer</s>).</dd>
             <dt>Phase</dt>
             <dd>Essential.</dd>
             <dt>Scenarios</dt>
@@ -429,15 +480,21 @@ by the group should address.
           <h3 id="uc-issuing-i18n">Credential Internationalization</h3>
           <dl class="dl-horizontal">
             <dt>Requirement</dt>
-            <dd>It MUST be possible for a <a>credential consumer</a> operating in one language to understand credentials issued in a different language.</dd>
+            <dd>It MUST be possible for a <a>credential consumer</a>
+              operating in one language to understand credentials issued in a
+              different language.</dd>
             <dt>Motivation</dt>
-            <dd>Issuers and Credential Consumers often operate in different languages, and the basis of the credential MUST be described in a way which supports interpreting it in multiple language.</dd>
+            <dd>Issuers and Credential Consumers often operate in
+              different languages, and the basis of the credential MUST be
+              described in a way which supports interpreting it in multiple
+              language.</dd>
             <dt>Phase</dt>
             <dd>Essential.</dd>
             <dt>Scenarios</dt>
             <dd>Company creates a credential with claims.
-              Such claims need to either be described in multiple languages,
-              or the claim definition allows an indirection to describe the claim in different languages.</dd>
+              Such claims need to either be described in multiple languages, or
+              the claim definition allows an indirection to describe the claim
+              in different languages.</dd>
           </dl>
         </section>
       </section>
