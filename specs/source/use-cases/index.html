@@ -1005,10 +1005,12 @@ by the group should address.
           </dl>
         </section>
         <section>
-          <h3 id="uc-consuming-anonymity">Pseudo-Anonymity/h3>
+          <h3 id="uc-consuming-anonymity">Pseudo-Anonymity</h3>
           <dl class="dl-horizontal">
             <dt>Requirement</dt>
-            <dd>It MUST be possible for claims to be associated with IDs that reveal recipient-controllable amounts of personally identifiable information.</dd>
+            <dd>It MUST be possible for claims to be associated with
+            IDs that reveal recipient-controllable amounts of
+            personally identifiable information.</dd>
             <dt>Motivations</dt>
             <dd>Credentials may be issued to an identifier such that
             it is possible for the recipient to prove that the
@@ -1030,6 +1032,26 @@ by the group should address.
             the credential, but those who don’t know the identifier
             cannot derive personally identifiable information about
             the recipient.</dd>
+          </dl>
+        </section>
+        <section>
+          <h3 id="uc-consuming-searchability">Collectible and Searchable</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for claims from different
+            recipients to be collected and searched.</dd>
+            <dt>Motivations</dt>
+            <dd>A credential consumer who has been presented
+            credentials from a large number of candidates can sort and
+            filter those candidates by credentials they have received
+            and claims made by those credentials.</dd>
+            <dt>Phase</dt>
+            <dd>Essential</dd>
+            <dt>Scenarios</dt>
+            <dd>Steve, an HR recruiter searches his database of
+            job-seekers for a position that requires a particular
+            defined credential.Steve narrows a list of candidates to
+            those who have a valid passport credential.</dd>
           </dl>
         </section>
       </section>
@@ -1721,7 +1743,7 @@ by the group should address.
                       <dt><strong>Searchability</strong></dt>
                       <dd>Steve, an HR recruiter searches his database of job-seekers for a position that requires a particular defined credential.Steve narrows a list of candidates to those who have a valid passport credential.</dd>
                       <dt><em>Motivation</em></dt>
-                      <dd>A credential consumer who has been presented credentials from a large number of candidates can sort and filter those candidates by credentials they have received and claims made by those credentials.</dd>
+                      <dd>A credential consumer who has been presented credentials from a large number of candidates can sort and filter those candidates by credentials they have received and claims made by those credentials.<span class="ednote">Scenarios and motivation above added as consuming use case (@burnburn).</span></dd>
                   </dl>
                   <p><strong>Managing</strong></p>
                   <p><em><strong>Recipient Authorizes a Credential to be Read Asynchronously</strong></em></p>
