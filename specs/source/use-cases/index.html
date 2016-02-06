@@ -552,6 +552,110 @@ by the group should address.
             Twitter and LinkedIn.</dd>
           </dl>
         </section>
+        <section>
+          <h3 id="uc-consuming-medium-recipient-use-restrictions">Data Rights</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for the recipient to restrict the
+            uses to which their claims can be put</dd>
+            <dt>Motivations</dt>
+            <dd>A recipient of a digital credential may choose to
+            include information that asserts what their information
+            may be used for.</dd>
+            <dt>Phase</dt>
+            <dd>&nbsp;</dd>
+            <dt>Scenarios</dt>
+            <dd>Rosa is transmitting her email address to a group
+            buying website and wants to ensure that her email address
+            will not be used for unsolicited emails. She attaches a
+            &quot;no advertising&quot; assertion to her email
+            credential to ensure that it isn't re-transmitted to 3rd
+            parties for advertising purposes.</dd>
+          </dl>
+        </section>
+        <section>
+          <h3 id="uc-consuming-composability">Composability</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for claims to be combined together
+            in order to meet complex requirements.</dd>
+            <dt>Motivations</dt>
+            <dd>Credentials may be displayed together in order to meet
+            complex requirements or prove qualification more
+            substantively than would be possible with one credential
+            alone.</dd>
+            <dt>Phase</dt>
+            <dd>&nbsp;</dd>
+            <dt>Scenarios</dt>
+            <dd>Marisol wants to open a bank account at a new
+            bank. The bank requires two valid forms of
+            identification. She uses a US Passport credential and a
+            Colorado driver’s license credential to prove that she is
+            who she says she is to the bank.</dd>
+            <dd>Willie is transferring between universities and wants
+            to ensure he gets credit for work he did at his old
+            school, so he bundles the credentials he received for his
+            course work with a 3rd party’s endorsements that he knows
+            the new school trusts, so that the new school is more
+            likely to accept the credentials.</dd>
+            <dd>Idris wants to take the introduction to organic
+            chemistry which is an upper division course. In order to
+            qualify for that course, Idris needs to have proven that
+            he’s taken Biochemistry and Physics. He proves that he’s
+            taken these prerequisite courses which unlocks the
+            opportunity to enroll in the organic chemistry
+            course.</dd>
+          </dl>
+        </section>
+        <section>
+          <h3 id="uc-consuming-verifiability">Consumer Verifies Claim</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for consumer to verify that the
+            credential is an authentic statement of an issuer’s claims
+            about the recipient. The verifying entity must have the
+            capability to connect the issuer’s identity to its
+            credential identifier and the recipient’s identity to
+            their identifier as indicated in the credential. The
+            issuer’s verification information, such as its public key,
+            must be discoverable from the credential record and
+            verifiably linked to the issuer.</dd>
+            <dt>Motivations</dt>
+            <dd>&nbsp;</dd>
+            <dt>Phase</dt>
+            <dd>Essential</dd>
+            <dt>Scenarios</dt>
+            <dd>&nbsp;</dd>
+          </dl>
+        </section>
+        <section>
+          <h3 id="uc-consuming-anonymity">Pseudo-Anonymity/h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for claims to be associated with IDs that reveal recipient-controllable amounts of personally identifiable information.</dd>
+            <dt>Motivations</dt>
+            <dd>Credentials may be issued to an identifier such that
+            it is possible for the recipient to prove that the
+            identifier corresponds to them without revealing
+            personally identifiable information. In the case of a
+            subpoena, an identity service may be compelled to reveal
+            additional information beyond what the holder of the
+            identity wished to transmit.</dd>
+            <dt>Phase</dt>
+            <dd>&nbsp;</dd>
+            <dt>Scenarios</dt>
+            <dd>June goes to her local beer and wine store to buy a
+            bottle of wine. She submits her identity credential that
+            lets the liquor store owner know that she is over 21
+            without having to reveal her actual DOB.</dd>
+            <dd>A credential contains an identifier that is a hash of
+            a known identifier (email address) of an individual so
+            that those who know the recipient identifier can verify
+            the credential, but those who don’t know the identifier
+            cannot derive personally identifiable information about
+            the recipient.</dd>
+          </dl>
+        </section>
       </section>
 
       <section>
@@ -1200,7 +1304,7 @@ by the group should address.
                       <dt><strong>Data Rights</strong></dt>
                       <dd>Rosa is transmitting her email address to a group buying website and wants to ensure that her email address will not be used for unsolicited emails. She attaches a &quot;no advertising&quot; assertion to her email credential to ensure that it isn't re-transmitted to 3rd parties for advertising purposes.</dd>
                       <dt><em>Motivation</em></dt>
-                      <dd>A recipient of a digital credential may choose to include information that asserts what their information may be used for.</dd>
+                      <dd>A recipient of a digital credential may choose to include information that asserts what their information may be used for.<span class="ednote">Scenarios and motivation above added as consuming use case (@burnburn).</span></dd>
                   </dl>
                   <dl class="dl-horizontal">
                       <dt><strong>Composability</strong></dt>
@@ -1211,19 +1315,19 @@ by the group should address.
                           <li>Idris wants to take the introduction to organic chemistry which is an upper division course. In order to qualify for that course, Idris needs to have proven that he’s taken Biochemistry and Physics. He proves that he’s taken these prerequisite courses which unlocks the opportunity to enroll in the organic chemistry course.</li>
                       </ul></dd>
                       <dt><em>Motivation</em></dt>
-                      <dd>Credentials may be displayed together in order to meet complex requirements or prove qualification more substantively than would be possible with one credential alone.</dd>
+                      <dd>Credentials may be displayed together in order to meet complex requirements or prove qualification more substantively than would be possible with one credential alone.<span class="ednote">Scenarios and motivation above added as consuming use case (@burnburn).</span></dd>
                   </dl>
                   <p><strong>Credential Consumer Verifies Credential</strong></p>
                   <dl class="dl-horizontal">
                       <dt><strong>Verifiability</strong></dt>
-                      <dd>Credential Consumer Verifies a digital credential may verify that the credential is an authentic statement of an issuer’s claims about the recipient. The verifying entity must have the capability to connect the issuer’s identity to its credential identifier and the recipient’s identity to their identifier as indicated in the credential. The issuer’s verification information, such as its public key, must be discoverable from the credential record and verifiably linked to the issuer.
+                      <dd>Credential Consumer Verifies a digital credential may verify that the credential is an authentic statement of an issuer’s claims about the recipient. The verifying entity must have the capability to connect the issuer’s identity to its credential identifier and the recipient’s identity to their identifier as indicated in the credential. The issuer’s verification information, such as its public key, must be discoverable from the credential record and verifiably linked to the issuer.<span class="ednote">Statements above added as consuming use case (@burnburn).</span>
                   </dl>
                   <dl class="dl-horizontal">
                       <dt><strong>Pseudo-anonymity</strong></dt>
                       <dd>June goes to her local beer and wine store to buy a bottle of wine. She submits her identity credential that lets the liquor store owner know that she is over 21 without having to reveal her actual DOB.</dd>
                       <dd>A credential contains an identifier that is a hash of a known identifier (email address) of an individual so that those who know the recipient identifier can verify the credential, but those who don’t know the identifier cannot derive personally identifiable information about the recipient.</dd>
                       <dt><em>Motivation</em></dt>
-                      <dd>Credentials may be issued to an identifier such that it is possible for the recipient to prove that the identifier corresponds to them without revealing personally identifiable information. In the case of a subpoena, an identity service may be compelled to reveal additional information beyond what the holder of the identity wished to transmit.</dd>
+                      <dd>Credentials may be issued to an identifier such that it is possible for the recipient to prove that the identifier corresponds to them without revealing personally identifiable information. In the case of a subpoena, an identity service may be compelled to reveal additional information beyond what the holder of the identity wished to transmit.<span class="ednote">Scenarios and motivation above added as consuming use case (@burnburn).</span></dd>
                   </dl>
                   <p><strong>Credential Consumer Grants Access to Recipient</strong></p>
                   <dl class="dl-horizontal">
