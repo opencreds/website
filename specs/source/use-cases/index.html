@@ -1021,13 +1021,25 @@ by the group should address.
             their identifier as indicated in the credential. The
             issuer’s verification information, such as its public key,
             must be discoverable from the credential record and
-            verifiably linked to the issuer.</dd>
+            verifiably linked to the issuer.  It MUST be possible to
+            do this in an automated fashion.</dd>
             <dt>Motivations</dt>
             <dd>&nbsp;</dd>
             <dt>Phase</dt>
             <dd>Essential</dd>
             <dt>Scenarios</dt>
-            <dd>&nbsp;</dd>
+            <dd>For banks and other financial institutions it would be
+            the ability to verify on-line customer or potential
+            customer information such a name, address, social security
+            number, age, employment and salary information, credit
+            history and various biometrics such as facial and
+            fingerprint.</dd>
+            <dd>A customer presents a driver’s license to buy
+            alcohol. In the same transaction, the customer buys other
+            items and presents a SNAP card for payment. The previously
+            presented driver’s license should be used as an
+            authentication for both methods of payment without relying
+            on the competence of the clerk.</dd>
           </dl>
         </section>
         <section>
@@ -1211,7 +1223,7 @@ by the group should address.
                   <p><em>Issuing</em><br>A prospective user on a feature phone is able to register with a Mobile Money Wallet provider at a specific KYC tiered level. They register using shared secrets known only to the third party (could be government) Identity Provider (IdP).  The registration takes place via a feature phone - e.g. via USSD session or SMS messages.  Credentials are then stored with the Mobile Wallet provider and renewed automatically with the issuing authority. 
                   </p>
                   <hr>
-                  <p><em>Consuming</em><br>For banks and other financial institutions it would be the ability to verify on-line customer or potential customer information such a name, address, social security number, age, employment and salary information, credit history and various biometrics such as facial and fingerprint.</p>
+                  <p><em>Consuming</em><br>For banks and other financial institutions it would be the ability to verify on-line customer or potential customer information such a name, address, social security number, age, employment and salary information, credit history and various biometrics such as facial and fingerprint.<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <ol>
                       <li><em>Managing and Sharing</em><br>A user collates a comprehensive record of competency demonstrations and
@@ -1258,7 +1270,7 @@ by the group should address.
                   <hr>
                   <p><em>Consuming</em><br>From the processor perspective, issues surrounding the merchant integration of retail with web shopping - there is great interest in cases where a customer will pay online and then pick up in in-store; or if a customer were to place the order online and then pay at the pick-up.  Additional areas of concern from instances of Card not present or online shipping where items may be delivered in split shipments requiring multiple authorizations or an item is on back order and the customer wants to complete the transaction - or even instances of advanced orders contingent on future availability.</p>
                   <hr>
-                  <p><em>Consuming</em><br>A customer presents a driver’s license to buy alcohol. In the same transaction, the customer buys other items and presents a SNAP card for payment. The previously presented driver’s license should be used as an authentication for both methods of payment without relying on the competence of the clerk.</p>
+                  <p><em>Consuming</em><br>A customer presents a driver’s license to buy alcohol. In the same transaction, the customer buys other items and presents a SNAP card for payment. The previously presented driver’s license should be used as an authentication for both methods of payment without relying on the competence of the clerk.<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <p><em>Issuing, Consuming</em><br>The Company runs experience-based certification programs exchange of credentials could unfold in two ways: 1)  Issuing credentials on the validity of a certificate after successful assessment of candidates 2) Candidates bringing in evidence of certain activities necessary to comply with conformance requirements e.g. “I have maintained my profession by following xyz course.” <span class="ednote">Added as issuing use case (@gkellogg).</span></p>
                   <hr>
