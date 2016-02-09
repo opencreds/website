@@ -45,6 +45,8 @@
               { name: "Manu Sporny", url: "http://digitalbazaar.com/",
                 company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/" },
               { name: "Gregg Kellogg", url: "http://greggkellogg.net/", w3cid: "44770" },
+              { name: "Brian Sletten", url: "http://bosatsu.net",
+                company: "Bosatsu Consulting, Inc.", companyURL: "http://bosatsu.net" },
           ],
 
           // authors, add as many as you like.
@@ -56,8 +58,6 @@
                 company: "Badge Alliance", companyURL: "" },
               { name: "Nate Otto", url: "",
                 company: "Badge Alliance", companyURL: "" },
-              { name: "Brian Sletten", url: "http://bosatsu.net",
-                company: "Bosatsu Consulting, Inc.", companyURL: "http://bosatsu.net" },
           ],
 
           // maximum level of table of contents
@@ -151,7 +151,7 @@ by the group should address.
   </section>
 
   <section id='sotd'>
-      <p>This document is an early version being used as an integration point for 
+      <p>This document is an early version being used as an integration point for
       a variety of use cases assembled from throughout the industry.  As the document
       becomes more mature this status will be updated accordingly.</p>
   </section>
@@ -179,7 +179,7 @@ by the group should address.
         <h3>Importance of this Work</h3>
 
         <p>People need to make many kinds of claims as part of their
-        everyday lives.  
+        everyday lives.
         As more important business moves to the Internet, people need
         to be able to transmit instantly <em>verifiable</em> claims about their
         accomplishments and qualifications. From educational records
@@ -189,7 +189,7 @@ by the group should address.
         Human-mediated decisions about job applications, collaboration
         and professional development will depend on filtering and
         analyzing growing amounts of data about individuals'
-        experience and accomplishments. 
+        experience and accomplishments.
         </p>
         <p>Standardization of digital <a>claim</a> technologies makes it
         possible for many stakeholders to issue, earn, and trust these
@@ -220,7 +220,7 @@ by the group should address.
       a system must be implemented.  First, consider this diagram:</p>
       <img alt='Example Flow Diagram' style='display:block; margin:auto' src="example.svg"/>
       <ol>
-          <li>Jane decides to shop on the web site 
+          <li>Jane decides to shop on the web site
           WinesOfTheWorld.example.com (merchant).</li>
           <li>The merchant's site requires Jane be 21 years of age and
           requests Jane prove this (via a user agent-supported API call).</li>
@@ -352,7 +352,7 @@ by the group should address.
             <dd>Nice to have.</dd>
             <dt>Scenarios</dt>
             <dd>
-              <p>Purpose  The Country Government does not want to build a centralised repository for citizen’s self-asserted credentials such as contact details and perhaps other claimed attributes such as partner’s name, etc. Alternatively, the objective is to support the marketplace to develop an ecosystem of local or global providers that offer the citizen a range of options to choose from. A standard could enable an approach that would remove dependence on any particular technology or platform as the choice of repository for an individual’s self-asserted profile – for example, personal mobile device, open cloud service, commercial provider website.</p> 
+              <p>Purpose  The Country Government does not want to build a centralised repository for citizen’s self-asserted credentials such as contact details and perhaps other claimed attributes such as partner’s name, etc. Alternatively, the objective is to support the marketplace to develop an ecosystem of local or global providers that offer the citizen a range of options to choose from. A standard could enable an approach that would remove dependence on any particular technology or platform as the choice of repository for an individual’s self-asserted profile – for example, personal mobile device, open cloud service, commercial provider website.</p>
               <p>Agency and citizen requirements:</p>
               <ul>
               <li>The government agency requires an applicant’s contact details – that is self-asserted credentials; for example, email address, mobile phone, postal address, to complete their registration process for the agency’s online service.</li>
@@ -439,6 +439,67 @@ by the group should address.
 
       <section>
           <h2>Managing and Sharing Claims</h2>
+          <section>
+            <h3 id="uc-example">Entity Composes Claims to Meet Consumer Needs</h3>
+            <dl class="dl-horizontal">
+                <dt>Requirement</dt>
+                <dd>Entities represented by one or more claims will want to be
+                able to compose them into a shaped representation to meet the
+                needs of specific consumers.</dd>
+                <dt>Motivation</dt>
+                <dd>The space for exchanging claims will involve both entities
+                being described and consumers interested in the claims. This
+                will include consumer interest in retrieving the claims about
+                specific entities as well as groups of entities matching an
+                expressed query. In order to be more easily found in this space,
+                entities will want to be able to structure their claims to match
+                these expressed queries.</dd>
+                <dt>Phase</dt>
+                <dd>Nice to Have</dd>
+                <dt>Scenarios</dt>
+                <dd>An intellectual property law firm has a specific interest in
+                recent law graduates with a background in computers. While
+                perusing a page of open positions, Allison discovers this
+                opening and sees the persistent query associated with it.
+                She is interested in this job and creates a compsite of her
+                credentials that highlight both her law degree from last year
+                and her Bachelor of Science in computer science.
+                </dd>
+                <dd>On a social networking site dedicated to
+                matchmaking investors, Antoine finds an individual that knows a
+                friend of his interested in partnering on a financial services
+                venture. As a means of introducing himself and standing out, he creates a composite credential that highlights
+                the social network connection and a series of articles he has
+                written in relevant trade journals.</dd>
+            </dl>
+        </section>
+        <section>
+          <h3 id="uc-example">Entities Wish to Control a Credential's Context</h3>
+          <dl class="dl-horizontal">
+              <dt>Requirement</dt>
+              <dd>An entity sharing a credential wishes to control aspects of
+              the context in which it is consumed.</dd>
+              <dt>Motivation</dt>
+              <dd>In an attempt to avoid creating permanent credentials that
+              can be used by any consumer for any purpose, entities sharing
+              credentials will want to specify a context for their use. This
+              will include setting expiration dates, allowed consumers and
+              intended purposes. This is expressed as metadata on the credential
+              that is part of what is digitally signed. Any attempt to use the
+              credential outside of this context will result in a verification
+              error rendering it unusable.</dd>
+              <dt>Phase</dt>
+              <dd>Essential</dd>
+              <dt>Scenarios</dt>
+              <dd>Philip is applying for a position as a driver for a package
+              delivery service. As part of the process, he gives them access to
+              a clean driving claim from the Department of Motor Vehicles as
+              well as proof of address and proof of age claims. He sets an
+              expiration date on each of these and an recipient consumer
+              context to avoid the credentials being used by other consumers
+              in the future.</dd>
+          </dl>
+        </section>
       </section>
 
       <section>
@@ -511,10 +572,10 @@ by the group should address.
               <h3 id="uc-endorsing-issuers">Endorsement of Issuers</h3>
               <dl class="dl-horizontal">
                   <dt>Requirement</dt>
-                  <dd>It MUST be possible for an <a>entity</a> to endorse certificates 
+                  <dd>It MUST be possible for an <a>entity</a> to endorse certificates
                   associated with an <a>issuer</a>.</dd>
                   <dt>Motivation</dt>
-                  <dd>A credential is only as strong as the trust <a>credential consumers</a> have in 
+                  <dd>A credential is only as strong as the trust <a>credential consumers</a> have in
                   the credential's <a>issuer</a>.  In order to enhance that trust, an issuer may choose
                   to have their own credentials available and endorsed by other, (supposedly) more
                   trusted entities.  A credential consumer could examine these endorsements to
@@ -523,22 +584,22 @@ by the group should address.
                   <dt>Phase</dt>
                   <dd>Nice to have</dd>
                   <dt>Scenarios</dt>
-                  <dd>Jim shares a Verifiable Claim with a prospective employer about the results of taking 
+                  <dd>Jim shares a Verifiable Claim with a prospective employer about the results of taking
                   a certification course.
-                  The claim was issued by the course provider - Bob's School o' Programming.  
-                  The employer's system looks at the claim, but is not familiar with the issuer. 
+                  The claim was issued by the course provider - Bob's School o' Programming.
+                  The employer's system looks at the claim, but is not familiar with the issuer.
                   The issuer has included a URI for their own Verifiable Claim in the certification,
-                  and the employer's system retrieves that.  
+                  and the employer's system retrieves that.
                   The issuer's claim was issued by "Big Computer Corporation", a multi-national that
                   the employer's system <em>is</em> familiar with.
                   The system decides that it can trust the issuer, and therefore Jim's Verifiable
                   Claim.</dd>
                   <dd>Big Testing Service (BTS) provides online test management for a large collection of
                   training organizations - connecting those organizations to various online testing
-                  providers and capturing test results. Systems such as LTI (Learning Tools Interoperability) 
+                  providers and capturing test results. Systems such as LTI (Learning Tools Interoperability)
                   can be used by BTS to certify that they are who they are, and the
                   online testing providers are who they claim to be.  Unfortunately, LTI does not
-                  extend to the tire of BTS' clients, nor to the end users who are taking the tests.  
+                  extend to the tire of BTS' clients, nor to the end users who are taking the tests.
                   Organizations outside of that
                   community need a way to know that Verifiable Claims issued by BTS and their clients
                   are valid.  Endorsement of the BTS claims by the online testing providers, and
@@ -563,7 +624,7 @@ by the group should address.
                   <hr>
                   <p><em>Consuming</em><br>Multiple credential issuers issue Jane a set of credentials for her shipping address, loyalty card, payment instrument, proof of age, and email address. When she goes to a new store to buy something, all of those credentials are requested by the merchant in a single credentials request. The credentials are delivered via the browser from Jane’s credential storage service to the merchant’s website and Jane initiates the payment process. Jane does not have to fill out any form information or register with the website to complete the purchase since her credentials contain everything the merchant needs to finalize the transaction.</p>
                   <hr>
-                  <p><em>Issuing</em><br>A prospective user on a feature phone is able to register with a Mobile Money Wallet provider at a specific KYC tiered level. They register using shared secrets known only to the third party (could be government) Identity Provider (IdP).  The registration takes place via a feature phone - e.g. via USSD session or SMS messages.  Credentials are then stored with the Mobile Wallet provider and renewed automatically with the issuing authority. 
+                  <p><em>Issuing</em><br>A prospective user on a feature phone is able to register with a Mobile Money Wallet provider at a specific KYC tiered level. They register using shared secrets known only to the third party (could be government) Identity Provider (IdP).  The registration takes place via a feature phone - e.g. via USSD session or SMS messages.  Credentials are then stored with the Mobile Wallet provider and renewed automatically with the issuing authority.
                   </p>
                   <hr>
                   <p><em>Consuming</em><br>For banks and other financial institutions it would be the ability to verify on-line customer or potential customer information such a name, address, social security number, age, employment and salary information, credit history and various biometrics such as facial and fingerprint.</p>
@@ -758,7 +819,7 @@ by the group should address.
                   <hr>
                   <p><em>Sharing / Managing</em><br>Lending, in particular Trade Finance and Funding. Credentials as a “set of Credentials” leading to the formation of an “Identity Persona” allows for Credit Scores or Reputational Systems to happen in third world countries where currently there is none. This leads to financial inclusion.</p>
                   <hr>
-                  <p>Yes, some of the other ones include: 
+                  <p>Yes, some of the other ones include:
                   <ol>
                       <li><em>Sharing</em><br>being able to share credential information without
                       violating privacy tenets (privacy-enhancing credentials / bearer credentials),
@@ -1149,7 +1210,7 @@ by the group should address.
                       <dt><em>Privacy</em></dt>
                       <dd>Credential Service must establish a takedown request procedure</dd>
                   </dl>
-                  <!-- moved into section 4.5 
+                  <!-- moved into section 4.5
 <p>Endorsing</p>
 <p>Recipient Collects Counter-signatures for Credential</p>
 <p>Endorsement</p>
@@ -1168,7 +1229,7 @@ by the group should address.
 
 
 
-              <!-- 
+              <!--
 
   ORIGINAL CONTENT FOR REFERENCE
 
