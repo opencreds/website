@@ -1,6 +1,6 @@
 @startuml
-'/ bringing this in from the master branch
-!includeurl  https://raw.githubusercontent.com/opencreds/website/master/specs/source/common/skin.pml 
+' bringing this in from the master branch
+' !includeurl  https://raw.githubusercontent.com/opencreds/website/master/specs/source/common/skin.pml 
 !ifndef SKIN_INCLUDED
 skinparam {
     backgroundColor transparent
