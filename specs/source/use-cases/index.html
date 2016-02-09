@@ -1213,6 +1213,40 @@ by the group should address.
             of applications for this.</dd>
           </dl>
         </section>
+        <section>
+          <h3 id="uc-consuming-verify-xaction-occurrence">Verify Transaction Occurrence</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>(**NB**: This requirement might be better as the
+            consequence of some other requirements) It MUST be
+            possible for claims to be used in a way that verifies that
+            a transaction has occurred.</dd>
+            <dt>Motivations</dt>
+            <dd>Transactions such as purchases often need to be
+            verified later, such as when the purchased item is picked
+            up.  Being able to track this without a separate database
+            could be useful.</dd>
+            <dt>Phase</dt>
+            <dd>&nbsp;</dd>
+            <dt>Scenarios</dt>
+            <dd>From the processor perspective, issues surrounding the
+            merchant integration of retail with web shopping - there
+            is great interest in cases where a customer will pay
+            online and then pick up in in-store; or if a customer were
+            to place the order online and then pay at the pick-up.
+            Additional areas of concern from instances of Card not
+            present or online shipping where items may be delivered in
+            split shipments requiring multiple authorizations or an
+            item is on back order and the customer wants to complete
+            the transaction - or even instances of advanced orders
+            contingent on future availability.</dd>
+            <dd>Many other use cases - examples include reversing
+            payments (refunds/chargebacks), status enquiries</dd>
+            <dd>There are other use cases of identity verification for
+            selling different items, pick up of orders, employee
+            credential verifications etc.</dd>
+          </dl>
+        </section>
       </section>
 
       <section>
@@ -1450,7 +1484,7 @@ by the group should address.
                       received credentials from both transaction participants.</li>
                   </ol><span class="ednote">Scenarios above added as consuming use case (@burnburn).</span>
                   <hr>
-                  <p><em>Consuming</em><br>From the processor perspective, issues surrounding the merchant integration of retail with web shopping - there is great interest in cases where a customer will pay online and then pick up in in-store; or if a customer were to place the order online and then pay at the pick-up.  Additional areas of concern from instances of Card not present or online shipping where items may be delivered in split shipments requiring multiple authorizations or an item is on back order and the customer wants to complete the transaction - or even instances of advanced orders contingent on future availability.</p>
+                  <p><em>Consuming</em><br>From the processor perspective, issues surrounding the merchant integration of retail with web shopping - there is great interest in cases where a customer will pay online and then pick up in in-store; or if a customer were to place the order online and then pay at the pick-up.  Additional areas of concern from instances of Card not present or online shipping where items may be delivered in split shipments requiring multiple authorizations or an item is on back order and the customer wants to complete the transaction - or even instances of advanced orders contingent on future availability.<span class="ednote">Scenarios above added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <p><em>Consuming</em><br>A customer presents a driver’s license to buy alcohol. In the same transaction, the customer buys other items and presents a SNAP card for payment. The previously presented driver’s license should be used as an authentication for both methods of payment without relying on the competence of the clerk.<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
@@ -1562,9 +1596,9 @@ by the group should address.
                   <hr>
                   <p><!-- moved into section 4.5 --><em>Endorsing</em><br>We need to know why we can trust a certain issuer to make specific claims, so we need endorsement</p>
                   <hr>
-                  <p><em>Consuming</em><br>Many other use cases - examples include reversing payments (refunds/chargebacks), status enquiries</p>
+                  <p><em>Consuming</em><br>Many other use cases - examples include reversing payments (refunds/chargebacks), status enquiries<span class="ednote">Scenarios above added as consuming use case (@burnburn).</span></p>
                   <hr>
-                  <p><em>Consuming</em><br>There are other use cases of identity verification for selling different items, pick up of orders, employee credential verifications etc.</p>
+                  <p><em>Consuming</em><br>There are other use cases of identity verification for selling different items, pick up of orders, employee credential verifications etc.<span class="ednote">Scenarios above added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <p><em>Managing</em><br>blending credentials in a holistic portfolio that allows the individual to present a truer representation of their capabilities and interests – blending credential details to present continuous learning opportunities for the individual – filling supply and demand skill gaps in the labor market – tracking outcome data of credential usage for issuers (how, where, why and in what context is a credential used)​</p>
                   <hr>
