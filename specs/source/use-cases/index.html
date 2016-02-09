@@ -1092,6 +1092,49 @@ by the group should address.
             those who have a valid passport credential.</dd>
           </dl>
         </section>
+        <section>
+          <h3 id="uc-consuming-existing-ids">Use Existing IDs as Claim(s)</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for existing IDs to be used as
+            claims, assuming there is an entity that will verify
+            them.</dd>
+            <dt>Motivations</dt>
+            <dd>&nbsp;</dd>
+            <dt>Phase</dt>
+            <dd>&nbsp;</dd>
+            <dt>Scenarios</dt>
+            <dd>We do promote the use of LEI, the Legal Entity
+            Identifier. This is focussed on banks, which will provide
+            certainty in financial trades. E.g.,:</p>
+              <ul>
+                <li>Identification and storing in repository of trades
+                between financial Institutions and customers;</li>
+                <li>Due diligence in correspondent banking;</li>
+                <li>Identifying banks with LEI is for some cases a
+                more precise way than presently done through BICs,
+                though we have no plans to change the usage of BIC in
+                our RTGS payment system.</li>
+                <li>indeed KYC, and also FATF‎.</li>
+              </ul>
+            </dd>
+            <dd>We are building various decentralized applications
+            (dApps) and platforms that all make use of our
+            ID/Persona/Reputation system.  “Sign in” to these dApps is
+            accomplished via the wallet that we have built which
+            serves as a container for ID/Persona.  A small number of
+            examples of the systems that use this
+            ID/Persona/Reputation construct include Product, our
+            prediction markets platform, our Poker platform, and Music
+            Platform, our open music industry platform</dd>
+            <dd>We integrate with many products and each product has
+            it’s own credentialing system. Some use LDAP, but that is
+            not consistent. This causes headaches because we don’t
+            know which account to assign which user, especially if
+            they use the account to store data. Will be nice to have a
+            centralized Identity server (like OpenID connect)</dd>
+          </dl>
+        </section>
       </section>
 
       <section>
@@ -1241,7 +1284,7 @@ by the group should address.
                       presently done through BICs, though we have no plans to change the usage of
                       BIC in our RTGS payment system.</li>
                       <li>indeed KYC, and also FATF‎.</li>
-                  </ul>
+                  </ul><span class="ednote">Scenarios above added as consuming use case (@burnburn).</span>
                   <hr>
                   <p><em>General</em><br>Work being done at G3ict and Raising The Floor initiative seek to provide Assistive Technology from the cloud, which will require robust credentials to ensure privacy and security concerns, while still “opening the door” to access these types of cloud services. I see a standardized credentials system playing a big part in these efforts.</p>
                   <hr>
@@ -1276,13 +1319,13 @@ by the group should address.
                   <hr>
                   <p><em>Managing / Sharing</em><br>Actors: job seekers/learners/employers Purpose: Credential discovery, identification, and comparison  By means of the Web, individual learners and organizations needing to make sense of the rapidly growing credential marketplace in order to make education/training and job seeking decisions want to quickly discover, identify, and compare available credentials and credential providers based on a number of criteria including, but not limited to: (1) type of credential, (2) scope of credential application (e.g., job types, geographic areas), (3) transfer value, (4) competencies addressed; (5) mechanisms of assessment, (6) prerequisite competencies, and (7) accreditation/endorsement status.</p>
                   <hr>
-                  <p><em>Issuing / Consuming</em><br>We are building various decentralized applications (dApps) and platforms that all make use of our ID/Persona/Reputation system.  “Sign in” to these dApps is accomplished via the wallet that we have built which serves as a container for ID/Persona.  A small number of examples of the systems that use this ID/Persona/Reputation construct include Product, our prediction markets platform, our Poker platform, and Music Platform, our open music industry platform</p>
+                  <p><em>Issuing / Consuming</em><br>We are building various decentralized applications (dApps) and platforms that all make use of our ID/Persona/Reputation system.  “Sign in” to these dApps is accomplished via the wallet that we have built which serves as a container for ID/Persona.  A small number of examples of the systems that use this ID/Persona/Reputation construct include Product, our prediction markets platform, our Poker platform, and Music Platform, our open music industry platform<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <p><em>Consuming</em><br>We are primarily interested in credentials in relation to content and annotation ownership. Our use cases center around moderation of annotations, cumulative reputation for credentialed individuals, notification (where possible) to content owners that their content is being annotated or their annotations are being replied to, as well as content and annotation distribution and publishing vetted by a distributed reputation system (permission to publish based on merit, explicit permission).</p>
                   <hr>
                   <p><em>Consuming / Issuing</em><br>In MOOC and other on-line learning systems being able to reliably identify participants is vital to ensure the individual evaluation and certification. A participant that performs a test certified on the Web must provide his credentials to prove his identity before the test, and then to allow the system to issue a secure certificate of his results to the test. <span class="ednote">Added as issuing use case (@gkellogg).</span></p>
                   <hr>
-                  <p><em>Consuming</em><br>We integrate with many products and each product has it’s own credentialing system. Some use LDAP, but that is not consistent. This causes headaches because we don’t know which account to assign which user, especially if they use the account to store data. Will be nice to have a centralized Identity server (like OpenID connect)</p>
+                  <p><em>Consuming</em><br>We integrate with many products and each product has it’s own credentialing system. Some use LDAP, but that is not consistent. This causes headaches because we don’t know which account to assign which user, especially if they use the account to store data. Will be nice to have a centralized Identity server (like OpenID connect)<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <p><em>Consuming</em><br>Transient private communication is difficult, since the ActivityPump spec requires verifying the that a message came from its origin, so signatures may help here.</p>
                   <hr>
