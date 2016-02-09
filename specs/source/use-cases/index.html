@@ -1136,6 +1136,83 @@ by the group should address.
             centralized Identity server (like OpenID connect)</dd>
           </dl>
         </section>
+        <section>
+          <h3 id="uc-consuming-multiple-recipients">Verify Claims for Multiple Recipients</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible to simultaneously verify claims
+            for multiple recipients.</dd>
+            <dt>Motivations</dt>
+            <dd>Transactions done by third parties often need to
+            confirm the claims of the two other parties to the
+            transaction.</dd>
+            <dt>Phase</dt>
+            <dd>Essential</dd>
+            <dt>Scenarios</dt>
+            <dd>
+              <ol>
+                <li>Physician writes a prescription, electronically on iPad application.</li>
+                <li>Physician transmits to a PBM or Pharmacy.</li>
+                <li>Transmission contains physician’s key credentials
+                that would allow the transaction to complete (all of
+                which can “expire” or be revoked at any moment in
+                time), like NPI Number, Professional License, DEA
+                Registration, Network Enrollment, PECOS Enrollment,
+                Exclusion/Debarment status).</li>
+                <li>Transmission contains patient’s key credentials
+                that would allow the transaction to complete (all of
+                which can “expire” or be revoked at any moment in
+                time), like drug allergies, other prescribed drugs
+                (inter-actives), Network/Payer enrollment,
+                Medicare/Medicaid enrollment, Drug Program enrollment
+                etc.</li>
+                <li>Credential consumer (PBM/pharmacy) pass or fails
+                transaction based on received credentials from both
+                transaction participants.</li>
+              </ol>
+            </dd>
+            <dd>Company is involved in the issuance and consumption of
+            credentials as “social currency” to prove reputation and
+            ascertain privilege on the Web. A credential is defined as
+            a digitally signed data document that represents
+            authoritative claims issued by primary source data
+            providers to an entity (i.e., person, place or
+            thing.). First major use case: An example would be a
+            nursing license issued by a government agency. The holder
+            of a nursing license credential can offer it via their
+            browser to a web site as proof of required attributes. For
+            instance, if a web site requires a visitor to hold nursing
+            license to gain access, the site would request the nursing
+            identity credential from the visitor’s IdP to authenticate
+            the visitor by inspecting and verifying the provided
+            credential status and authenticity. The nurse should be
+            able to keep private the use of the web site from the
+            IdP. Second major use case: Prior to filling and handing
+            over a prescription to a patient, a pharmacy needs to:
+            ensure the doctor’s credentials are valid and none of them
+            violate a business rule; that the prescription data has
+            not been tampered with; and authenticate the person
+            picking up the prescription is or is appropriately
+            associated with or an official proxy of the patient. Using
+            digital credentials, these processes can be largely
+            automated and streamlined. For example, when a doctor who
+            writes a prescription, a digitally-signed credential can
+            be generated that contains the prescription and an
+            identifier for the intended patient. Linked to the
+            credential can be another credential that contains the
+            doctor’s License, DEA Registration, National Provider
+            Identifier (NPI), Medicare/Medicaid Enrollment Status and
+            Exclusion/Debarment status. The patient can be issued a
+            credential that can be used to prove they are associated
+            with the identifier. The pharmacy prescription system can
+            now independently verify all of the above via these
+            digital credentials at the point of sale terminal or even
+            over the Web.</dd>
+            <dd>Entry Point Processing: verifying credentials of a
+            healthcare transaction participant (broadly) - - hundreds
+            of applications for this.</dd>
+          </dl>
+        </section>
       </section>
 
       <section>
@@ -1371,7 +1448,7 @@ by the group should address.
                       enrollment etc.</li>
                       <li>Credential consumer (PBM/pharmacy) pass or fails transaction based on
                       received credentials from both transaction participants.</li>
-                  </ol>
+                  </ol><span class="ednote">Scenarios above added as consuming use case (@burnburn).</span>
                   <hr>
                   <p><em>Consuming</em><br>From the processor perspective, issues surrounding the merchant integration of retail with web shopping - there is great interest in cases where a customer will pay online and then pick up in in-store; or if a customer were to place the order online and then pay at the pick-up.  Additional areas of concern from instances of Card not present or online shipping where items may be delivered in split shipments requiring multiple authorizations or an item is on back order and the customer wants to complete the transaction - or even instances of advanced orders contingent on future availability.</p>
                   <hr>
@@ -1403,7 +1480,7 @@ by the group should address.
                   <hr>
                   <p><em>Consuming</em><br>Our Trade product allows users to trade on the network but users are required to provide KYC information before they can use their accounts.  Currently we use a third-party service which allows user to upload scanned copies of their relevant documents (passport, driver’s license etc) which, if not automatically verified, require manual verification.  Ideally users should be able to share digital credentials with us that cover all of our KYC requirements.</p>
                   <hr>
-                  <p><em>Consuming</em><br>Company is involved in the issuance and consumption of credentials as “social currency” to prove reputation and ascertain privilege on the Web. A credential is defined as a digitally signed data document that represents authoritative claims issued by primary source data providers to an entity (i.e., person, place or thing.). First major use case: An example would be a nursing license issued by a government agency. The holder of a nursing license credential can offer it via their browser to a web site as proof of required attributes. For instance, if a web site requires a visitor to hold nursing license to gain access, the site would request the nursing identity credential from the visitor’s IdP to authenticate the visitor by inspecting and verifying the provided credential status and authenticity. The nurse should be able to keep private the use of the web site from the IdP. Second major use case: Prior to filling and handing over a prescription to a patient, a pharmacy needs to: ensure the doctor’s credentials are valid and none of them violate a business rule; that the prescription data has not been tampered with; and authenticate the person picking up the prescription is or is appropriately associated with or an official proxy of the patient. Using digital credentials, these processes can be largely automated and streamlined. For example, when a doctor who writes a prescription, a digitally-signed credential can be generated that contains the prescription and an identifier for the intended patient. Linked to the credential can be another credential that contains the doctor’s License, DEA Registration, National Provider Identifier (NPI), Medicare/Medicaid Enrollment Status and Exclusion/Debarment status. The patient can be issued a credential that can be used to prove they are associated with the identifier. The pharmacy prescription system can now independently verify all of the above via these digital credentials at the point of sale terminal or even over the Web.</p>
+                  <p><em>Consuming</em><br>Company is involved in the issuance and consumption of credentials as “social currency” to prove reputation and ascertain privilege on the Web. A credential is defined as a digitally signed data document that represents authoritative claims issued by primary source data providers to an entity (i.e., person, place or thing.). First major use case: An example would be a nursing license issued by a government agency. The holder of a nursing license credential can offer it via their browser to a web site as proof of required attributes. For instance, if a web site requires a visitor to hold nursing license to gain access, the site would request the nursing identity credential from the visitor’s IdP to authenticate the visitor by inspecting and verifying the provided credential status and authenticity. The nurse should be able to keep private the use of the web site from the IdP. Second major use case: Prior to filling and handing over a prescription to a patient, a pharmacy needs to: ensure the doctor’s credentials are valid and none of them violate a business rule; that the prescription data has not been tampered with; and authenticate the person picking up the prescription is or is appropriately associated with or an official proxy of the patient. Using digital credentials, these processes can be largely automated and streamlined. For example, when a doctor who writes a prescription, a digitally-signed credential can be generated that contains the prescription and an identifier for the intended patient. Linked to the credential can be another credential that contains the doctor’s License, DEA Registration, National Provider Identifier (NPI), Medicare/Medicaid Enrollment Status and Exclusion/Debarment status. The patient can be issued a credential that can be used to prove they are associated with the identifier. The pharmacy prescription system can now independently verify all of the above via these digital credentials at the point of sale terminal or even over the Web.<span class="ednote">Scenarios above added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <p><em>Consuming</em><br>Like many telcos (mobile and fixed line alike) are required by law to assess the legal identity of a person before allowing them into the network.Originally only presence of the person in a shop and presentation of an identity document (ID Card, passport, etc.) was required. As it is a prerequsite e.g. even for MVNOs to sell mobile contracts (hence, SIM Cards) in supermarkets and via TV, copies of said documents, or the use of the national (proprietary) eID has seen some Adoption.</p>
                   <hr>
@@ -1506,7 +1583,7 @@ by the group should address.
                       credentials (NPI, License, DEA Registrant, PECOS, Exclusions/Debarments). </li>
                       <li><em>Consuming</em><br>Entry Point Processing: verifying credentials of a
                       healthcare transaction participant (broadly) - - hundreds of applications for
-                      this.</li>
+                      this.<span class="ednote">Scenarios above added as consuming use case (@burnburn).</span></li>
                       <li><em>Sharing</em><br>Healthcare Directories: payer or managed care
                       directories for patient referrals (B2C), providing credentials to potential
                       consumers.</li>
