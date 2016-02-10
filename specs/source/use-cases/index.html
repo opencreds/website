@@ -870,6 +870,42 @@ by the group should address.
             membership credential, which she provides. The website
             confirms her membership credential is valid and grants her
             access to the member-only portion of the site.</dd>
+            <dd>In MOOC and other on-line learning systems being able
+            to reliably identify participants is vital to ensure the
+            individual evaluation and certification. A participant
+            that performs a test certified on the Web must provide his
+            credentials to prove his identity before the test, and
+            then to allow the system to issue a secure certificate of
+            his results to the test.</dd>
+            <dd>Like many telcos (mobile and fixed line alike) are
+            required by law to assess the legal identity of a person
+            before allowing them into the network.Originally only
+            presence of the person in a shop and presentation of an
+            identity document (ID Card, passport, etc.) was
+            required. As it is a prerequsite e.g. even for MVNOs to
+            sell mobile contracts (hence, SIM Cards) in supermarkets
+            and via TV, copies of said documents, or the use of the
+            national (proprietary) eID has seen some Adoption.</dd>
+            <dd>Password reset, change of contract modules, tariffs,
+            etc. might also require credentials beyond the ones give
+            during registration.</dd>
+            <dd>For business partners would like to be able to have
+            them verify their employees to their retirement/401K,
+            payroll, stock plans and other financial accounts with the
+            instiution.  Also have the business authenticate employees
+            with authorization to commit payments for their company
+            for goods and services</dd>
+            <dd>Once enrolled the user is able to authenticate to the
+            mobile wallet system with at least two factor
+            authentication.</dd>
+            <dd>As we move to more self-service modes (institutions
+            that self-register) we can’t always rely on a trusted
+            partnership so our business options are limited.
+            (Consider a bogus ‘MyGarage University’ self-registering
+            and expecting free review copies of eTextbooks for its
+            ‘instructors’).  We need stronger assurances that partners
+            are who they say they are and are entitled to
+            institutional or user status.</dd>
           </dl>
         </section>
         <section>
@@ -1525,7 +1561,7 @@ by the group should address.
                   <hr>
                   <p><em>Consuming</em><br>We are primarily interested in credentials in relation to content and annotation ownership. Our use cases center around moderation of annotations, cumulative reputation for credentialed individuals, notification (where possible) to content owners that their content is being annotated or their annotations are being replied to, as well as content and annotation distribution and publishing vetted by a distributed reputation system (permission to publish based on merit, explicit permission).<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
-                  <p><em>Consuming / Issuing</em><br>In MOOC and other on-line learning systems being able to reliably identify participants is vital to ensure the individual evaluation and certification. A participant that performs a test certified on the Web must provide his credentials to prove his identity before the test, and then to allow the system to issue a secure certificate of his results to the test. <span class="ednote">Added as issuing use case (@gkellogg).</span></p>
+                  <p><em>Consuming / Issuing</em><br>In MOOC and other on-line learning systems being able to reliably identify participants is vital to ensure the individual evaluation and certification. A participant that performs a test certified on the Web must provide his credentials to prove his identity before the test, and then to allow the system to issue a secure certificate of his results to the test. <span class="ednote">Added as issuing use case (@gkellogg).</span><span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <p><em>Consuming</em><br>We integrate with many products and each product has it’s own credentialing system. Some use LDAP, but that is not consistent. This causes headaches because we don’t know which account to assign which user, especially if they use the account to store data. Will be nice to have a centralized Identity server (like OpenID connect)<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
@@ -1545,7 +1581,7 @@ by the group should address.
                   <hr>
                   <p><em>Consuming</em><br>Company is involved in the issuance and consumption of credentials as “social currency” to prove reputation and ascertain privilege on the Web. A credential is defined as a digitally signed data document that represents authoritative claims issued by primary source data providers to an entity (i.e., person, place or thing.). First major use case: An example would be a nursing license issued by a government agency. The holder of a nursing license credential can offer it via their browser to a web site as proof of required attributes. For instance, if a web site requires a visitor to hold nursing license to gain access, the site would request the nursing identity credential from the visitor’s IdP to authenticate the visitor by inspecting and verifying the provided credential status and authenticity. The nurse should be able to keep private the use of the web site from the IdP. Second major use case: Prior to filling and handing over a prescription to a patient, a pharmacy needs to: ensure the doctor’s credentials are valid and none of them violate a business rule; that the prescription data has not been tampered with; and authenticate the person picking up the prescription is or is appropriately associated with or an official proxy of the patient. Using digital credentials, these processes can be largely automated and streamlined. For example, when a doctor who writes a prescription, a digitally-signed credential can be generated that contains the prescription and an identifier for the intended patient. Linked to the credential can be another credential that contains the doctor’s License, DEA Registration, National Provider Identifier (NPI), Medicare/Medicaid Enrollment Status and Exclusion/Debarment status. The patient can be issued a credential that can be used to prove they are associated with the identifier. The pharmacy prescription system can now independently verify all of the above via these digital credentials at the point of sale terminal or even over the Web.<span class="ednote">Scenarios above added as consuming use case (@burnburn).</span></p>
                   <hr>
-                  <p><em>Consuming</em><br>Like many telcos (mobile and fixed line alike) are required by law to assess the legal identity of a person before allowing them into the network.Originally only presence of the person in a shop and presentation of an identity document (ID Card, passport, etc.) was required. As it is a prerequsite e.g. even for MVNOs to sell mobile contracts (hence, SIM Cards) in supermarkets and via TV, copies of said documents, or the use of the national (proprietary) eID has seen some Adoption.</p>
+                  <p><em>Consuming</em><br>Like many telcos (mobile and fixed line alike) are required by law to assess the legal identity of a person before allowing them into the network.Originally only presence of the person in a shop and presentation of an identity document (ID Card, passport, etc.) was required. As it is a prerequsite e.g. even for MVNOs to sell mobile contracts (hence, SIM Cards) in supermarkets and via TV, copies of said documents, or the use of the national (proprietary) eID has seen some Adoption.<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <p><em>Issuing / Sharing</em><br>We want to enable test takers to have a digital credential that represents a score report for pursuing opportunities in education, workforce, and personal endeavors.  We can do point-to-point distribution of score reports with current technologies and standards, but we seek a digital score report credential that will allow a test taker to do controlled, multipoint display and distribution (on LinkedIn, Credly, Parchment, Monster, or Facebook, for example). Such a credential will increase the utility and user control of their score reports.  Doing this requires ubiquitous web-based standards of the type being worked on by IMS Global, the W3C Community Group, the Dublin Core, and others to ensure validity, security, privacy, efficient display and consumption, issuer control, protection of intellectual property and business model, and similar requirements. <span class="ednote">Added as issuing use case (@gkellogg).</span></p>
                   <hr>
@@ -1631,9 +1667,9 @@ by the group should address.
                   <hr>
                   <p><em>Managing</em><br>blending credentials in a holistic portfolio that allows the individual to present a truer representation of their capabilities and interests – blending credential details to present continuous learning opportunities for the individual – filling supply and demand skill gaps in the labor market – tracking outcome data of credential usage for issuers (how, where, why and in what context is a credential used)​</p>
                   <hr>
-                  <p><em>Consuming</em><br>Password reset, change of contract modules, tariffs, etc. might also require credentials beyond the ones give during registration.</p>
+                  <p><em>Consuming</em><br>Password reset, change of contract modules, tariffs, etc. might also require credentials beyond the ones give during registration.<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
-                  <p><em>Sharing / Consuming</em><br>For business partners would like to be able to have them verify their employees to their retirement/401K, payroll, stock plans and other financial accounts with the instiution.   Also have the business authenticate employees with authorization to commit payments for their company for goods and services</p>
+                  <p><em>Sharing / Consuming</em><br>For business partners would like to be able to have them verify their employees to their retirement/401K, payroll, stock plans and other financial accounts with the instiution.   Also have the business authenticate employees with authorization to commit payments for their company for goods and services<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <p><em>Consuming</em><br>Too much to describe here. i wrote the main principle as an answer for question 10. If that principle works, also all simpler use cases can work without any problem. The most compelling after the one mentioned above is that the authentication is done by means of a certificate from a CA which acts as a LoA 3 credential.</p>
                   <hr>
@@ -1656,7 +1692,7 @@ by the group should address.
                   <hr>
                   <p><em>Sharing</em><br>Offline (non-public Web) credentials which may later “surface” to the wider Web at the point of publication (i.e. ebook reader annotations being published to a community web site later).</p>
                   <hr>
-                  <p><em>Consuming</em><br>Once enrolled the user is able to authenticate to the mobile wallet system with at least two factor authentication. </p>
+                  <p><em>Consuming</em><br>Once enrolled the user is able to authenticate to the mobile wallet system with at least two factor authentication.<span class="ednote">Scenario added as consuming use case (@burnburn).</span> </p>
                   <hr>
                   <p><em>Sharing / Managing</em><br>Lending, in particular Trade Finance and Funding. Credentials as a “set of Credentials” leading to the formation of an “Identity Persona” allows for Credit Scores or Reputational Systems to happen in third world countries where currently there is none. This leads to financial inclusion.</p>
                   <hr>
@@ -1747,7 +1783,7 @@ by the group should address.
                       business options are limited.  (Consider a bogus ‘MyGarage University’
                       self-registering and expecting free review copies of eTextbooks for its
                       ‘instructors’).  We need stronger assurances that partners are who they say
-                      they are and are entitled to institutional or user status.</li>
+                      they are and are entitled to institutional or user status.<span class="ednote">Scenario added as consuming use case (@burnburn).</span></li>
                       <li><em>Managing</em><br>SAML 2 solutions provide us with higher quality
                       identity but virtually no 'course context’ or ‘role’ information.  (LTI
                       provides very rich educational metadata with each launch).</li>
