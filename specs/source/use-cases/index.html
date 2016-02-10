@@ -1107,6 +1107,10 @@ by the group should address.
             the credential, but those who don’t know the identifier
             cannot derive personally identifiable information about
             the recipient.</dd>
+            <dd>Transient private communication is difficult, since
+            the ActivityPump spec requires verifying the that a
+            message came from its origin, so signatures may help
+            here.</dd>
           </dl>
         </section>
         <section>
@@ -1565,7 +1569,7 @@ by the group should address.
                   <hr>
                   <p><em>Consuming</em><br>We integrate with many products and each product has it’s own credentialing system. Some use LDAP, but that is not consistent. This causes headaches because we don’t know which account to assign which user, especially if they use the account to store data. Will be nice to have a centralized Identity server (like OpenID connect)<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
-                  <p><em>Consuming</em><br>Transient private communication is difficult, since the ActivityPump spec requires verifying the that a message came from its origin, so signatures may help here.</p>
+                  <p><em>Consuming</em><br>Transient private communication is difficult, since the ActivityPump spec requires verifying the that a message came from its origin, so signatures may help here.<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <p><em>Managing / Sharing</em><br>Bank-ID: based on already executed Customer Due Diligince process at the bank, other service providers such as retailers may request trusted credentials for a specific customer, such as current address or age limits.  A retailer selling wine products on-line asks a customer to identify himself via the Bank-ID service. The customer logs in via a dialogue provided by his bank, using the 2FA token provided by the bank. After succesful sign-in, the bank makes the required data available to the retailer.</p>
                   <hr>
