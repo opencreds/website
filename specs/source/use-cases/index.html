@@ -1325,6 +1325,81 @@ by the group should address.
             that generates them.</dd>
           </dl>
         </section>
+        <section>
+          <h3 id="uc-consuming-qualifier">Verifiable Claims as Qualifiers</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for verifiable claims to be used
+            as qualifiers for an action of transaction.</dd>
+            <dt>Motivations</dt>
+            <dd>Verifiable claims may be used to determine eligibility
+            rather than identity.</dd>
+            <dt>Phase</dt>
+            <dd>Essential</dd>
+            <dt>Scenarios</dt>
+            <dd>Age-restricted consumer products companies (CPGs) have
+            largely been excluded from price-reduced promotions – a
+            $500B market in the US - to targeted consumers largely due
+            to the requirement to ensure the promotion does not
+            encourage under-age sales.  Digital identity can provide
+            value to the consumer, CPG and merchant by opening up this
+            currently closed market to age-restricted sales.  A beer
+            brewer wants to provide a digital promotion to an ‘of age’
+            consumer.  To obtain the promotion on their mobile, the
+            consumer must prove their age to the beer company (so as
+            not to run afoul of age laws) to obtain the promotion
+            token.  Proof of age must be digital and tokenized,
+            incorporated within the mobile device, and validated by a
+            trusted service provider.  Upon validation of age, the
+            brewer issues the promotion to the mobile, ideally with
+            the age verification token embedded in the promotion token
+            (for validation at POS).  The consumer then selects the
+            promoted product at the convenience store, which is
+            scanned at the POS.  The consumer elects to apply the
+            promotion and passes BOTH the promotion token and age
+            verification token to the POS which matches tokens.  With
+            a successful match, the promotion is applied to the sale
+            and price is discounted.  The store then ‘settles’ the
+            promotion with the brewer; seeking payment from the
+            brewer, retiring the promotion token and posting proof
+            that age verification was assured for proof with
+            regulatory agencies.  This same process – minus the token
+            – can be applied in all age-validated sales within a
+            convenience store; reducing or eliminating the store’s
+            liability to under-age sales and keeping age-restricted
+            products out of the hands of youth</dd>
+            <dd>I think there are two use cases that would be
+            important to Company.  The first is when verifying that
+            new users are who they say they are.  We require that all
+            users have a <a href="http://company.com">company.com</a>
+            account in order to shop with us, so that either results
+            in a returning user signing in or a new user creating an
+            account.  It would be good to have the ability to verify
+            with a credentials solution that the customer signing up
+            with us was who they say they were.  The second case is
+            relative to selling restricted items.  If we had a good
+            way to validate a customer was qualified to purchase that
+            restricted item with us then I think that could eliminate
+            a good deal of friction from the process.</dd>
+            <dd>We see a need for analyzing a bundle of credentials to
+            help match or qualify a person for educational, workforce,
+            and personal opportunities.  Doing so requires that the
+            credentials meet the needs for our use case mentioned
+            above in Question 4 and that the credential ecosystem can
+            live on the web and within the web’s linked data standards
+            and methods of data and privacy protection, security,
+            sharing, and consumption.  We need credentials to be part
+            of the web ecosystem to keep us from having to develop
+            independent systems and applications for managing
+            credentials.</dd>
+            <dd>Establish a framework for fully embedded assessment
+            model built on personal, academic, social, and
+            professional accomplishments.</dd>
+            <dd>Claims processing: patient credentials (insurance
+            coverage/enrollment, admitted to a facility or study
+            participant).</dd>
+          </dl>
+        </section>
       </section>
 
       <section>
@@ -1602,7 +1677,7 @@ by the group should address.
                   <hr>
                   <p><em>General</em><br>The ability for organisations working with credentials to offer services that are accessible to people with disabilities, and where required fulfill their legal obligations to do so.</p>
                   <hr>
-                  <p><em>Consuming</em><br>Age-restricted consumer products companies (CPGs) have largely been excluded from price-reduced promotions – a $500B market in the US - to targeted consumers largely due to the requirement to ensure the promotion does not encourage under-age sales.  Digital identity can provide value to the consumer, CPG and merchant by opening up this currently closed market to age-restricted sales.  A beer brewer wants to provide a digital promotion to an ‘of age’ consumer.  To obtain the promotion on their mobile, the consumer must prove their age to the beer company (so as not to run afoul of age laws) to obtain the promotion token.  Proof of age must be digital and tokenized, incorporated within the mobile device, and validated by a trusted service provider.  Upon validation of age, the brewer issues the promotion to the mobile, ideally with the age verification token embedded in the promotion token (for validation at POS).   The consumer then selects the promoted product at the convenience store, which is scanned at the POS.  The consumer elects to apply the promotion and passes BOTH the promotion token and age verification token to the POS which matches tokens.  With a successful match, the promotion is applied to the sale and price is discounted.  The store then ‘settles’ the promotion with the brewer; seeking payment from the brewer, retiring the promotion token and posting proof that age verification was assured for proof with regulatory agencies.  This same process – minus the token – can be applied in all age-validated sales within a convenience store; reducing or eliminating the store’s liability to under-age sales and keeping age-restricted products out of the hands of youth</p>
+                  <p><em>Consuming</em><br>Age-restricted consumer products companies (CPGs) have largely been excluded from price-reduced promotions – a $500B market in the US - to targeted consumers largely due to the requirement to ensure the promotion does not encourage under-age sales.  Digital identity can provide value to the consumer, CPG and merchant by opening up this currently closed market to age-restricted sales.  A beer brewer wants to provide a digital promotion to an ‘of age’ consumer.  To obtain the promotion on their mobile, the consumer must prove their age to the beer company (so as not to run afoul of age laws) to obtain the promotion token.  Proof of age must be digital and tokenized, incorporated within the mobile device, and validated by a trusted service provider.  Upon validation of age, the brewer issues the promotion to the mobile, ideally with the age verification token embedded in the promotion token (for validation at POS).   The consumer then selects the promoted product at the convenience store, which is scanned at the POS.  The consumer elects to apply the promotion and passes BOTH the promotion token and age verification token to the POS which matches tokens.  With a successful match, the promotion is applied to the sale and price is discounted.  The store then ‘settles’ the promotion with the brewer; seeking payment from the brewer, retiring the promotion token and posting proof that age verification was assured for proof with regulatory agencies.  This same process – minus the token – can be applied in all age-validated sales within a convenience store; reducing or eliminating the store’s liability to under-age sales and keeping age-restricted products out of the hands of youth<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <ol>
                       <li><em>Sharing</em><br>Make a payment  Payer asserts an identity and payment
@@ -1616,21 +1691,21 @@ by the group should address.
                   <hr>
                   <p><em>General</em><br>We operate in the investor / aggregation equity crowdfunding space. What we need is detailed here … <a href="http://www.paulniederer.com/2015/09/an-alternative-title-iii-retail-unaccredited-investors-and-equity-crowdfunding-solution/">http://www.paulniederer.com/2015/09/an-alternative-title-iii-retail-unaccredited-investors-and-equity-crowdfunding-solution/</a></p>
                   <hr>
-                  <p><em>Consuming</em><br>I think there are two use cases that would be important to Company.  The first is when verifying that new users are who they say they are.  We require that all users have a <a href="http://company.com">company.com</a> account in order to shop with us, so that either results in a returning user signing in or a new user creating an account.  It would be good to have the ability to verify with a credentials solution that the customer signing up with us was who they say they were.  The second case is relative to selling restricted items.  If we had a good way to validate a customer was qualified to purchase that restricted item with us then I think that could eliminate a good deal of friction from the process.</p>
+                  <p><em>Consuming</em><br>I think there are two use cases that would be important to Company.  The first is when verifying that new users are who they say they are.  We require that all users have a <a href="http://company.com">company.com</a> account in order to shop with us, so that either results in a returning user signing in or a new user creating an account.  It would be good to have the ability to verify with a credentials solution that the customer signing up with us was who they say they were.  The second case is relative to selling restricted items.  If we had a good way to validate a customer was qualified to purchase that restricted item with us then I think that could eliminate a good deal of friction from the process.<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
               </section>
               <section>
                   <h1>5. Are there other use cases that your organization feels are important? If so, what are they?</h1>
                   <p><em>Issuing / Sharing</em><br>Company would like to be able to strongly establish a learning identity so that when that individual moves from one institution using our software to another institution using our software (or someone else’s software) that identity and their associated accomplishments can travel with them.  We also want to be able to validate that users actually using our system is the same person who registered for courses and will receive credentials during and after assessment. <span class="ednote">Added as issuing use case (@gkellogg).</span></p>
                   <hr>
-                  <p><em>Consuming</em><br>We see a need for analyzing a bundle of credentials to help match or qualify a person for educational, workforce, and personal opportunities.  Doing so requires that the credentials meet the needs for our use case mentioned above in Question 4 and that the credential ecosystem can live on the web and within the web’s linked data standards and methods of data and privacy protection, security, sharing, and consumption.  We need credentials to be part of the web ecosystem to keep us from having to develop independent systems and applications for managing credentials.</p>
+                  <p><em>Consuming</em><br>We see a need for analyzing a bundle of credentials to help match or qualify a person for educational, workforce, and personal opportunities.  Doing so requires that the credentials meet the needs for our use case mentioned above in Question 4 and that the credential ecosystem can live on the web and within the web’s linked data standards and methods of data and privacy protection, security, sharing, and consumption.  We need credentials to be part of the web ecosystem to keep us from having to develop independent systems and applications for managing credentials.<span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <p><em>Consuming</em><br>Use similar to the above, but with the ability to recognize a customer’s loyalty account without additional information or clerk decision making. This would require the customer’s permission, preferably at provisioning time.</p>
                   <hr>
                   <ol>
                       <li><em>Consuming</em><br>Establish a framework for fully embedded assessment
                       model built on personal, academic, social, and professional
-                      accomplishments.</li>
+                      accomplishments.<span class="ednote">Scenario added as consuming use case (@burnburn).</span></li>
                       <li><em>Consuming</em><br>Institutional differentiation based on fit-for-purpose quality metrics.</li>
                   </ol>
                   <hr>
@@ -1690,7 +1765,7 @@ by the group should address.
                   <hr>
                   <ol>
                       <li><em>Consuming</em><br>Claims processing: patient credentials (insurance
-                      coverage/enrollment, admitted to a facility or study participant).</li>
+                      coverage/enrollment, admitted to a facility or study participant).<span class="ednote">Scenario added as consuming use case (@burnburn).</span></li>
                       <li><em>Sharing</em><br>Claims processing: healthcare billing practitioner
                       credentials (NPI, License, DEA Registrant, PECOS, Exclusions/Debarments). </li>
                       <li><em>Consuming</em><br>Entry Point Processing: verifying credentials of a
