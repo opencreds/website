@@ -1,4 +1,5 @@
 @startuml
+!includeurl  https://raw.githubusercontent.com/opencreds/website/master/specs/source/common/skin.pml 
 Autonumber
 
 Actor Asako
@@ -6,9 +7,9 @@ Participant "User Agent" as UA
 Participant "Credential Curator" as CV
 Participant "Certifying Authority" as Issuer
 
-Asako->UA: Navigate to web site
-UA->Issuer: Request Credential
-Issuer->Issuer: Verify identity
+Asako->UA: Navigate to\nweb site
+UA->Issuer: Request\nCredential
+Issuer->Issuer: Verify\nidentity
 
 Note right
   Expand on identity
@@ -16,11 +17,11 @@ Note right
 End note
 
 Issuer->Issuer: Generate credential
-Issuer->UA: Return credential
+Issuer->UA: Return\ncredential
 UA->Asako: Display credential
 Asako->UA: Save credential
-UA->CV: Store credential
-CV->UA: Display saved credentials
+UA->CV: Store\ncredential
+CV->UA: Display\nsaved credentials
 
 title Example credential creation flow
 
