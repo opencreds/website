@@ -1400,6 +1400,41 @@ by the group should address.
             participant).</dd>
           </dl>
         </section>
+        <section>
+          <h3 id="uc-consuming-securing-sources">Claims to Secure Source Data</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for source data used to
+            generate/issue claims be protected from consumer
+            access.</dd>
+            <dt>Motivations</dt>
+            <dd>Some agencies do not want the legal obligations
+            associated with having access to priviledged user
+            data.</dd>
+            <dt>Phase</dt>
+            <dd>Essential</dd>
+            <dt>Scenarios</dt>
+            <dd>One of the most compelling use cases for Company is
+            issuance of Loyalty Cards. When a customer applies for
+            Loyalty Cards either online or at Point Of Sale (POS), he
+            would need to enclose either SSN or Driving License or
+            State ID. Though there are secure standards implemented in
+            handling the information it would be preferable to avoid
+            sensitive information exchange.</dd>
+            <dd>Authenticating the people using Fuel Fleet Cards
+            (payment cards) and ACH-based payments is also important.
+            Credentialing in both cases is critical and uncontrolled
+            by the card brand.  Both are decoupled, and require a
+            payment system to KYC and other profile information – all
+            without passing that source data around.  So in ACH its “I
+            am John Doe, and here is my account information” in a
+            digital token.  Closed loop cards as well.  ACH is just a
+            set of rails, with no authentication beyond RTA – so
+            credentials are key here (waiting for the first ACH breach
+            to drive that home – with the source accounts drained and
+            Reg E the only remedy)</dd>
+          </dl>
+        </section>
       </section>
 
       <section>
@@ -1687,7 +1722,7 @@ by the group should address.
                   <hr>
                   <p><em>Sharing</em><br>Sharing credentials online across multiple stakeholder communities  w/out sacrificing insight to “evidence of success”, value of the outcome or earner’s privacy.  Company will provide, individuals a trusted and verifiable way to share the details of their professional accomplishments to any 3rd party recipient like employers, regulatory bodies and professional organizations.  An open standard would facilitate the transmission of this sort of data with many endpoints, so we can focus on a business model rather than data sharing protocols.</p>
                   <hr>
-                  <p><em>Issuing / Consuming</em><br>One of the most compelling use cases for Company is issuance of Loyalty Cards. When a customer applies for Loyalty Cards either online or at Point Of Sale (POS), he would need to enclose either SSN or Driving License or State ID. Though there are secure standards implemented in handling the information it would be preferable to avoid sensitive information exchange. <span class="ednote">Added as issuing use case (@gkellogg).</span></p>
+                  <p><em>Issuing / Consuming</em><br>One of the most compelling use cases for Company is issuance of Loyalty Cards. When a customer applies for Loyalty Cards either online or at Point Of Sale (POS), he would need to enclose either SSN or Driving License or State ID. Though there are secure standards implemented in handling the information it would be preferable to avoid sensitive information exchange. <span class="ednote">Added as issuing use case (@gkellogg).</span><span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <p><em>General</em><br>We operate in the investor / aggregation equity crowdfunding space. What we need is detailed here … <a href="http://www.paulniederer.com/2015/09/an-alternative-title-iii-retail-unaccredited-investors-and-equity-crowdfunding-solution/">http://www.paulniederer.com/2015/09/an-alternative-title-iii-retail-unaccredited-investors-and-equity-crowdfunding-solution/</a></p>
                   <hr>
@@ -1807,7 +1842,7 @@ by the group should address.
                   information” in a digital token.  Closed loop cards as well.  ACH is just a set of
                   rails, with no authentication beyond RTA – so credentials are key here (waiting for
                   the first ACH breach to drive that home – with the source accounts drained and Reg
-                  E the only remedy) <span class="ednote">Added as issuing use case (@gkellogg).</span></p>
+                  E the only remedy) <span class="ednote">Added as issuing use case (@gkellogg).</span><span class="ednote">Scenario added as consuming use case (@burnburn).</span></p>
                   <hr>
                   <p><em>Consuming / Sharing</em><br>Digital Annotation. In our research we encounter several use cases from the cultural heritage domain where credentials are relevant (e.g. to uniquely identify contributors), although not always crucial.</p>
                   <hr>
