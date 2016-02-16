@@ -290,52 +290,51 @@ dl.dl-horizontal > dd {
         <h2>Issuing Claims</h2>
 
         <p>The general flow discussed for issuing claims is the following:</p>
-        <p><em><strong>Issuer Advertises Credential Template</strong></em></p>
-        <p>The <a>Issuer</a> publishes a Credential Template elaborating
-        on the requirements that must be completed to issue the
-        <a>credential</a>.</p>
-        <p>The credential definition includes descriptive metadata about
-        the circumstances and context in which the credential is issued to
-        the recipient (<a>holder</a>). The issuer clearly defines this
-        information so others who later view or review the credential can
-        understand the context behind it.</p>
 
-        <p><em><strong>Recipient Proves Suitability for
-                Credential</strong></em></p>
-        <p>A recipient proves that they have met the requirements necessary
-        to acquire the credential from the issuer.</p>
-        <p>The results of tests could be shared more easily if they
-        were produced in the form of a digital credential.</p>
-        <p>Credentials should be able to be issued as a side-effect
+        <p><em><strong>Issuer Advertises Credential template</strong></em></p>
+
+        <p>The <a>Issuer</a> publishes a <a>Credential</a> template elaborating
+        on the requirements that must be completed to issue the
+        credential.</p>
+
+        <p>The credential definition includes descriptive metadata about the
+        circumstances and context in which the credential is issued to the
+        recipient (<a>holder</a>). The issuer clearly defines this information
+        so others who later <a data-lt="credential consumer">consume</a> the
+        credential can understand the context behind it.</p>
+
+        <p><em><strong>Recipient Proves Suitability for Credential</strong></em></p>
+
+        <p>A recipient (<a>entity</a>) proves that they have met the requirements necessary
+        to acquire the <a>credential</a> from the <a>issuer</a>.</p>
+
+        <p class="note">Credentials should be able to be issued as a side-effect
         of performing a particular real-world action.</p>
 
-        <p><em><strong>Issuer Issues Credential to Recipient</strong></em></p>
-        <p>The issuer customizes the credential template for a
-        particular recipient. The credential may be digitally
-        signed.</p>
-        <p>An issuer can make a <a>claim</a> that asserts something specific
-        about the recipient, such as a qualification, attribute, or the
-        attainment of a particular defined achievement.</p>
-        <p>It is important that an issuer ensure that a recipient is
-        who they say they are before issuing important credentials to the
-        recipient.</p>
-        <p>Personally identifiable information must use known data fields
+        <p><em><strong>Issuer Issues Credential to Holder</strong></em></p>
+
+        <p>The <a>issuer</a> creates the credential for a particular
+        <a>holder</a> containing one or more <a>claims</a> along with a
+        <a>digital signature</a>. Issuers MUST verify the identity of the
+        holder before issuing a credential if the credential makes claims about
+        the holder.</p>
+
+        <p class="note">Personally identifiable information must use known data fields
         in order to enable credential curation services to protect the
         recipient’s privacy.</p>
-        <p>A credential must be able to be issued to people that
-        have disabilities (10% of the human population)</p>
 
-        <p><em><strong>Recipient Stores Credential</strong></em></p>
-        <p>The recipient stores the credential in a credential vault or
-        other long-term storage location. A recipient of a digital credential
-        may store it on a variety of platforms or media. Credentials MUST be
-        portable.</p>
+        <p><em><strong>Holder Stores Credential</strong></em></p>
+
+        <p>The <a>holder</a> stores the <a>credential</a> with a <a>credential service</a> or
+        other long-term storage location. A holder of a credential
+        MAY store it on a variety of platforms or media. Credentials MUST be
+        portable between <a>credential services</a>.</p>
 
         <section>
             <h3 id="uc-issuing-claims">Issuing Claims</h3>
             <dl class="dl-horizontal">
                 <dt>Requirement</dt>
-                <dd>It MUST be possible for any <a>entity</a> to issue a verifiable claim.</dd>
+                <dd>It MUST be possible for any <a>entity</a> to issue a verifiable <a>claim</a>.</dd>
                 <dt>Motivation</dt>
                 <dd>An <a>entity</a>, such as an end user (<a>holder</a>),
                 wishes to make a <a>claim</a> and would like it to be endorsed by a
@@ -344,15 +343,15 @@ dl.dl-horizontal > dd {
                 <dt>Importance</dt>
                 <dd>Essential</dd>
                 <dt>Scenarios</dt>
-                <dd>Jane would like to get a digitally signed credential for her
+                <dd>Jane would like to get a digitally signed <a>credential</a> for her
                 checking account at MidBank. MidBank offers to provide a
                 credential asserting that Jane has an account at MidBank and has
                 access to her associated checking account.</dd>
                 <dd>Asako just passed the final test to receive a drivers
                 license. As she is still a new driver, and may be pulled over
-                for a traffic violation, she would like to receive a verfiable
-                claim that she has right to drive a car (<a>claim</a>). She
-                requests a verifiable claim from the certifying authority
+                for a traffic violation, she would like to receive a <a>credential</a>
+                asserts a <a>claim</a> that she has right to drive a car. She
+                requests a credential from the certifying authority
                 (<a>issuer</a>) that she can use to prove to the officer
                 (<a>credential consumer</a>) that her <a>claim</a> is
                 valid.
@@ -372,9 +371,9 @@ dl.dl-horizontal > dd {
                 exists. Finally it presents the eTextbook contents to the
                 student.</dd>
                 <dd>Certificate Co. runs experience-based certification programs
-                issuing credentials. That issuance could unfold in two ways: 1) Issuing
+                issuing <a>credentials</a>. That issuance could unfold in two ways: 1) Issuing
                 credentials on the validity of a certificate after successful
-                assessment of candidates; 2) Candidates bringing in evidence of
+                assessment of candidates (<a>entities</a>); 2) Candidates bringing in evidence of
                 certain activities necessary to comply with conformance
                 requirements e.g., “I have maintained my profession by following
                 xyz course.”</dd>
@@ -382,8 +381,8 @@ dl.dl-horizontal > dd {
                 and other on-line learning systems being able to reliably
                 identify participants is vital to ensure the individual
                 evaluation and certification. A participant that performs a test
-                certified on the Web must provide his credentials to prove his
-                identity before the test, and then to allow the system to issue a
+                certified on the Web must provide his <a>credentials</a> to prove his
+                <a>identity</a> before the test, and then to allow the system to issue a
                 secure certificate of his results to the test.</dd>
                 <dd>We want to enable test takers to have a
                 digital credential that represents a score report for pursuing
