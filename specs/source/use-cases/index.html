@@ -290,52 +290,53 @@ dl.dl-horizontal > dd {
         <h2>Issuing Claims</h2>
 
         <p>The general flow discussed for issuing claims is the following:</p>
-        <p><em><strong>Issuer Advertises Credential Template</strong></em></p>
-        <p>The <a>Issuer</a> publishes a Credential Template elaborating
-        on the requirements that must be completed to issue the
-        <a>credential</a>.</p>
-        <p>The credential definition includes descriptive metadata about
-        the circumstances and context in which the credential is issued to
-        the recipient (<a>holder</a>). The issuer clearly defines this
-        information so others who later view or review the credential can
-        understand the context behind it.</p>
 
-        <p><em><strong>Recipient Proves Suitability for
-                Credential</strong></em></p>
-        <p>A recipient proves that they have met the requirements necessary
-        to acquire the credential from the issuer.</p>
-        <p>The results of tests could be shared more easily if they
-        were produced in the form of a digital credential.</p>
-        <p>Credentials should be able to be issued as a side-effect
+        <p><em><strong>Issuer Advertises Credential template</strong></em></p>
+
+        <p>The <a>Issuer</a> publishes a <a>Credential</a> template elaborating
+        on the requirements that must be completed to issue the
+        credential.</p>
+
+        <p>The credential definition includes descriptive metadata about the
+        circumstances and context in which the credential is issued to the
+        recipient (<a>holder</a>). The issuer clearly defines this information
+        so others who later <a data-lt="credential consumer">consume</a> the
+        credential can understand the context behind it.</p>
+
+        <p><em><strong>Recipient Proves Suitability for Credential</strong></em></p>
+
+        <p>A recipient (<a>entity</a>) proves that they have met the requirements necessary
+        to acquire the <a>credential</a> from the <a>issuer</a>.</p>
+
+        <p class="note">Credentials should be able to be issued as a side-effect
         of performing a particular real-world action.</p>
 
-        <p><em><strong>Issuer Issues Credential to Recipient</strong></em></p>
-        <p>The issuer customizes the credential template for a
-        particular recipient. The credential may be digitally
-        signed.</p>
-        <p>An issuer can make a <a>claim</a> that asserts something specific
-        about the recipient, such as a qualification, attribute, or the
-        attainment of a particular defined achievement.</p>
-        <p>It is important that an issuer ensure that a recipient is
-        who they say they are before issuing important credentials to the
-        recipient.</p>
-        <p>Personally identifiable information must use known data fields
+        <p><em><strong>Issuer Issues Credential to Holder</strong></em></p>
+
+        <p>The <a>issuer</a> creates the credential for a particular
+        <a>holder</a> containing one or more <a>claims</a> along with a
+        <a>digital signature</a>. Issuers MUST verify the identity of the
+        holder before issuing a credential if the credential makes claims about
+        the holder.</p>
+
+        <p class="note">Personally identifiable information must use known data fields
         in order to enable credential curation services to protect the
         recipient’s privacy.</p>
-        <p>A credential must be able to be issued to people that
-        have disabilities (10% of the human population)</p>
 
-        <p><em><strong>Recipient Stores Credential</strong></em></p>
-        <p>The recipient stores the credential in a credential vault or
-        other long-term storage location. A recipient of a digital credential
-        may store it on a variety of platforms or media. Credentials MUST be
-        portable.</p>
+        <p><em><strong>Holder Stores Credential</strong></em></p>
+
+        <p>The <a>holder</a> stores the <a>credential</a> with a <a>credential service</a> or
+        other long-term storage location. A holder of a credential
+        MAY store it on a variety of platforms or media. Credentials MUST be
+        portable between <a>credential services</a>.</p>
+
+        <img alt='Example credential creation flow' style='display:block; margin:auto' src="uc-issuing-claims.svg"/>
 
         <section>
             <h3 id="uc-issuing-claims">Issuing Claims</h3>
             <dl class="dl-horizontal">
                 <dt>Requirement</dt>
-                <dd>It MUST be possible for any <a>entity</a> to issue a verifiable claim.</dd>
+                <dd>It MUST be possible for any <a>entity</a> to issue a verifiable <a>claim</a>.</dd>
                 <dt>Motivation</dt>
                 <dd>An <a>entity</a>, such as an end user (<a>holder</a>),
                 wishes to make a <a>claim</a> and would like it to be endorsed by a
@@ -344,81 +345,87 @@ dl.dl-horizontal > dd {
                 <dt>Importance</dt>
                 <dd>Essential</dd>
                 <dt>Scenarios</dt>
-                <dd>Jane would like to get a digitally signed credential for her
-                checking account at MidBank. MidBank offers to provide a
-                credential asserting that Jane has an account at MidBank and has
-                access to her associated checking account.</dd>
+                <dd>Jane would like to get a digitally signed <a>credential</a> for her
+                  checking account at MidBank. MidBank offers to provide a
+                  credential asserting that Jane has an account at MidBank and
+                  has access to her associated checking account. MidBank has
+                  performed Know Your Customer clearing (driver’s license,
+                  background check, anti-money laundering blackslist check,
+                  etc.), on Jane which she can use at other financial
+                  institutions.</dd>
                 <dd>Asako just passed the final test to receive a drivers
-                license. As she is still a new driver, and may be pulled over
-                for a traffic violation, she would like to receive a verfiable
-                claim that she has right to drive a car (<a>claim</a>). She
-                requests a verifiable claim from the certifying authority
-                (<a>issuer</a>) that she can use to prove to the officer
-                (<a>credential consumer</a>) that her <a>claim</a> is
-                valid.
-                <img alt='Example credential creation flow' style='display:block; margin:auto' src="uc-issuing-claims.svg"/>
+                  license. As she is still a new driver, and may be pulled over
+                  for a traffic violation, she would like to receive a <a>credential</a>
+                  asserts a <a>claim</a> that she has right to drive a car. She
+                  requests a credential from the certifying authority
+                  (<a>issuer</a>) that she can use to prove to the officer
+                  (<a>credential consumer</a>) that her <a>claim</a> is
+                  valid.
+                </dd>
+                <dd>
+                  <p>In education, <a>issuers</a> need to reliably identify participants to
+                    ensure that participants are properly evaulated and certificates are
+                    issued as appropriate. A participant that performs a test
+                    on the Web must provide <a>credentials</a> to prove their
+                    <a>identity</a> before taking the test, to allow the system to issue a
+                    <a>credential</a> certifying the test results. These credentials
+                    can then be used as proof of pre-requisites for other courses.
+                    <a>Claims</a> from multiple credentials can be combined into a new credential
+                    which acts as a digital score report, which allows the <a>holder</a>
+                    to do controlled,
+                    multipoint display and distribution (on LinkedIn, Credly,
+                    Parchment, Monster, or Facebook, for example).</p>
+                  <p>Alternatively, a participant may provide evidence of certain
+                    activities (<a>claims</a>) necessary to comply with conformance
+                    requirements e.g., “I have maintained my profession by
+                    following xyz course,” upon which the issuer may provide
+                    a credential asserting these claims.</p>
+                  <ul>
+                    <li>Colorado State University is creating several
+                      recognition certificates to help foster a campus culture of
+                      leadership, tolerance and acceptance. The dean’s office
+                      defines the criteria and what evidence is accepted to prove
+                      that the recipient has met the criteria.</li>
+                    <li>Harper High School teachers define soft skill
+                      credentials to award their students, using a web app that
+                      has badge defining and issuing features.</li>
+                    <li>A teacher professional development association awards
+                      Penny Chen a digital certificate which claims she has
+                      fulfilled her professional development units and has
+                      demonstrated mastery over common core instruction.</li>
+                    <li>Brian is taking an online course on web development.
+                      When he completes modules, the website issues badges to him
+                      for module completion and progress through the course. At
+                      the end of the course he has an option to submit his work
+                      and quizzes that are evaluated and then he is issued a
+                      badge.</li>
+                  </ul>
                 </dd>
                 <dd>Book Co. is a the leading provider of electronic textbooks to
-                higher-ed. A large percentage (near 75%) of integrations with their
-                partner institutions launch (open) an eTextbook through the
-                IMSGlobal standard: Learning Tools Interoperability (LTI). At
-                present Book Co. processes about two million LTI launches per
-                month. The primary use case for this organization is: Student logs on to their
-                learning system (LMS) (<a>credential consumer</a>) and clicks an
-                eTextbook icon that they would like to study (<a>claim</a>). The
-                LTI inteGration broker (<a>issuer</a>) needs to subscribe the
-                student if it’s their first visit. Furthermore it needs to issue
-                a license (<a>credential</a>) for the eTextbook if none currently
-                exists. Finally it presents the eTextbook contents to the
-                student.</dd>
-                <dd>Certificate Co. runs experience-based certification programs
-                issuing credentials. That issuance could unfold in two ways: 1) Issuing
-                credentials on the validity of a certificate after successful
-                assessment of candidates; 2) Candidates bringing in evidence of
-                certain activities necessary to comply with conformance
-                requirements e.g., “I have maintained my profession by following
-                xyz course.”</dd>
-                <dd>In <abbr title="Massive Open Online Course">MOOC</abbr>
-                and other on-line learning systems being able to reliably
-                identify participants is vital to ensure the individual
-                evaluation and certification. A participant that performs a test
-                certified on the Web must provide his credentials to prove his
-                identity before the test, and then to allow the system to issue a
-                secure certificate of his results to the test.</dd>
-                <dd>We want to enable test takers to have a
-                digital credential that represents a score report for pursuing
-                opportunities in education, workforce, and personal endeavors. We
-                can do point-to-point distribution of score reports with current
-                technologies and standards, but we seek a digital score report
-                credential that will allow a test taker to do controlled,
-                multipoint display and distribution (on LinkedIn, Credly,
-                Parchment, Monster, or Facebook, for example). Such a credential
-                will increase the utility and user control of their score
-                reports. Doing this requires ubiquitous web-based standards of
-                the type being worked on by IMS Global, the W3C Community Group,
-                the Dublin Core, and others to ensure validity, security,
-                privacy, efficient display and consumption, issuer control,
-                protection of intellectual property and business model, and
-                similar requirements.</dd>
-                <dd>
-                <p>There are important pieces of metadata associated with a
-                particular Credential:</p>
-                <ul>
-                    <li>Colorado State University is creating several recognition certificates to help foster a campus culture of leadership, tolerance and acceptance. The dean’s office defines the criteria and what evidence is accepted to prove that the recipient has met the criteria.</li>
-                    <li>Green Federal Credit Union has performed Know Your Customer clearing (driver’s license, background check, anti-money laundering blackslist check, etc.), on Reece and would like to issue a credential to him for use at other financial institutions.</li>
-                    <li>Harper High School teachers define soft skill credentials to award their students, using a web app that has badge defining and issuing features.</li>
-                    <li>The Veterans Affairs office is working on an initiative to translate military experience into digitized claims of the veteran’s skills to help veterans better connect with employment when they return from duty.</li>
-                    <li>The Project Management Institute which has been issuing Project Management certificates for many years is moving toward digitization of their existing certification program.</li>
-                </ul>
-                </dd>
-                <dd>
-                <ul>
-                    <li>A teacher professional development association awards Penny Chen a digital certificate which claims she has fulfilled her professional development units and has demonstrated mastery over common core instruction.</li>
-                    <li>Brian is taking an online course on web development. When he completes modules, the website issues badges to him for module completion and progress through the course. At the end of the course he has an option to submit his work and quizzes that are evaluated and then he is issued a badge.</li>
-                    <li>The state government of California issues Amari a driver’s license after he passes both the written and practice driving tests.</li>
-                    <li>Educause conference issues digital badges to all conference speakers through a claim code system. Conference speakers are given a special code, that they input on the educause site which triggers a badge to be issued to them.</li>
-                </ul>
-                </dd>
+                  higher-ed. A large percentage (near 75%) of integrations with
+                  their partner institutions launch (open) an eTextbook through
+                  the IMSGlobal standard: Learning Tools Interoperability
+                  (LTI). At present Book Co. processes about two million LTI
+                  launches per month. The primary use case for this
+                  organization is: Student logs on to their learning system
+                  (LMS) (<a>credential consumer</a>) and clicks an eTextbook
+                  icon that they would like to study (<a>claim</a>). The LTI
+                  inteGration broker (<a>issuer</a>) needs to subscribe the
+                  student if it’s their first visit. Furthermore it needs to
+                  issue a license (<a>credential</a>) for the eTextbook if none
+                  currently exists. Finally it presents the eTextbook contents
+                  to the student.</dd>
+                <dd>The Veterans Affairs office is working on an initiative to
+                  translate military experience into digitized claims of the
+                  veteran’s skills to help veterans better connect with
+                  employment when they return from duty.</dd>
+                <dd>The Project Management Institute which has been issuing
+                  Project Management certificates for many years is moving toward
+                  digitization of their existing certification program.</li>
+                <dd>Educause conference issues digital badges to all conference
+                  speakers through a claim code system. Conference speakers are
+                  given a special code, that they input on the educause site
+                  which triggers a badge to be issued to them.</dd>
             </dl>
         </section>
 
@@ -427,75 +434,78 @@ dl.dl-horizontal > dd {
             <dl class="dl-horizontal">
                 <dt>Requirement</dt>
                 <dd>It MUST be possible for an <a>issuer</a> to verify
-                the <a>identity</a> of a <a>holder</a>. Personally identifiable
-                information MUST use known data fields in order to enable
-                credential curation services to protect the recipient’s
-                privacy.</dd>
+                  the <a>identity</a> of a <a>holder</a>. Personally identifiable
+                  information MUST use known data fields in order to enable
+                  credential curation services to protect the recipient’s
+                  privacy.</dd>
                 <dt>Motivation</dt>
                 <dd>It is important that an <a>issuer</a> ensure that a
-                <a>holder</a> is who they say they are before issuing important
-                credentials.</dd>
+                  <a>holder</a> is who they say they are before issuing important
+                  credentials.</dd>
                 <dt>Importance</dt>
                 <dd>Essential</dd>
                 <dt>Scenarios</dt>
-                <dd>When Big Bank Co. opens a new account for an <a>entity</a>, it verifies 
-                that entity is who they say they are using a variety of 
-                <abbr title="Know Your Customer">KYC</abbr>
-                techniques (that may include Verifiable Claims).  Once they are
-                convinced of the <a>entity's</a> identity, they create the account and 
-                issue a verifiable claim that the account exists and the <a>entity</a> 
-                has access to it.</dd>
+                <dd>When MidBank opens a new account for an <a>entity</a>, it verifies 
+                  that entity is who they say they are using a variety of “Know
+                  Your Customer” (KYC) techniques (that may include Verifiable
+                  Claims). Once they are convinced of the <a>entity's</a>
+                  <a>identity</a>, they create the account and issue a
+                  <a>credential</a> that <a>claims</a> the account exists and
+                  the <a>entity</a> has access to it.</dd>
                 <dd>One of the most compelling use cases for Big Shoe Store is issuance
-                of Loyalty Cards. When a customer applies for Loyalty Cards
-                either online or at Point Of Sale (POS), he would need to enclose
-                either SSN or Driving License or State ID. Though there are
-                secure standards implemented in handling the information it would
-                be preferable to avoid sensitive information exchange.</dd>
+                  of Loyalty Cards. When a customer applies for Loyalty Cards
+                  either online or at Point Of Sale (POS), he would need to
+                  enclose either SSN or Driving License or State ID. Though
+                  there are secure standards implemented in handling the
+                  information it would be preferable to avoid sensitive
+                  information exchange.</dd>
                 <dd>Big Training Company would like to be able to strongly establish a
-                learning identity so that when that individual moves from one
-                institution using their software to another institution using their
-                software (or someone else’s software) that identity and the
-                associated accomplishments could travel with them. The comapny also wants to
-                be able to validate that a user using our system is the
-                same person who registered for courses and will receive
-                credentials during and after assessment.</dd>
+                  learning <a>identity</a> so that when that individual moves
+                  from one institution using their software to another
+                  institution using their software (or someone else’s software)
+                  that identity and the associated accomplishments could travel
+                  with them. The company also wants to be able to validate that
+                  a user using our system is the same person who registered for
+                  courses and will receive credentials during and after
+                  assessment.</dd>
                 <dd>Authenticating the people using Fuel Fleet Cards
-                (payment cards) and <abbr title="Automated Clearing
-                    House">ACH</abbr>-based payments is also important. Credentialing
-                in both cases is critical and uncontrolled by the card brand.
-                Both are decoupled, and require a payment system to <abbr title="Know Your Customer">KYC</abbr> and other
-                profile information – all without passing that source data
-                around. So in ACH its “I am John Doe, and here is my account
-                information” in a digital token. Closed loop cards as well. ACH
-                is just a set of rails, with no authentication beyond RTA – so
-                credentials are key here (waiting for the first ACH breach to
-                drive that home – with the source accounts drained and Reg E the
-                only remedy).</dd>
+                  (payment cards) and <abbr title="Automated Clearing
+                  House">ACH</abbr>-based payments is also important.
+                  Credentialing in both cases is critical and uncontrolled by
+                  the card brand. Both are decoupled, and require a payment
+                  system to Know Your Customer” (KYC) and other profile
+                  information – all without passing that source data around. So
+                  in ACH its “I am John Doe, and here is my account
+                  information” in a digital token. Closed loop cards as well.
+                  ACH is just a set of rails, with no authentication beyond RTA
+                  – so credentials are key here (waiting for the first ACH
+                  breach to drive that home – with the source accounts drained
+                  and Reg E the only remedy).</dd>
             </dl>
         </section>
 
         <section>
-            <h3 id="uc-issuing-verifiability">Credential Verifiability</h3>
-            <dl class="dl-horizontal">
-                <dt>Requirement</dt>
-                <dd>It MUST be possible for a <a>credential consumer</a> to
-                <a data-lt="credential verification">verify credentials</a>
-                as genuine.</dd>
-                <dt>Motivation</dt>
-                <dd>An <a>issuer</a> MUST be able to sign a credential
-                which can be verified by an arbitrary third party (<s>credential
-                    consumer</s>).</dd>
-                <dt>Importance</dt>
-                <dd>Essential</dd>
-                <dt>Scenarios</dt>
-                <dd>Company creates credential and signs with a private key.
-                Part of the signed data includes the location of the
-                corresponding public key. A third party having received the
-                credential can retrieve the public key and verify that the
-                credential signature is valid. Through other means, they can
-                choose to trust Company as a valid issuer of
-                credentials including claims that they require.</dd>
-            </dl>
+          <h3 id="uc-issuing-verifiability">Credential Verifiability</h3>
+          <dl class="dl-horizontal">
+            <dt>Requirement</dt>
+            <dd>It MUST be possible for a <a>credential consumer</a> to
+            <a data-lt="credential verification">verify credentials</a>
+              as genuine.</dd>
+            <dt>Motivation</dt>
+            <dd>An <a>issuer</a> MUST be able to sign a credential
+              which can be validated by an arbitrary third party (<a>credential
+              consumer</a>).</dd>
+            <dt>Importance</dt>
+            <dd>Essential</dd>
+            <dt>Scenarios</dt>
+            <dd>Company creates credential and signs with a private key.
+              Part of the signed data includes the location of the
+              corresponding public key. A third party having received the
+              <a>credential</a> can retrieve the public key and verify that the
+              <a>digital signature</a> is valid. Through other means, they can
+              choose to trust Company as a valid <a>issuer</a> of
+              credentials including <a>claims</a> that they require.</dd>
+          </dl>
         </section>
 
         <section>
