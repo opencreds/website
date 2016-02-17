@@ -199,10 +199,18 @@ dl.dl-horizontal > dd {
     </section>
     <section>
         <h3>How to Read This Document</h3>
-        <p>This document is organized around the basic operations that
+        <p>First, review the basic terminology used in section 2. This will give
+        you a good foundation for understanding the rudimentary examples of how 
+        claims might be
+        issued and later verified in section 3.</p>
+        <p>Finally, review the detailed requirements and supporting scenarios in
+        Section 4.  There are also a significant number of "Extended Use Cases" in
+        Appendix A.  We expect these are important, but possibly could be dealt
+        with in subsequent phases of work.</p>
+        <p class="note">The use cases in this document are organized around the basic operations that
         might be performed on a Verifiable Claim.  For each of these
-        operations, and for the additional section "Uncategorized /
-        General", the document captures some high level use cases
+        operations, 
+        the document captures some high level use cases
         grouped by the requirement they represent.
         Each use case contains information about its motivation, relative
         priority, and one or more examples to help define the target
@@ -213,14 +221,52 @@ dl.dl-horizontal > dd {
 
 <section>
     <!-- Editor - @halindrome -->
+    <h2>Examples</h2>
+    <p>These examples describe basic ways in which Verifiable Claims 
+    might be used.  They are not meant to be architecturally constraing. Instead,
+    they are meant to help illustrate the basic way it <em>could</em> be done in a
+    typical commerce situation.
+    Again - please remember that it is just an
+    example, and should not be thought of as the canonical way such
+    a claims environment must be implemented.</p>
+    <section>
+        <h2>How a Verifiable Claim Might be Created</h2>
+        <p>In this first example, a user will request a Verifiable Claim - a
+        confirmation of their identity. Consider this illustration:</p>
+
+        <img alt='Verifiable Claim Creation Flow Description' style='display:block; margin:auto' src="uc-issuing-claims.svg"/>
+        <p>Expanding on these steps:</p>
+        <ol title="Verifiable Claim Creation Flow Description">
+            <li>Jane asks her User Agent to help her get a Verifiable Claim about
+            her identity.</li>
+            <li>Her user agent connects her to a Certifying Authority that is able
+            to verify her identity.</li>
+            <li>The CA examimes her documentation.</li>
+            <li>They are satisfied, so the CA generates a Verifiable Claim for
+            Jane that includes information about her identity linked to their
+            own trusted <em>credential</em>.</li>
+            <li>The CA delivers the credential back to Jane's User Agent.</li>
+            <li>Jane views the credential to ensure it reflects he
+            requirements.</li>
+            <li>When she is satisfied, she instructs her User Agent to save the
+            Verifiable Claim so she can use it in the future.</li>
+            <li>The UA communicates with her <a>Credential Curator</a>,
+            instructing it to store the new claim.</li>
+            <li>The <a>Credential Curator</a> returns a list of the claims it is
+            holding for Jane to the UA.</li>
+            <li>The UA shows Jane her claim collection - confirming 
+            everything she has available.</li>
+        </ol>
+    </section>
+    <section>
     <h2>How a Verifiable Claim Might be Used</h2>
-    <p>Just to provide a basis for discussion, this section
+    <p>This sub-section
     illustrates a simple example of how a claim might be used in a
     typical commerce situation.  Please remember that it is just an
     example, and should not be thought of as the canonical way such
     a system must be implemented.  First, consider this diagram:</p>
-    <img aria-describedby="vf-flow" alt='Verifiable Claim Flow Diagram' style='display:block; margin:auto' src="example.svg"/>
-    <ol title="Verifiable Claim Flow Description" id="vf-flow">
+    <img aria-describedby="vf-flow" alt='Verifiable Claim Usage Flow Diagram' style='display:block; margin:auto' src="example.svg"/>
+    <ol title="Verifiable Claim Usage Flow Description" id="vf-flow">
         <li>Jane decides to shop on the web site
         WinesOfTheWorld.example.com (merchant).</li>
         <li>The merchant's site requires Jane be 21 years of age and
@@ -241,6 +287,7 @@ dl.dl-horizontal > dd {
         <li>The merchant redirects the user agent to the web site
         with appropriate authorization.</li>
     </ol>
+</section>
 </section>
 
 <section>
@@ -289,6 +336,8 @@ dl.dl-horizontal > dd {
         <!-- Editor - @gkellogg -->
         <h2>Issuing Claims</h2>
 
+        <!-- commented out by @halindrome - not appropriate in the use cases
+        section
         <p>The general flow discussed for issuing claims is the following:</p>
 
         <p><em><strong>Issuer Advertises Credential template</strong></em></p>
@@ -330,7 +379,8 @@ dl.dl-horizontal > dd {
         MAY store it on a variety of platforms or media. Credentials MUST be
         portable between <a>credential services</a>.</p>
 
-        <img alt='Example credential creation flow' style='display:block; margin:auto' src="uc-issuing-claims.svg"/>
+        -->
+
 
         <section>
             <h3 id="uc-issuing-claims">Issuing Claims</h3>
