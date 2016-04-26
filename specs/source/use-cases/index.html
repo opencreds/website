@@ -3,7 +3,9 @@
 <head>
 <title>Verifiable Claims Task Force Use Cases</title>
 <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
-<script src='http://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script>
+<script src='http://pandora.aptest.com/w3c/respec-schemaorg/builds/respec-w3c-common.js' async
+class='remove'></script>  
+<!-- <script src='http://www.w3.org/Tools/respec/respec-w3c-common' class='remove'></script> -->
 <script src='../common/common.js' class='remove'></script>
 <script class='remove'>
 var respecConfig = {
@@ -27,6 +29,7 @@ var respecConfig = {
 
           issueBase: "https://github.com/opencreds/website/issues/",
           githubAPI:  "https://api.github.com/repos/opencreds/website",
+          includePermalinks: "true",
 
           // if there a publicly available Editor's Draft, this is the link
           edDraftURI:           "https://opencreds.org/specs/source/use-cases",
@@ -43,6 +46,8 @@ var respecConfig = {
           editors:  [
               { name: "Shane McCarron", url: "http://digitalbazaar.com/",
                 company: "Digital Bazaar, Inc.", companyURL: "http://digitalbazaar.com/", w3cid: "23346" },
+              { name: "Daniel Burnett", 
+                company: "Standards Play", companyURL: "http://standardsplay.com/"},
               { name: "Gregg Kellogg", url: "http://greggkellogg.net/", w3cid: "44770" },
               { name: "Brian Sletten", url: "http://bosatsu.net",
                 company: "Bosatsu Consulting, Inc.", companyURL: "http://bosatsu.net" },
@@ -247,7 +252,7 @@ dl.dl-horizontal > dd {
         <img alt='Verifiable Claim Creation Flow Description' style='display:block; margin:auto' src="uc-issuing-claims.svg"/>
         <p>Expanding on these steps:</p>
         <ol title="Verifiable Claim Creation Flow Description">
-            <li>Jane asks her User Agent to help her get a Verifiable Claim about
+            <li>[[XHTML1]]Jane asks her User Agent to help her get a Verifiable Claim about
             her identity.</li>
             <li>Her user agent connects her to a Certifying Authority that is able
             to verify her identity.</li>
