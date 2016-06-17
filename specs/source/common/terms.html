@@ -8,7 +8,8 @@
 <dl class="termlist">
   <dt><dfn data-lt="verifiable claim|claims">claim</dfn></dt>
   <dd>
-A statement made by an <a>entity</a> about an <a>identity</a>.
+A statement made by an <a>entity</a> about the <a>subject</a> defined
+by an <a>identity profile</a>.
   </dd>
   <dt><dfn>credential curator</dfn></dt>
   <dd>
@@ -75,6 +76,15 @@ A mathematical scheme for demonstrating the authenticity of a digital message.
 A thing with distinct and independent existence such as a person, organization,
 concept, or device.
   </dd>
+  <dt><dfn data-lt="entity credential|entity credentials">entity credential</dfn></dt>
+  <dd>
+A set of claims made by an <a>entity</a> about an <a>identity
+profile</a> referred to as the <a>subject</a> of the claims.  An
+entity credential may refer to a qualification, achievement, personal
+quality, or other information abouth the <a>subject</a> such as a
+name, government ID, preferred payment processor, home address, or
+university degree that is typically used to indicate suitability.
+  </dd>
   <dt><dfn data-lt="holders|holder's|recipient|recipients|recipient's">holder</dfn></dt>
   <dd>
 An <a>entity</a> that is in control of a particular <a>credential</a>.
@@ -106,10 +116,20 @@ handles requests to store <a>credentials</a> issued by an
 <a>issuer</a> and to retrieve <a>credentials</a> when requested by a
 <a>credential consumer</a>.
   </dd>
+  <dt><dfn data-lt="identity profile|identity profiles">identity profile</dfn></dt>
+  <dd>
+A set of information that can be used to identify a particular
+<a>entity</a>. An
+<a>entity</a> may have multiple identity profiles associated with it.
+  </dd>
   <dt><dfn data-lt="issuers|issuer's">issuer</dfn></dt>
   <dd>
 An <a>entity</a> that creates a <a>credential</a> and associates it
 with a particular <a>holder</a>.
+  </dd>
+  <dt><dfn data-lt="subjects|subject's">subject</dfn></dt>
+  <dd>
+An <a>entity</a> which may have multiple <a>identity profiles<a> and about which <a>claims</h> may be made.
   </dd>
   <dt><dfn>user agent</dfn></dt>
   <dd>
