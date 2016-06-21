@@ -1,5 +1,5 @@
 /* Web Payments Community Group common spec JavaScript */
-/* globals respecConfig, $, require */
+/* globals omitTerms, respecConfig, $, require */
 /* exported linkCrossReferences, restrictReferences, fixIncludes */
 
 var opencreds = {
@@ -110,9 +110,37 @@ function restrictReferences(utils, content) {
     $.each(base.querySelectorAll("dfn"), function(i, item) {
         var $t = $(item) ;
         var titles = $t.getDfnTitles();
-        var n = $t.makeID("dfn", titles[0]);
-        if (n) {
-            termNames[n] = $t.parent() ;
+        var dropit = false;
+        // do we have an omitTerms
+        if (window.hasOwnProperty("omitTerms")) {
+            // search for a match
+            $.each(omitTerms, function(j, term) {
+                if (titles.indexOf(term) !== -1) {
+                    dropit = true;
+                }
+            });
+        } 
+        // do we have an includeTerms
+        if (window.hasOwnProperty("includeTerms")) {
+            var found = false;
+            // search for a match
+            $.each(includeTerms, function(j, term) {
+                if (titles.indexOf(term) !== -1) {
+                    found = true;
+                }
+            });
+            if (!found) {
+                dropit = true;
+            }
+        }
+        if (dropit) {
+            $t.parent().next().remove();
+            $t.parent().remove();
+        } else {
+            var n = $t.makeID("dfn", titles[0]);
+            if (n) {
+                termNames[n] = $t.parent() ;
+            }
         }
     });
 
@@ -193,7 +221,7 @@ require(["core/pubsubhub"], function(respecEvents) {
                 if ($p) {
                     var tList = $p.getDfnTitles();
                     $p.parent().next().remove();
-                    $p.remove() ;
+                    $p.parent().remove() ;
                     tList.forEach(function( item ) {
                         if (respecConfig.definitionMap[item]) {
                             delete respecConfig.definitionMap[item];
