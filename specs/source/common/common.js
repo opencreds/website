@@ -26,6 +26,19 @@ var opencreds = {
       status: "unofficial",
       publisher: "Web Payments Community Group"
     },
+    "VCTF-USECASES": {
+      title: "Verifiable Claims Use Cases",
+      href: "http://w3c.github.io/webpayments-ig/VCTF/use-cases/",
+      authors: [
+	"Shane McCarron",
+        "Daniel Burnett",
+        "Gregg Kellogg",
+        "Brian Sletten",
+        "Manu Sporny"
+      ],
+      status: "IG-DRAFT",
+      publisher: "Web Payments Interest Group Verifiable Claims Task Force"
+    },
     // aliases to known references
     "HTTP-SIGNATURES": {
       aliasOf: "http-signatures"
