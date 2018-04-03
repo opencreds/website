@@ -695,7 +695,7 @@ This specification adds a new type of credential, <code>IdentityCredential</code
 interface IdentityCredential : Credential {
   readonly attribute dictionary identity;
 
-  static Promise<any> register(dictionary options);
+  static Promise&lt;any&gt; register(dictionary options);
 };
         </pre>
 
