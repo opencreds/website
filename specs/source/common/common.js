@@ -28,7 +28,7 @@ var opencreds = {
     },
     "VCTF-USECASES": {
       title: "Verifiable Claims Use Cases",
-      href: "http://w3c.github.io/webpayments-ig/VCTF/use-cases/",
+      href: "https://w3c.github.io/webpayments-ig/VCTF/use-cases/",
       authors: [
 	"Shane McCarron",
         "Daniel Burnett",
@@ -69,14 +69,14 @@ var opencreds = {
     },
     'IDENTITY-CREDENTIALS': {
       title: 'Identity Credentials',
-      href: 'http://opencreds.org/specs/source/identity-credentials/',
+      href: 'https://opencreds.org/specs/source/identity-credentials/',
       authors: ['Manu Sporny', 'Dave Longley'],
       status:   'CG-DRAFT',
       publisher:  'W3C Credentials Community Group'
     },
     'RDF-NORMALIZATION': {
       title: 'RDF Dataset Normalization',
-      href: 'http://json-ld.github.io/normalization/spec/',
+      href: 'https://json-ld.github.io/normalization/spec/',
       authors: ['Dave Longley', 'Manu Sporny'],
       status:   'CG-DRAFT',
       publisher:  'Credentials W3C Community Group'
