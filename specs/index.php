@@ -25,6 +25,9 @@ function dirContents($dir)
     <div class="row white">
       <div class="col-md-8 col-md-offset-2 inner-bottom-xs">
         <h1>Specifications</h1>
+        <div class="alert alert-info">
+          <strong>Note</strong>: This is a historical site.  Please visit the <strong><a href="https://www.w3.org/2017/vc/WG/">W3C Verifiable Claims Working Group</a></strong> and the <strong><a href="https://w3c-ccg.github.io/">W3C Credentials Community Group</a></strong>.
+        </div>
         <p>
 The Open Credentials specs are available under an open, patent and royalty-free 
 license. Just like all other successful open Web technologies, the freedom to 
