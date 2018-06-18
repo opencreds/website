@@ -735,6 +735,7 @@ $(document).ready(function () {
 /*	GOOGLE MAPS
 /*===================================================================================*/
 
+/*
 $(document).ready(function () {
 	
 	function initialize() {
@@ -749,6 +750,7 @@ $(document).ready(function () {
 	google.maps.event.addDomListener(window, 'load', initialize);
 	
 });
+*/
 
 
 /*===================================================================================*/

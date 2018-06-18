@@ -71,7 +71,7 @@
 		<script src="<?php echo $TOP_DIR ?>/assets/js/owl.carousel.min.js"></script>
 		<script src="<?php echo $TOP_DIR ?>/assets/js/jquery.isotope.min.js"></script>
 		<script src="<?php echo $TOP_DIR ?>/assets/js/jquery.easytabs.min.js"></script>
-		<script src="<?php echo $TOP_DIR ?>/assets/js/google.maps.api.v3.js"></script>
+<!--		<script src="<?php echo $TOP_DIR ?>/assets/js/google.maps.api.v3.js"></script>-->
 		<script src="<?php echo $TOP_DIR ?>/assets/js/viewport-units-buggyfill.js"></script>
 		<script src="<?php echo $TOP_DIR ?>/assets/js/scripts.js"></script>		
 	</body>
